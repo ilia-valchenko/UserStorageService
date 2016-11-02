@@ -78,10 +78,17 @@ namespace MyServiceLibrary
         public User() { }
 
         public User(string firstname, string lastname, DateTime dateOfBirth)
-        {
-            // Set unique Id
+        {      
             FirstName = firstname;
             LastName = lastname;
+            DateOfBirth = dateOfBirth;
+        }
+
+        public User(int id, string firstname, string lastname, DateTime dateOfBirth)
+        {
+            Id = id;
+            FirstName = firstname;
+            LastName = lastName;
             DateOfBirth = dateOfBirth;
         }
 

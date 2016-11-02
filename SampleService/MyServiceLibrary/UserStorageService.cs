@@ -4,20 +4,28 @@ using BinarySearchTree;
 
 namespace MyServiceLibrary
 {
+    public delegate int TransformId(int id);
+
     /// <summary>
     /// This class represents the simple user storage service which prodives basic operations such as addition, finding and removing users.
     /// </summary>
     public sealed class UserStorageService
     {
         #region Constructors
-        public UserStorageService()
-        {
-            bst = new BinarySearchTree<User>();
-        }
+        public UserStorageService() : this(new List<User>(), (int id) => id + 1) {}
 
-        public UserStorageService(IEnumerable<User> users)
+        public UserStorageService(TransformId transformId) : this(new List<User>(), transformId) { }
+
+        public UserStorageService(IEnumerable<User> users, TransformId transformId)
         {
+            if (users == null)
+                throw new ArgumentNullException(nameof(users));
+
+            if (transformId == null)
+                throw new ArgumentNullException(nameof(transformId));
+
             bst = new BinarySearchTree<User>();
+            this.transformId = transformId;
 
             foreach (var user in users)
                 bst.Add(user);
@@ -51,12 +59,14 @@ namespace MyServiceLibrary
 
 
             // And what about unique Id?
+            var userWithId = new User(nextId, user.FirstName, user.LastName, user.DateOfBirth);
+            nextId = transformId
+
             bst.Add(user);
             // stub
             return 1;
         }
 
-        // what about signature?
         public void Delete(User user)
         {
             if (user == null)
@@ -124,9 +134,11 @@ namespace MyServiceLibrary
                     users.Add(user);
 
             return users.ToArray();
-        } 
+        }
         #endregion
 
+        private readonly int nextId = 0;
         private BinarySearchTree<User> bst;
+        private TransformId transformId;
     }
 }
