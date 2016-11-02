@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyServiceLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:MyServiceLibrary.User">
+            <summary>
+            This class represents a simple user which contains information about it's first name, last name and a date of birth.
+            </summary>
+        </member>
+    </members>
+</doc>

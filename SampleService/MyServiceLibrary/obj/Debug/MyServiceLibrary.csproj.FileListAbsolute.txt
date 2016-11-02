@@ -1,0 +1,9 @@
+G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.XML
+G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.csprojResolveAssemblyReference.cache
+G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.dll
+G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.pdb
+G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\MyServiceLibrary\bin\Debug\BinarySearchTree.dll
+G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\MyServiceLibrary\bin\Debug\BinarySearchTree.pdb
+G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\MyServiceLibrary\bin\Debug\BinarySearchTree.xml
+G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.dll
+G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.pdb
