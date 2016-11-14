@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BinarySearchTree</name>
+    </assembly>
+    <members>
+        <member name="T:BinarySearchTree.BinarySearchTree`1">
+            <summary>
+            This class represents a simple binary search tree. It's a rooted binary tree, whose internal nodes 
+            each store a key and each have two distinguished sub-trees, commonly denoted left and right.
+            </summary>
+            <typeparam name="T">Type of tree's node.</typeparam>
+        </member>
+        <member name="P:BinarySearchTree.BinarySearchTree`1.Count">
+            <summary>
+            Number of elements of tree.
+            </summary>
+        </member>
+        <member name="M:BinarySearchTree.BinarySearchTree`1.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:BinarySearchTree.BinarySearchTree`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            This constructor use the given collection for creating a new tree.
+            </summary>
+            <param name="collection">The collection of the values.</param>
+        </member>
+        <member name="M:BinarySearchTree.BinarySearchTree`1.Add(`0)">
+            <summary>
+            This method adds a new node which contains the given value to the tree.
+            </summary>
+            <param name="value">The value of the new node.</param>
+        </member>
+        <member name="M:BinarySearchTree.BinarySearchTree`1.Remove(`0)">
+            <summary>
+            This method deletes node which contains the given value from the tree.
+            </summary>
+            <param name="item">The value of the node which must be deleted.</param>
+            <returns>Returns true, if delete operation is successful.</returns>
+        </member>
+        <member name="M:BinarySearchTree.BinarySearchTree`1.FindByValue(`0)">
+            <summary>
+            This method finds the node which contains the given value.
+            </summary>
+            <param name="value">The value of the sought-for node.</param>
+            <returns>Returns the node which contains the given value.</returns>
+        </member>
+        <member name="M:BinarySearchTree.BinarySearchTree`1.Preorder">
+            <summary>
+            In this traversal method, the root node is visited first, then left subtree and finally right sub-tree.
+            </summary>
+            <returns>Returns elements of the tree in the preorder traversal.</returns>
+        </member>
+        <member name="M:BinarySearchTree.BinarySearchTree`1.Inorder">
+            <summary>
+            In this traversal method, the left left-subtree is visited first, then root and then the 
+            right sub-tree. We should always remember that every node may represent a subtree itself.
+            </summary>
+            <returns>Returns elements of the tree in the inorder traversal.</returns>
+        </member>
+        <member name="M:BinarySearchTree.BinarySearchTree`1.Postorder(BinarySearchTree.BinarySearchTree{`0}.Node)">
+            <summary>
+            In this traversal method, the root node is visited last, hence the name. First we traverse left subtree, 
+            then right subtree and finally root.
+            </summary>
+            <param name="node"></param>
+            <returns>Returns elements of the tree in the postorder traversal.</returns>
+        </member>
+        <member name="P:BinarySearchTree.BinarySearchTree`1.IsReadOnly">
+            <summary>
+            This method returns true if the BST is read-only.
+            </summary>
+        </member>
+        <member name="M:BinarySearchTree.BinarySearchTree`1.Clear">
+            <summary>
+            This method clears the current tree.
+            </summary>
+        </member>
+        <member name="M:BinarySearchTree.BinarySearchTree`1.Contains(`0)">
+            <summary>
+            This method defines does the given element is contains in the tree.
+            </summary>
+            <param name="item">The value of the sought-for node.</param>
+            <returns>Returns true if the tree contains the given element.</returns>
+        </member>
+        <member name="M:BinarySearchTree.BinarySearchTree`1.CopyTo(`0[],System.Int32)">
+            <summary>
+            This method copies tree into an array.
+            </summary>
+            <param name="array">The destination array.</param>
+            <param name="arrayIndex">The start index.</param>
+        </member>
+        <member name="M:BinarySearchTree.BinarySearchTree`1.GetEnumerator">
+            <summary>
+            This method returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>Returns an enumerator that iterates through a collection.</returns>
+        </member>
+        <member name="T:BinarySearchTree.BinarySearchTree`1.Node">
+            <summary>
+            This inner class represents a node of a binary search tree.
+            </summary>
+        </member>
+        <member name="P:BinarySearchTree.BinarySearchTree`1.Node.Left">
+            <summary>
+            A left child of a node.
+            </summary>
+        </member>
+        <member name="P:BinarySearchTree.BinarySearchTree`1.Node.Right">
+            <summary>
+            A right child of a node.
+            </summary>
+        </member>
+        <member name="P:BinarySearchTree.BinarySearchTree`1.Node.Value">
+            <summary>
+            A value which node contains.
+            </summary>
+        </member>
+        <member name="M:BinarySearchTree.BinarySearchTree`1.Node.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:BinarySearchTree.BinarySearchTree`1.Node.#ctor(`0)">
+            <summary>
+            This constructor creates a new node with the given value.
+            </summary>
+            <param name="value"></param>
+        </member>
+    </members>
+</doc>
