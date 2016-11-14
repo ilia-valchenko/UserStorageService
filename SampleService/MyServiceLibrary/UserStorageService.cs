@@ -1,23 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using BinarySearchTree;
 
 namespace MyServiceLibrary
 {
+    /// <summary>
+    /// This delegate encapsulates a method which create an Id of a user.
+    /// </summary>
+    /// <param name="id">An Id of a previous user.</param>
+    /// <returns>Returns id of the current user.</returns>
+    public delegate int IdentifierChanger(int id);
+
     /// <summary>
     /// This class represents the simple user storage service which prodives basic operations such as addition, finding and removing users.
     /// </summary>
     public sealed class UserStorageService
     {
         #region Constructors
-        public UserStorageService()
-        {
-            bst = new BinarySearchTree<User>();
-        }
+        public UserStorageService() : this(new List<User>(), id => id++) { }
 
-        public UserStorageService(IEnumerable<User> users)
+        public UserStorageService(IEnumerable<User> users) : this(users, id => id++) { }
+
+        public UserStorageService(IEnumerable<User> users, IdentifierChanger identifierChanger)
         {
+            if (users == null)
+                throw new ArgumentNullException(nameof(users));
+
+            if (identifierChanger == null)
+                throw new ArgumentNullException(nameof(identifierChanger));
+
             bst = new BinarySearchTree<User>();
+            this.identifierChanger = identifierChanger;
+            this.id = 0;
 
             foreach (var user in users)
                 bst.Add(user);
@@ -29,36 +44,37 @@ namespace MyServiceLibrary
         /// This method ads users to the storage if this storage doesn't contain the user. 
         /// </summary>
         /// <param name="user">User which must be added.</param>
-        /// <returns>Returns the new Id of the user.</returns>
-        public int Add(User user)
+        public void Add(User user)
         {
             if (user == null)
                 throw new ArgumentNullException(nameof(user));
 
             // set more info to the exception 
-            if (String.IsNullOrEmpty(user.FirstName))
+            if (string.IsNullOrEmpty(user.FirstName))
                 throw new InvalidUserException();
 
-            if (String.IsNullOrEmpty(user.LastName))
+            if (string.IsNullOrEmpty(user.LastName))
                 throw new InvalidUserException();
 
             if (user.DateOfBirth > DateTime.Now)
                 throw new InvalidUserException();
 
             // should I throw this exception or not?
+            //if (bst.Contains(user))
+            //    throw new UserAlreadyExistsException();
+
             if (bst.Contains(user))
-                throw new UserAlreadyExistsException();
+                return;
 
-
-            // And what about unique Id?
-            bst.Add(user);
-            // stub
-            return 1;
+            bst.Add(new User(user.FirstName, user.LastName, user.DateOfBirth, identifierChanger(id)));
         }
 
-        // what about signature?
+        /// <summary>
+        /// This method removes user from the storage.
+        /// </summary>
+        /// <param name="user">A user that must be removed.</param>
         public void Delete(User user)
-        {
+        { 
             if (user == null)
                 throw new ArgumentNullException(nameof(user));
 
@@ -72,61 +88,49 @@ namespace MyServiceLibrary
         /// This method removes user from the storage if it exists.
         /// </summary>
         /// <param name="userId">Id of the user which must be deleted.</param>
-        /// <returns>Returns true if the user was successfully deleted.</returns>
-        public bool Delete(int userId)
+        public void Delete(int userId)
         {
             if (userId < 0)
                 throw new ArgumentException(nameof(userId));
 
-            Predicate<User> getUserById = (User u) => { return u.Id == userId; };
+            Predicate<User> getUserById = (User u) => u.Id == userId;
             var user = GetUserByPredicate(getUserById);
 
             if (user != null)
-            {
                 bst.Remove(user);
-                return true;
-            }
-
-            return false;
         }
 
         /// <summary>
         /// This method finds a user by the given predicate.
         /// </summary>
         /// <param name="predicate"></param>
-        /// <returns></returns>
+        /// <returns>Returns user which was found by using the predicate.</returns>
         public User GetUserByPredicate(Predicate<User> predicate)
         {
             if (predicate == null)
                 throw new ArgumentNullException(nameof(predicate));
 
-            foreach (var user in bst)
-                if (predicate(user))
-                    return user;
-
-            return null;
+            return bst.FirstOrDefault(user => predicate(user));
         }
 
         /// <summary>
         /// This method finds an array of users by the given predicate.
         /// </summary>
         /// <param name="predicate"></param>
-        /// <returns></returns>
-        public User[] GetUsersByPredicate(Predicate<User> predicate)
+        /// <returns>Returns a collection of users which was found by using predicate.</returns>
+        public IEnumerable<User> GetUsersByPredicate(Predicate<User> predicate)
         {
             if (predicate == null)
                 throw new ArgumentNullException(nameof(predicate));
 
-            var users = new List<User>();
-
-            foreach (var user in bst)
-                if (predicate(user))
-                    users.Add(user);
-
-            return users.ToArray();
-        } 
+            return bst.Where(user => predicate(user));
+        }
         #endregion
 
-        private BinarySearchTree<User> bst;
+        #region Private fields and properties
+        private readonly BinarySearchTree<User> bst;
+        private readonly IdentifierChanger identifierChanger;
+        private int id;
+        #endregion
     }
 }

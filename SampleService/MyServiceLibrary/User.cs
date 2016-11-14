@@ -75,11 +75,11 @@ namespace MyServiceLibrary
             }
         }
 
-        public User() { }
+        public User() : this("unknown", "unknown", DateTime.Now) { }
 
-        public User(string firstname, string lastname, DateTime dateOfBirth)
+        public User(string firstname, string lastname, DateTime dateOfBirth, int id = 0)
         {
-            // Set unique Id
+            Id = id;
             FirstName = firstname;
             LastName = lastname;
             DateOfBirth = dateOfBirth;
