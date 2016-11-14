@@ -1,6 +1,0 @@
-G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\BinarySearchTree\bin\Debug\BinarySearchTree.XML
-G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\BinarySearchTree\bin\Debug\BinarySearchTree.dll
-G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\BinarySearchTree\bin\Debug\BinarySearchTree.pdb
-G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\BinarySearchTree\obj\Debug\BinarySearchTree.csprojResolveAssemblyReference.cache
-G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\BinarySearchTree\obj\Debug\BinarySearchTree.dll
-G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\BinarySearchTree\obj\Debug\BinarySearchTree.pdb
