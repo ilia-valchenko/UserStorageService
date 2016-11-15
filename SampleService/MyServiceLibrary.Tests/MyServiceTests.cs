@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 
 namespace MyServiceLibrary.Tests
 {
@@ -16,5 +17,18 @@ namespace MyServiceLibrary.Tests
 
         //[TestMethod]
         //[ExpectedException(typeof(In))]
+
+        // http://metanit.com/sharp/mvc5/18.5.php
+
+        // Arrange 
+        // Act 
+        // Assert
+
+        // test moq
+        [TestMethod]
+        public void Test()
+        {
+            var mock = new Mock<>();
+        }
     }
 }

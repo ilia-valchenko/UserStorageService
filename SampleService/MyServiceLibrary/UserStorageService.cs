@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using BinarySearchTree;
 
 namespace MyServiceLibrary
 {
@@ -15,27 +13,49 @@ namespace MyServiceLibrary
     /// <summary>
     /// This class represents the simple user storage service which prodives basic operations such as addition, finding and removing users.
     /// </summary>
-    public sealed class UserStorageService
+    public sealed class UserStorageService : IUserStorageService
     {
         #region Constructors
-        public UserStorageService() : this(new List<User>(), id => id++) { }
-
-        public UserStorageService(IEnumerable<User> users) : this(users, id => id++) { }
-
-        public UserStorageService(IEnumerable<User> users, IdentifierChanger identifierChanger)
+        /// <summary>
+        /// Default constructor that creates a simple service with empty collection of users and basic autoincrement id.
+        /// </summary>
+        /// <param name="storage">A storage for users.</param>
+        public UserStorageService(IUserStorage storage) : this(storage, new List<User>(), id => id++) { }
+        /// <summary>
+        /// This constructor creates a simple service with empty collection of users and custom identifierChanger.
+        /// </summary>
+        /// <param name="storage">A storage for users.</param>
+        /// <param name="identifierChanger">Delegate which encapsulates method to change user's id.</param>
+        public UserStorageService(IUserStorage storage, IdentifierChanger identifierChanger) : this(storage, new List<User>(), identifierChanger) { }
+        /// <summary>
+        /// This constructor takes an initializes collection of users.
+        /// </summary>
+        /// <param name="storage">A storage for users.</param>
+        /// <param name="users">The collection of users which must be added to the storage for the first time.</param>
+        public UserStorageService(IUserStorage storage, IEnumerable<User> users) : this(storage, users, id => id++) { }
+        /// <summary>
+        /// This constructor takes an initializes collection of users and custom identifierChanger.
+        /// </summary>
+        /// <param name="storage">A storage for users.</param>
+        /// <param name="users">The collection of users which must be added to the storage for the first time.</param>
+        /// <param name="identifierChanger">Delegate which encapsulates method to change user's id.</param>
+        public UserStorageService(IUserStorage storage, IEnumerable<User> users, IdentifierChanger identifierChanger)
         {
+            if(storage == null)
+                throw new ArgumentNullException(nameof(storage));
+
             if (users == null)
                 throw new ArgumentNullException(nameof(users));
 
             if (identifierChanger == null)
                 throw new ArgumentNullException(nameof(identifierChanger));
 
-            bst = new BinarySearchTree<User>();
+            this.storage = storage;
             this.identifierChanger = identifierChanger;
             this.id = 0;
 
             foreach (var user in users)
-                bst.Add(user);
+                storage.Add(user);
         }
         #endregion
 
@@ -49,7 +69,6 @@ namespace MyServiceLibrary
             if (user == null)
                 throw new ArgumentNullException(nameof(user));
 
-            // set more info to the exception 
             if (string.IsNullOrEmpty(user.FirstName))
                 throw new InvalidUserException();
 
@@ -59,14 +78,12 @@ namespace MyServiceLibrary
             if (user.DateOfBirth > DateTime.Now)
                 throw new InvalidUserException();
 
-            // should I throw this exception or not?
-            //if (bst.Contains(user))
-            //    throw new UserAlreadyExistsException();
-
-            if (bst.Contains(user))
+            if (storage.Contains(user))
                 return;
 
-            bst.Add(new User(user.FirstName, user.LastName, user.DateOfBirth, identifierChanger(id)));
+            id = identifierChanger(id);
+
+            storage.Add(new User(user.FirstName, user.LastName, user.DateOfBirth, id));
         }
 
         /// <summary>
@@ -78,10 +95,10 @@ namespace MyServiceLibrary
             if (user == null)
                 throw new ArgumentNullException(nameof(user));
 
-            if (!bst.Contains(user))
+            if (!storage.Contains(user))
                 throw new UserDoesntExistException();
 
-            bst.Remove(user);
+            storage.Delete(user);
         }
 
         /// <summary>
@@ -97,7 +114,7 @@ namespace MyServiceLibrary
             var user = GetUserByPredicate(getUserById);
 
             if (user != null)
-                bst.Remove(user);
+                storage.Delete(user);
         }
 
         /// <summary>
@@ -110,7 +127,7 @@ namespace MyServiceLibrary
             if (predicate == null)
                 throw new ArgumentNullException(nameof(predicate));
 
-            return bst.FirstOrDefault(user => predicate(user));
+            return storage.FirstOrDefault(user => predicate(user));
         }
 
         /// <summary>
@@ -123,12 +140,12 @@ namespace MyServiceLibrary
             if (predicate == null)
                 throw new ArgumentNullException(nameof(predicate));
 
-            return bst.Where(user => predicate(user));
+            return storage.Where(user => predicate(user));
         }
         #endregion
 
         #region Private fields and properties
-        private readonly BinarySearchTree<User> bst;
+        private readonly IUserStorage storage;
         private readonly IdentifierChanger identifierChanger;
         private int id;
         #endregion

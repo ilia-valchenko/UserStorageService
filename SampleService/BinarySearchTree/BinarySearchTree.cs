@@ -10,7 +10,7 @@ namespace BinarySearchTree
     /// each store a key and each have two distinguished sub-trees, commonly denoted left and right.
     /// </summary>
     /// <typeparam name="T">Type of tree's node.</typeparam>
-    public class BinarySearchTree<T> : ICollection<T>, IEnumerable<T> where T : IEquatable<T>, IComparable<T>
+    public class BinarySearchTree<T> : ICollection<T> where T : IEquatable<T>, IComparable<T>
     {
         /// <summary>
         /// Number of elements of tree.
@@ -293,7 +293,7 @@ namespace BinarySearchTree
         /// </summary>
         /// <param name="item">The value of the sought-for node.</param>
         /// <returns>Returns true if the tree contains the given element.</returns>
-        public bool Contains(T item) => FindByValue(item) != null ? true : false;
+        public bool Contains(T item) => FindByValue(item) != null;
 
         /// <summary>
         /// This method copies tree into an array.

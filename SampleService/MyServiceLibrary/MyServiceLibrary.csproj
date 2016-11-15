@@ -42,8 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InvalidUserException.cs" />
+    <Compile Include="IUserStorage.cs" />
+    <Compile Include="IUserStorageService.cs" />
     <Compile Include="UserAlreadyExistsException.cs" />
     <Compile Include="UserDoesntExistException.cs" />
+    <Compile Include="UserStorage.cs" />
     <Compile Include="UserStorageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
