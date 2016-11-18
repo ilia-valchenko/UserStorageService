@@ -11,7 +11,7 @@ namespace MyServiceLibrary.Tests
         [ExpectedException(typeof(ArgumentNullException))]
         public void Add_NullUser_ExceptionThrown()
         {
-            var service = new UserStorageService();
+            var service = new UserStorageService(new UserStorage());
             service.Add(null);
         }
 
@@ -25,10 +25,10 @@ namespace MyServiceLibrary.Tests
         // Assert
 
         // test moq
-        [TestMethod]
-        public void Test()
-        {
-            var mock = new Mock<>();
-        }
+        //[TestMethod]
+        //public void Test()
+        //{
+        //    var mock = new Mock<>();
+        //}
     }
 }

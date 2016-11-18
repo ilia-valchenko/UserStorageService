@@ -127,7 +127,10 @@ namespace MyServiceLibrary
             if (predicate == null)
                 throw new ArgumentNullException(nameof(predicate));
 
-            return storage.FirstOrDefault(user => predicate(user));
+            //return storage.FirstOrDefault(user => predicate(user));
+
+            // stub
+            return new User();
         }
 
         /// <summary>
@@ -140,7 +143,10 @@ namespace MyServiceLibrary
             if (predicate == null)
                 throw new ArgumentNullException(nameof(predicate));
 
-            return storage.Where(user => predicate(user));
+            //return storage.Where(user => predicate(user));
+
+            // stub
+            return new List<User>();
         }
         #endregion
 

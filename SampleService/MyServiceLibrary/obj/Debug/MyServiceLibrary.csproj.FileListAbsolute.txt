@@ -7,3 +7,12 @@ G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\
 G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\MyServiceLibrary\bin\Debug\BinarySearchTree.xml
 G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.dll
 G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.pdb
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.XML
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.csprojResolveAssemblyReference.cache
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.pdb
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.pdb
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\bin\Debug\BinarySearchTree.dll
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\bin\Debug\BinarySearchTree.pdb
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\bin\Debug\BinarySearchTree.xml

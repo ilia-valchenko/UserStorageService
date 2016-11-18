@@ -4,6 +4,183 @@
         <name>MyServiceLibrary</name>
     </assembly>
     <members>
+        <member name="T:MyServiceLibrary.IUserStorage">
+            <summary>
+            This interface prodives basic operations for storage such as CRUD and seeking operations.
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.IUserStorage.Add(MyServiceLibrary.User)">
+            <summary>
+            This method ads the given user to the storage if it doesn't exist.
+            </summary>
+            <param name="user">A user which must be added to the storage.</param>
+        </member>
+        <member name="M:MyServiceLibrary.IUserStorage.Delete(MyServiceLibrary.User)">
+            <summary>
+            This method removes the given user from the storage if it exists.
+            </summary>
+            <param name="user">A user which must be removed.</param>
+        </member>
+        <member name="M:MyServiceLibrary.IUserStorage.Delete(System.Int32)">
+            <summary>
+            This method removes a user from the storage by using user's id.
+            </summary>
+            <param name="userId">An Id of the user which must be removed.</param>
+        </member>
+        <member name="M:MyServiceLibrary.IUserStorage.Contains(MyServiceLibrary.User)">
+            <summary>
+            This method defines if the given user exist into the storage.
+            </summary>
+            <returns>Returns true if the given user exists.</returns>
+        </member>
+        <member name="T:MyServiceLibrary.IUserStorageService">
+            <summary>
+            This interface provides an API of CRUD and seeking operations for storage of users.
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.IUserStorageService.Add(MyServiceLibrary.User)">
+            <summary>
+            This method ads users to the storage if this storage doesn't contain the user. 
+            </summary>
+            <param name="user">User which must be added.</param>
+        </member>
+        <member name="M:MyServiceLibrary.IUserStorageService.Delete(MyServiceLibrary.User)">
+            <summary>
+            This method removes user from the storage.
+            </summary>
+            <param name="user">A user that must be removed.</param>
+        </member>
+        <member name="M:MyServiceLibrary.IUserStorageService.Delete(System.Int32)">
+            <summary>
+            This method removes user from the storage if it exists.
+            </summary>
+            <param name="userId">Id of the user which must be deleted.</param>
+        </member>
+        <member name="M:MyServiceLibrary.IUserStorageService.GetUserByPredicate(System.Predicate{MyServiceLibrary.User})">
+            <summary>
+            This method finds a user by the given predicate.
+            </summary>
+            <param name="predicate"></param>
+            <returns>Returns user which was found by using the predicate.</returns>
+        </member>
+        <member name="M:MyServiceLibrary.IUserStorageService.GetUsersByPredicate(System.Predicate{MyServiceLibrary.User})">
+            <summary>
+            This method finds an array of users by the given predicate.
+            </summary>
+            <param name="predicate"></param>
+            <returns>Returns a collection of users which was found by using predicate.</returns>
+        </member>
+        <member name="T:MyServiceLibrary.UserStorage">
+            <summary>
+            This class represents a simple storage for users with basic operations.
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.UserStorage.#ctor">
+            <summary>
+            A default constructor that creates an empty storage.
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.UserStorage.Add(MyServiceLibrary.User)">
+            <summary>
+            This method ads users to the storage. 
+            </summary>
+            <param name="user">User which must be added.</param>
+        </member>
+        <member name="M:MyServiceLibrary.UserStorage.Delete(MyServiceLibrary.User)">
+            <summary>
+            This method removes user from the storage.
+            </summary>
+            <param name="user">A user that must be removed.</param>
+        </member>
+        <member name="M:MyServiceLibrary.UserStorage.Delete(System.Int32)">
+            <summary>
+            This method removes user from the storage by using user's id.
+            </summary>
+            <param name="userId">Id of the user which must be deleted.</param>
+        </member>
+        <member name="M:MyServiceLibrary.UserStorage.Contains(MyServiceLibrary.User)">
+            <summary>
+            This method defines if the given user exist into the storage.
+            </summary>
+            <returns>Returns true if the given user exists.</returns>
+        </member>
+        <member name="F:MyServiceLibrary.UserStorage.bst">
+            <summary>
+            An inner structure for storage.
+            </summary>
+        </member>
+        <member name="T:MyServiceLibrary.IdentifierChanger">
+            <summary>
+            This delegate encapsulates a method which create an Id of a user.
+            </summary>
+            <param name="id">An Id of a previous user.</param>
+            <returns>Returns id of the current user.</returns>
+        </member>
+        <member name="T:MyServiceLibrary.UserStorageService">
+            <summary>
+            This class represents the simple user storage service which prodives basic operations such as addition, finding and removing users.
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.UserStorageService.#ctor(MyServiceLibrary.IUserStorage)">
+            <summary>
+            Default constructor that creates a simple service with empty collection of users and basic autoincrement id.
+            </summary>
+            <param name="storage">A storage for users.</param>
+        </member>
+        <member name="M:MyServiceLibrary.UserStorageService.#ctor(MyServiceLibrary.IUserStorage,MyServiceLibrary.IdentifierChanger)">
+            <summary>
+            This constructor creates a simple service with empty collection of users and custom identifierChanger.
+            </summary>
+            <param name="storage">A storage for users.</param>
+            <param name="identifierChanger">Delegate which encapsulates method to change user's id.</param>
+        </member>
+        <member name="M:MyServiceLibrary.UserStorageService.#ctor(MyServiceLibrary.IUserStorage,System.Collections.Generic.IEnumerable{MyServiceLibrary.User})">
+            <summary>
+            This constructor takes an initializes collection of users.
+            </summary>
+            <param name="storage">A storage for users.</param>
+            <param name="users">The collection of users which must be added to the storage for the first time.</param>
+        </member>
+        <member name="M:MyServiceLibrary.UserStorageService.#ctor(MyServiceLibrary.IUserStorage,System.Collections.Generic.IEnumerable{MyServiceLibrary.User},MyServiceLibrary.IdentifierChanger)">
+            <summary>
+            This constructor takes an initializes collection of users and custom identifierChanger.
+            </summary>
+            <param name="storage">A storage for users.</param>
+            <param name="users">The collection of users which must be added to the storage for the first time.</param>
+            <param name="identifierChanger">Delegate which encapsulates method to change user's id.</param>
+        </member>
+        <member name="M:MyServiceLibrary.UserStorageService.Add(MyServiceLibrary.User)">
+            <summary>
+            This method ads users to the storage if this storage doesn't contain the user. 
+            </summary>
+            <param name="user">User which must be added.</param>
+        </member>
+        <member name="M:MyServiceLibrary.UserStorageService.Delete(MyServiceLibrary.User)">
+            <summary>
+            This method removes user from the storage.
+            </summary>
+            <param name="user">A user that must be removed.</param>
+        </member>
+        <member name="M:MyServiceLibrary.UserStorageService.Delete(System.Int32)">
+            <summary>
+            This method removes user from the storage if it exists.
+            </summary>
+            <param name="userId">Id of the user which must be deleted.</param>
+        </member>
+        <member name="M:MyServiceLibrary.UserStorageService.GetUserByPredicate(System.Predicate{MyServiceLibrary.User})">
+            <summary>
+            This method finds a user by the given predicate.
+            </summary>
+            <param name="predicate"></param>
+            <returns>Returns user which was found by using the predicate.</returns>
+        </member>
+        <member name="M:MyServiceLibrary.UserStorageService.GetUsersByPredicate(System.Predicate{MyServiceLibrary.User})">
+            <summary>
+            This method finds an array of users by the given predicate.
+            </summary>
+            <param name="predicate"></param>
+            <returns>Returns a collection of users which was found by using predicate.</returns>
+        </member>
         <member name="T:MyServiceLibrary.User">
             <summary>
             This class represents a simple user which contains information about it's first name, last name and a date of birth.

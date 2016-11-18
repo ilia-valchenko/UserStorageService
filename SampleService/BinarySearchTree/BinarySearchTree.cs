@@ -192,25 +192,29 @@ namespace BinarySearchTree
             if (ReferenceEquals(head, null))
                 throw new InvalidOperationException("Tree is empty!");
 
-            var roots = new Stack<Node>();
+            throw new NotImplementedException();
 
-            if (!ReferenceEquals(head.Left, null))
-                roots.Push(head.Left);
+            //var roots = new Stack<Node>();
 
-            if (!ReferenceEquals(head.Right, null))
-                roots.Push(head.Right);
+            //if (!ReferenceEquals(head.Left, null))
+            //    roots.Push(head.Left);
 
-            while (roots.Any())
-            {
-                var root = roots.Pop();
-                yield return root.Value;
+            //if (!ReferenceEquals(head.Right, null))
+            //    roots.Push(head.Right);
 
-                if (!ReferenceEquals(root.Left, null))
-                    roots.Push(root.Left);
+            //while (roots.Any())
+            //{
+            //    var root = roots.Pop();
+            //    yield return root.Value;
 
-                if (!ReferenceEquals(root.Right, null))
-                    roots.Push(root.Right);
-            }
+            //    if (!ReferenceEquals(root.Left, null))
+            //        roots.Push(root.Left);
+
+            //    if (!ReferenceEquals(root.Right, null))
+            //        roots.Push(root.Right);
+            //}
+
+
         }
 
         /// <summary>
@@ -311,8 +315,8 @@ namespace BinarySearchTree
         /// <returns>Returns an enumerator that iterates through a collection.</returns>
         public IEnumerator<T> GetEnumerator()
         {
-            //return Preorder();
-            return Inorder();
+            return Preorder();
+            //return Inorder();
             //return Postorder(head);
         }
 

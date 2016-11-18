@@ -17,6 +17,18 @@ namespace ServiceApplication
 
             BinarySearchTree.BinarySearchTree<int> bst =new BinarySearchTree<int>();
 
+            int[] arr = {8,3,10,1,6,14,4,7,13};
+
+            foreach (var VARIABLE in arr)
+            {
+                bst.Add(VARIABLE);
+            }
+
+            foreach (var VARIABLE in bst)
+            {
+                Console.Write(VARIABLE + " ");
+            }
+
             Console.WriteLine("\nTap to continue...");
             Console.ReadKey(true);
         }

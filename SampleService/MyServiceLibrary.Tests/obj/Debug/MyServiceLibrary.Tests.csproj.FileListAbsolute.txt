@@ -10,3 +10,19 @@ G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\
 G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\MyServiceLibrary.Tests\bin\Debug\BinarySearchTree.xml
 G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\MyServiceLibrary.Tests\obj\Debug\MyServiceLibrary.Tests.dll
 G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\MyServiceLibrary.Tests\obj\Debug\MyServiceLibrary.Tests.pdb
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\obj\Debug\MyServiceLibrary.Tests.csprojResolveAssemblyReference.cache
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\obj\Debug\MyServiceLibrary.Tests.dll
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\obj\Debug\MyServiceLibrary.Tests.pdb
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\MyServiceLibrary.Tests.dll
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\MyServiceLibrary.Tests.pdb
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\Castle.Core.dll
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\Moq.dll
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\MyServiceLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\BinarySearchTree.dll
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\MyServiceLibrary.pdb
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\MyServiceLibrary.xml
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\Castle.Core.xml
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\Moq.xml
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\BinarySearchTree.pdb
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\BinarySearchTree.xml
