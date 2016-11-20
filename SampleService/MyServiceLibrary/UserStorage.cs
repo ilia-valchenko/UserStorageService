@@ -66,7 +66,7 @@ namespace MyServiceLibrary
         /// </summary>
         /// <param name="predicate">Represents the method for searching a specific user by given criterion.</param>
         /// <returns>Returns the seeking user.</returns>
-        public User GetUserByPredicate(Predicate<User> predicate)
+        public User GetUserByPredicate(Func<User, bool> predicate)
         {
             if(predicate == null)
                 throw new ArgumentNullException(nameof(predicate));
@@ -79,7 +79,7 @@ namespace MyServiceLibrary
         /// </summary>
         /// <param name="predicate">Represents the method for searching users by given criterion.</param>
         /// <returns></returns>
-        public IEnumerable<User> GetUsersByPredicate(Predicate<User> predicate)
+        public IEnumerable<User> GetUsersByPredicate(Func<User, bool> predicate)
         {
             if (predicate == null)
                 throw new ArgumentNullException(nameof(predicate));

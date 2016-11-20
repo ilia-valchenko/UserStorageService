@@ -8,7 +8,7 @@ namespace MyServiceLibrary
     /// </summary>
     /// <param name="id">An Id of a previous user.</param>
     /// <returns>Returns id of the current user.</returns>
-    public delegate int IdentifierChanger(int id);
+    public delegate void IdentifierChanger(ref int id);
 
     /// <summary>
     /// This class represents the simple user storage service which prodives basic operations such as addition, finding and removing users.
@@ -20,7 +20,7 @@ namespace MyServiceLibrary
         /// Default constructor that creates a simple service with empty collection of users and basic autoincrement id.
         /// </summary>
         /// <param name="storage">A storage for users.</param>
-        public UserStorageService(IUserStorage storage) : this(storage, new List<User>(), id => id++) { }
+        public UserStorageService(IUserStorage storage) : this(storage, new List<User>(), (ref int id) => id++) { }
         /// <summary>
         /// This constructor creates a simple service with empty collection of users and custom identifierChanger.
         /// </summary>
@@ -32,7 +32,7 @@ namespace MyServiceLibrary
         /// </summary>
         /// <param name="storage">A storage for users.</param>
         /// <param name="users">The collection of users which must be added to the storage for the first time.</param>
-        public UserStorageService(IUserStorage storage, IEnumerable<User> users) : this(storage, users, id => id++) { }
+        public UserStorageService(IUserStorage storage, IEnumerable<User> users) : this(storage, users, (ref int id) => id++) { }
         /// <summary>
         /// This constructor takes an initializes collection of users and custom identifierChanger.
         /// </summary>
@@ -80,7 +80,7 @@ namespace MyServiceLibrary
             if (storage.Contains(user))
                 return;
 
-            id = identifierChanger(id);
+            identifierChanger(ref id);
 
             storage.Add(new User(user.FirstName, user.LastName, user.DateOfBirth, id));
         }
@@ -110,7 +110,7 @@ namespace MyServiceLibrary
             if (userId < 0)
                 throw new ArgumentException(nameof(userId));
 
-            Predicate<User> getUserById = (User u) => u.Id == userId;
+            Func<User, bool> getUserById = (User u) => u.Id == userId;
             var user = GetUserByPredicate(getUserById);
 
             if (user != null)
@@ -122,7 +122,7 @@ namespace MyServiceLibrary
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns>Returns user which was found by using the predicate.</returns>
-        public User GetUserByPredicate(Predicate<User> predicate)
+        public User GetUserByPredicate(Func<User, bool> predicate)
         {
             if (predicate == null)
                 throw new ArgumentNullException(nameof(predicate));
@@ -135,7 +135,7 @@ namespace MyServiceLibrary
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns>Returns a collection of users which was found by using predicate.</returns>
-        public IEnumerable<User> GetUsersByPredicate(Predicate<User> predicate)
+        public IEnumerable<User> GetUsersByPredicate(Func<User, bool> predicate)
         {
             if (predicate == null)
                 throw new ArgumentNullException(nameof(predicate));

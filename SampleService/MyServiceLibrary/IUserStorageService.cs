@@ -28,12 +28,12 @@ namespace MyServiceLibrary
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns>Returns user which was found by using the predicate.</returns>
-        User GetUserByPredicate(Predicate<User> predicate);
+        User GetUserByPredicate(Func<User, bool> predicate);
         /// <summary>
         /// This method finds an array of users by the given predicate.
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns>Returns a collection of users which was found by using predicate.</returns>
-        IEnumerable<User> GetUsersByPredicate(Predicate<User> predicate);
+        IEnumerable<User> GetUsersByPredicate(Func<User, bool> predicate);
     }
 }

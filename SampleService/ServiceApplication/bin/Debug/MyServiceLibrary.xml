@@ -33,14 +33,14 @@
             </summary>
             <returns>Returns true if the given user exists.</returns>
         </member>
-        <member name="M:MyServiceLibrary.IUserStorage.GetUserByPredicate(System.Predicate{MyServiceLibrary.User})">
+        <member name="M:MyServiceLibrary.IUserStorage.GetUserByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
             <summary>
             This method finds a user by the given predicate.
             </summary>
             <param name="predicate">Represents the method for searching a specific user by given criterion.</param>
             <returns>Returns user which was found by using the predicate.</returns>
         </member>
-        <member name="M:MyServiceLibrary.IUserStorage.GetUsersByPredicate(System.Predicate{MyServiceLibrary.User})">
+        <member name="M:MyServiceLibrary.IUserStorage.GetUsersByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
             <summary>
             This method finds a collection of users by the given predicate.
             </summary>
@@ -70,14 +70,14 @@
             </summary>
             <param name="userId">Id of the user which must be deleted.</param>
         </member>
-        <member name="M:MyServiceLibrary.IUserStorageService.GetUserByPredicate(System.Predicate{MyServiceLibrary.User})">
+        <member name="M:MyServiceLibrary.IUserStorageService.GetUserByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
             <summary>
             This method finds a user by the given predicate.
             </summary>
             <param name="predicate"></param>
             <returns>Returns user which was found by using the predicate.</returns>
         </member>
-        <member name="M:MyServiceLibrary.IUserStorageService.GetUsersByPredicate(System.Predicate{MyServiceLibrary.User})">
+        <member name="M:MyServiceLibrary.IUserStorageService.GetUsersByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
             <summary>
             This method finds an array of users by the given predicate.
             </summary>
@@ -118,14 +118,14 @@
             </summary>
             <returns>Returns true if the given user exists.</returns>
         </member>
-        <member name="M:MyServiceLibrary.UserStorage.GetUserByPredicate(System.Predicate{MyServiceLibrary.User})">
+        <member name="M:MyServiceLibrary.UserStorage.GetUserByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
             <summary>
             This method finds a user by the given predicate. 
             </summary>
             <param name="predicate">Represents the method for searching a specific user by given criterion.</param>
             <returns>Returns the seeking user.</returns>
         </member>
-        <member name="M:MyServiceLibrary.UserStorage.GetUsersByPredicate(System.Predicate{MyServiceLibrary.User})">
+        <member name="M:MyServiceLibrary.UserStorage.GetUsersByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
             <summary>
             This method finds a collection of users by the given predicate.
             </summary>
@@ -195,14 +195,14 @@
             </summary>
             <param name="userId">Id of the user which must be deleted.</param>
         </member>
-        <member name="M:MyServiceLibrary.UserStorageService.GetUserByPredicate(System.Predicate{MyServiceLibrary.User})">
+        <member name="M:MyServiceLibrary.UserStorageService.GetUserByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
             <summary>
             This method finds a user by the given predicate.
             </summary>
             <param name="predicate"></param>
             <returns>Returns user which was found by using the predicate.</returns>
         </member>
-        <member name="M:MyServiceLibrary.UserStorageService.GetUsersByPredicate(System.Predicate{MyServiceLibrary.User})">
+        <member name="M:MyServiceLibrary.UserStorageService.GetUsersByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
             <summary>
             This method finds an array of users by the given predicate.
             </summary>
