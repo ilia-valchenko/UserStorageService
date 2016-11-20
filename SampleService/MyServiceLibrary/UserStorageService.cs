@@ -52,7 +52,6 @@ namespace MyServiceLibrary
 
             this.storage = storage;
             this.identifierChanger = identifierChanger;
-            this.id = 0;
 
             foreach (var user in users)
                 storage.Add(user);
@@ -95,6 +94,7 @@ namespace MyServiceLibrary
             if (user == null)
                 throw new ArgumentNullException(nameof(user));
 
+            // Is it necessary?
             if (!storage.Contains(user))
                 throw new UserDoesntExistException();
 
@@ -127,10 +127,7 @@ namespace MyServiceLibrary
             if (predicate == null)
                 throw new ArgumentNullException(nameof(predicate));
 
-            //return storage.FirstOrDefault(user => predicate(user));
-
-            // stub
-            return new User();
+            return storage.GetUserByPredicate(predicate);
         }
 
         /// <summary>
@@ -143,10 +140,7 @@ namespace MyServiceLibrary
             if (predicate == null)
                 throw new ArgumentNullException(nameof(predicate));
 
-            //return storage.Where(user => predicate(user));
-
-            // stub
-            return new List<User>();
+            return storage.GetUsersByPredicate(predicate);
         }
         #endregion
 

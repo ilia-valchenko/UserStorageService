@@ -15,14 +15,19 @@ namespace ServiceApplication
             // 3. Search for an user by the first name.
             // 4. Search for an user by the last name.
 
-            BinarySearchTree.BinarySearchTree<int> bst =new BinarySearchTree<int>();
+            var bst = new BinarySearchTree<int>();
 
-            int[] arr = {8,3,10,1,6,14,4,7,13};
+            //int[] arr = {8,3,10,1,6,14,4,7,13};
+            int[] arr = {4,2,5,1,3,7,6,8};
+            //int[] arr = {5, 2, 18, -4, 3, 21, 19, 25};
 
             foreach (var VARIABLE in arr)
             {
                 bst.Add(VARIABLE);
             }
+
+            // Test the remove method
+            bst.Remove(5);
 
             foreach (var VARIABLE in bst)
             {

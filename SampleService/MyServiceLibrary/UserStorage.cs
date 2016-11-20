@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using BinarySearchTree;
 
 namespace MyServiceLibrary
@@ -13,7 +15,8 @@ namespace MyServiceLibrary
         /// </summary>
         public UserStorage()
         {
-            bst = new BinarySearchTree<User>();
+            //bst = new BinarySearchTree<User>();
+            storage = new Dictionary<int, User>();
         }
 
         /// <summary>
@@ -25,7 +28,7 @@ namespace MyServiceLibrary
             if(user == null)
                 throw new ArgumentNullException(nameof(user));
 
-            bst.Add(user);
+            storage.Add(user.Id, user);
         }
 
         /// <summary>
@@ -37,20 +40,14 @@ namespace MyServiceLibrary
             if(user == null)
                 throw new ArgumentNullException(nameof(user));
 
-            bst.Remove(user);
+            storage.Remove(user.Id);
         }
 
         /// <summary>
         /// This method removes user from the storage by using user's id.
         /// </summary>
         /// <param name="userId">Id of the user which must be deleted.</param>
-        public void Delete(int userId)
-        {
-            if(userId < 0)
-                throw new ArgumentException("The id of the user is less than zero.");
-
-
-        }
+        public void Delete(int userId) => storage.Remove(userId);
 
         /// <summary>
         /// This method defines if the given user exist into the storage.
@@ -61,12 +58,38 @@ namespace MyServiceLibrary
             if(user == null)
                 throw new ArgumentNullException(nameof(user));
 
-            return bst.Contains(user);
+            return storage.ContainsValue(user);
+        }
+
+        /// <summary>
+        /// This method finds a user by the given predicate. 
+        /// </summary>
+        /// <param name="predicate">Represents the method for searching a specific user by given criterion.</param>
+        /// <returns>Returns the seeking user.</returns>
+        public User GetUserByPredicate(Predicate<User> predicate)
+        {
+            if(predicate == null)
+                throw new ArgumentNullException(nameof(predicate));
+
+            return storage.First(item => predicate(item.Value)).Value;
+        }
+
+        /// <summary>
+        /// This method finds a collection of users by the given predicate.
+        /// </summary>
+        /// <param name="predicate">Represents the method for searching users by given criterion.</param>
+        /// <returns></returns>
+        public IEnumerable<User> GetUsersByPredicate(Predicate<User> predicate)
+        {
+            if (predicate == null)
+                throw new ArgumentNullException(nameof(predicate));
+
+            return storage.Where(item => predicate(item.Value)).Select(item => item.Value);
         }
 
         /// <summary>
         /// An inner structure for storage.
         /// </summary>
-        private readonly BinarySearchTree<User> bst;
+        private readonly Dictionary<int, User> storage;
     }
 }

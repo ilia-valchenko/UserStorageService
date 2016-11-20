@@ -39,7 +39,7 @@ namespace MyServiceLibrary.Tests
         [ExpectedException(typeof(ArgumentException))]
         public void Create_User_With_Future_DateOfBirth_ExceptionThrown()
         {
-            var user = new User("Ilia", "Valchenko", DateTime.ParseExact("12/01/2016", "dd/MM/yyyy", CultureInfo.InvariantCulture));
+            var user = new User("Ilia", "Valchenko", DateTime.ParseExact("12/01/2027", "dd/MM/yyyy", CultureInfo.InvariantCulture));
         }
     }
 }

@@ -33,6 +33,20 @@
             </summary>
             <returns>Returns true if the given user exists.</returns>
         </member>
+        <member name="M:MyServiceLibrary.IUserStorage.GetUserByPredicate(System.Predicate{MyServiceLibrary.User})">
+            <summary>
+            This method finds a user by the given predicate.
+            </summary>
+            <param name="predicate">Represents the method for searching a specific user by given criterion.</param>
+            <returns>Returns user which was found by using the predicate.</returns>
+        </member>
+        <member name="M:MyServiceLibrary.IUserStorage.GetUsersByPredicate(System.Predicate{MyServiceLibrary.User})">
+            <summary>
+            This method finds a collection of users by the given predicate.
+            </summary>
+            <param name="predicate">Represents the method for searching users by given criterion.</param>
+            <returns>Returns a collection of users which was found by using predicate.</returns>
+        </member>
         <member name="T:MyServiceLibrary.IUserStorageService">
             <summary>
             This interface provides an API of CRUD and seeking operations for storage of users.
@@ -104,7 +118,21 @@
             </summary>
             <returns>Returns true if the given user exists.</returns>
         </member>
-        <member name="F:MyServiceLibrary.UserStorage.bst">
+        <member name="M:MyServiceLibrary.UserStorage.GetUserByPredicate(System.Predicate{MyServiceLibrary.User})">
+            <summary>
+            This method finds a user by the given predicate. 
+            </summary>
+            <param name="predicate">Represents the method for searching a specific user by given criterion.</param>
+            <returns>Returns the seeking user.</returns>
+        </member>
+        <member name="M:MyServiceLibrary.UserStorage.GetUsersByPredicate(System.Predicate{MyServiceLibrary.User})">
+            <summary>
+            This method finds a collection of users by the given predicate.
+            </summary>
+            <param name="predicate">Represents the method for searching users by given criterion.</param>
+            <returns></returns>
+        </member>
+        <member name="F:MyServiceLibrary.UserStorage.storage">
             <summary>
             An inner structure for storage.
             </summary>

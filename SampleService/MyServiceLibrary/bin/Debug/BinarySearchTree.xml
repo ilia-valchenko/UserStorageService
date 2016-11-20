@@ -113,6 +113,11 @@
             A right child of a node.
             </summary>
         </member>
+        <member name="P:BinarySearchTree.BinarySearchTree`1.Node.Parent">
+            <summary>
+            A parent of the current node.
+            </summary>
+        </member>
         <member name="P:BinarySearchTree.BinarySearchTree`1.Node.Value">
             <summary>
             A value which node contains.
@@ -128,6 +133,12 @@
             This constructor creates a new node with the given value.
             </summary>
             <param name="value"></param>
+        </member>
+        <member name="M:BinarySearchTree.BinarySearchTree`1.Node.ToString">
+            <summary>
+            This method returns the string presentation of a binary search tree.
+            </summary>
+            <returns>Returns the string which represents the current binary search tree.</returns>
         </member>
     </members>
 </doc>

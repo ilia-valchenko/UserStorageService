@@ -19,10 +19,7 @@ G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\Cas
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\Moq.dll
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\MyServiceLibrary.dll
-G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\BinarySearchTree.dll
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\MyServiceLibrary.pdb
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\MyServiceLibrary.xml
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\Castle.Core.xml
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\Moq.xml
-G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\BinarySearchTree.pdb
-G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\BinarySearchTree.xml

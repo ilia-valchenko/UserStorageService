@@ -50,6 +50,8 @@ namespace BinarySearchTree
             if (ReferenceEquals(head, null))
             {
                 head = new Node(value);
+                // test
+                head.Parent = null;
                 count++;
                 return;
             }
@@ -65,6 +67,8 @@ namespace BinarySearchTree
                 if (node.Left == null)
                 {
                     node.Left = new Node(value);
+                    // test
+                    node.Left.Parent = node;
                 }
                 else
                 {
@@ -76,6 +80,8 @@ namespace BinarySearchTree
                 if (node.Right == null)
                 {
                     node.Right = new Node(value);
+                    // test
+                    node.Right.Parent = node;
                 }
                 else
                 {
@@ -89,7 +95,7 @@ namespace BinarySearchTree
         /// </summary>
         /// <param name="item">The value of the node which must be deleted.</param>
         /// <returns>Returns true, if delete operation is successful.</returns>
-        public bool Remove(T item) => Remove(head, item);
+        public bool Remove(T item) => Remove(TypeOfNode.Head, head, item);
 
         private Node FindMin(Node node)
         {
@@ -102,20 +108,26 @@ namespace BinarySearchTree
             return FindMin(node.Left);
         }
 
-        private bool Remove(Node node, T item)
+        // test
+        private bool Remove(TypeOfNode typeOfNode, Node node, T item)
         {
-            if (ReferenceEquals(node, null))
+            if (node == null)
                 return false;
+
+            // test
+            // Deleting the head
+            //if (parent == null)
+            //    return false;
 
             if (item.CompareTo(node.Value) < 0)
             {
-                Remove(node.Left, item);
+                Remove(TypeOfNode.Left, node.Left, item);
             }
             else
             {
                 if (item.CompareTo(node.Value) > 0)
                 {
-                    Remove(node.Right, item);
+                    Remove(TypeOfNode.Right, node.Right, item);
                 }
                 else
                 {
@@ -125,27 +137,31 @@ namespace BinarySearchTree
                         // Replace current node from the minimal element from the right sub-tree.
                         node.Value = FindMin(node.Right).Value;
                         // Delete element from the right sub-tree by using recursion.
-                        Remove(node.Right, node.Value);
+                        Remove(TypeOfNode.Right, node.Right, node.Value);
                     }
                     else
                     {
-                        //node = node.Left != null ? node.Left : node.Right;
-
-                        //if (node.Left != null)
-                        //    node = node.Left;
-                        //else
-                        //    node = node.Right;
-
                         if (node.Left == null && node.Right == null)
                         {
-                            node = null;
+                            switch (typeOfNode)
+                            {
+                                case (TypeOfNode.Left):
+                                    node.Parent.Left = null;
+                                    break;
+                                case (TypeOfNode.Right):
+                                    node.Parent.Right = null;
+                                    break;
+                            }
+
+                            // old
+                            // node = null;
                         }
                         else
                         {
                             if (node.Left != null)
-                                node = node.Left;
+                                node.Parent.Left = node.Left; //node = node.Left;
                             else
-                                node = node.Right;
+                                node.Parent.Left = node.Right; //node = node.Right;
                         }
                     }
                 }
@@ -189,10 +205,10 @@ namespace BinarySearchTree
         /// <returns>Returns elements of the tree in the preorder traversal.</returns>
         public IEnumerator<T> Preorder()
         {
-            if (ReferenceEquals(head, null))
-                throw new InvalidOperationException("Tree is empty!");
-
             throw new NotImplementedException();
+
+            //if (ReferenceEquals(head, null))
+            //    throw new InvalidOperationException("Tree is empty!");
 
             //var roots = new Stack<Node>();
 
@@ -213,8 +229,6 @@ namespace BinarySearchTree
             //    if (!ReferenceEquals(root.Right, null))
             //        roots.Push(root.Right);
             //}
-
-
         }
 
         /// <summary>
@@ -229,11 +243,11 @@ namespace BinarySearchTree
 
             var roots = new Stack<Node>();
             var current = head;
-            bool isDone = false;
+            var isDone = false;
 
             while (!isDone)
             {
-                if (!ReferenceEquals(current, null))
+                if (current != null)
                 {
                     roots.Push(current);
                     current = current.Left;
@@ -254,10 +268,6 @@ namespace BinarySearchTree
             }
         }
 
-
-        // recursion
-        // fix it
-
         /// <summary>
         /// In this traversal method, the root node is visited last, hence the name. First we traverse left subtree, 
         /// then right subtree and finally root.
@@ -266,16 +276,18 @@ namespace BinarySearchTree
         /// <returns>Returns elements of the tree in the postorder traversal.</returns>
         public IEnumerator<T> Postorder(Node node)
         {
-            if (ReferenceEquals(node, null))
-                throw new ArgumentNullException(nameof(node));
+            throw new NotImplementedException();
 
-            if (!ReferenceEquals(node.Left, null))
-                Postorder(node.Left);
+            //if (ReferenceEquals(node, null))
+            //    throw new ArgumentNullException(nameof(node));
 
-            if (!ReferenceEquals(node.Right, null))
-                Postorder(node.Right);
+            //if (!ReferenceEquals(node.Left, null))
+            //    Postorder(node.Left);
 
-            yield return node.Value;
+            //if (!ReferenceEquals(node.Right, null))
+            //    Postorder(node.Right);
+
+            //yield return node.Value;
         }
 
         /// <summary>
@@ -306,7 +318,7 @@ namespace BinarySearchTree
         /// <param name="arrayIndex">The start index.</param>
         public void CopyTo(T[] array, int arrayIndex)
         {
-            //throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -315,17 +327,12 @@ namespace BinarySearchTree
         /// <returns>Returns an enumerator that iterates through a collection.</returns>
         public IEnumerator<T> GetEnumerator()
         {
-            return Preorder();
-            //return Inorder();
-            //return Postorder(head);
+            return Inorder();
+            //return Preorder();
+            //return Postorder();
         }
 
         IEnumerator IEnumerable.GetEnumerator() => Inorder();
-
-        /*IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }*/
 
         /// <summary>
         /// This inner class represents a node of a binary search tree.
@@ -336,19 +343,23 @@ namespace BinarySearchTree
             /// A left child of a node.
             /// </summary>
             public Node Left { get; set; }
+
             /// <summary>
             /// A right child of a node.
             /// </summary>
             public Node Right { get; set; }
+
+            /// <summary>
+            /// A parent of the current node.
+            /// </summary>
+            public Node Parent { get; set; }
+
             /// <summary>
             /// A value which node contains.
             /// </summary>
             public T Value
             {
-                get
-                {
-                    return value;
-                }
+                get { return value; }
                 set
                 {
                     if (ReferenceEquals(value, null))
@@ -357,10 +368,14 @@ namespace BinarySearchTree
                     this.value = value;
                 }
             }
+
             /// <summary>
             /// Default constructor.
             /// </summary>
-            public Node() : this(default(T)) { }
+            public Node() : this(default(T))
+            {
+            }
+
             /// <summary>
             /// This constructor creates a new node with the given value.
             /// </summary>
@@ -370,16 +385,10 @@ namespace BinarySearchTree
                 Value = value;
             }
 
-            /*public int CompareTo(Node other) => value.CompareTo(other.value);
-            public bool Equals(Node other)
-            {
-                if(ReferenceEquals(other, null))
-                    throw new ArgumentNullException(nameof(other));
-                if (this.Value.Equals(other.Value))
-                    return true;
-                return false;
-            }*/
-
+            /// <summary>
+            /// This method returns the string presentation of a binary search tree.
+            /// </summary>
+            /// <returns>Returns the string which represents the current binary search tree.</returns>
             public override string ToString()
             {
                 if (ReferenceEquals(Left, null))
@@ -398,7 +407,9 @@ namespace BinarySearchTree
             private T value;
         }
 
+        private enum TypeOfNode { Left, Right, Head };
+
         private Node head;
-        private int count = 0;
+        private int count;
     }
 }

@@ -1,4 +1,7 @@
-﻿namespace MyServiceLibrary
+﻿using System;
+using System.Collections.Generic;
+
+namespace MyServiceLibrary
 {
     /// <summary>
     /// This interface prodives basic operations for storage such as CRUD and seeking operations.
@@ -25,7 +28,17 @@
         /// </summary>
         /// <returns>Returns true if the given user exists.</returns>
         bool Contains(User user);
-
-        //User FindByValue();
+        /// <summary>
+        /// This method finds a user by the given predicate.
+        /// </summary>
+        /// <param name="predicate">Represents the method for searching a specific user by given criterion.</param>
+        /// <returns>Returns user which was found by using the predicate.</returns>
+        User GetUserByPredicate(Predicate<User> predicate);
+        /// <summary>
+        /// This method finds a collection of users by the given predicate.
+        /// </summary>
+        /// <param name="predicate">Represents the method for searching users by given criterion.</param>
+        /// <returns>Returns a collection of users which was found by using predicate.</returns>
+        IEnumerable<User> GetUsersByPredicate(Predicate<User> predicate);
     }
 }
