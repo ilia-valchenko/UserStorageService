@@ -13,6 +13,3 @@ G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\obj\Debug\MyService
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.pdb
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.dll
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.pdb
-G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\bin\Debug\BinarySearchTree.dll
-G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\bin\Debug\BinarySearchTree.pdb
-G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\bin\Debug\BinarySearchTree.xml

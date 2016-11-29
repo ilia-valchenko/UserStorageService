@@ -23,8 +23,8 @@ namespace MyServiceLibrary.Tests
             // Arrange 
             var mock = new Mock<IUserStorage>();
             mock.Setup(service => service.GetUsersByPredicate((User user) => user.FirstName == "Ilia"))
-                .Returns(new List<User>() { new User("Ilia", "Valchenko", new DateTime(1995, 8, 2)),
-                                            new User("Ilia", "Codogno", new DateTime(1938, 1, 6)),
+                .Returns(new List<User>() { new User("Ilia", "Valchenko", Gender.Male, new DateTime(1995, 8, 2), null),
+                                            new User("Ilia", "Codogno", Gender.Male, new DateTime(1938, 1, 6), null),
                                            });
             var uss = new UserStorageService(mock.Object);
 
@@ -32,8 +32,8 @@ namespace MyServiceLibrary.Tests
             var result = uss.GetUserByPredicate((User user) => user.FirstName == "Ilia");
 
             // Assert
-            Assert.AreEqual(result, new List<User>() { new User("Ilia", "Valchenko", new DateTime(1995, 8, 2)),
-                                                       new User("Ilia", "Codogno", new DateTime(1938, 1, 6)),
+            Assert.AreEqual(result, new List<User>() { new User("Ilia", "Valchenko", Gender.Male, new DateTime(1995, 8, 2), null),
+                                                       new User("Ilia", "Codogno", Gender.Male, new DateTime(1938, 1, 6), null),
                                                      });
         }
 
@@ -46,9 +46,34 @@ namespace MyServiceLibrary.Tests
 
             var users = new User[]
             {
-                new User("Bobby", "McFerrin", new DateTime(1950, 3, 11), 1),
-                new User("Ilia", "Valchenko", new DateTime(1995, 8, 2), 2),
-                new User("Tim", "Berners-Lee", new DateTime(1955, 6, 8), 3)
+                new User("Bobby",
+                         "McFerrin",
+                         Gender.Male,
+                         new DateTime(1950, 3, 11),
+                         new List<VisaRecord>
+                         {
+                             new VisaRecord("USA", new DateTime(1969, 4, 2), new DateTime(1969, 5, 16)),
+                             new VisaRecord("Mexico", new DateTime(1973, 3, 10), new DateTime(1973, 4, 10))
+                         },
+                         1),
+
+                new User("Ilia",
+                         "Valchenko",
+                         Gender.Male,
+                         new DateTime(1995, 8, 2),
+                         new List<VisaRecord>
+                         {
+                             new VisaRecord("Ukraine", new DateTime(2003, 8, 2), new DateTime(2003, 8, 29)),
+                             new VisaRecord("Mexico", new DateTime(2016, 9, 7), new DateTime(2016, 10, 10))
+                         },
+                         2),
+
+                new User("Tim",
+                         "Berners-Lee",
+                         Gender.Male,
+                         new DateTime(1955, 6, 8),
+                         new List<VisaRecord>(),
+                         3)
             };
 
             foreach (var user in users)

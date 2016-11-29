@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using BinarySearchTree;
 
 namespace MyServiceLibrary
 {
@@ -15,7 +14,6 @@ namespace MyServiceLibrary
         /// </summary>
         public UserStorage()
         {
-            //bst = new BinarySearchTree<User>();
             storage = new Dictionary<int, User>();
         }
 
@@ -35,19 +33,19 @@ namespace MyServiceLibrary
         /// This method removes user from the storage.
         /// </summary>
         /// <param name="user">A user that must be removed.</param>
-        public void Delete(User user)
+        public bool Delete(User user)
         {
             if(user == null)
                 throw new ArgumentNullException(nameof(user));
 
-            storage.Remove(user.Id);
+            return storage.Remove(user.Id);
         }
 
         /// <summary>
         /// This method removes user from the storage by using user's id.
         /// </summary>
         /// <param name="userId">Id of the user which must be deleted.</param>
-        public void Delete(int userId) => storage.Remove(userId);
+        public bool Delete(int userId) => storage.Remove(userId);
 
         /// <summary>
         /// This method defines if the given user exist into the storage.
@@ -62,29 +60,29 @@ namespace MyServiceLibrary
         }
 
         /// <summary>
-        /// This method finds a user by the given predicate. 
+        /// This method finds a user by the given criteria. 
         /// </summary>
-        /// <param name="predicate">Represents the method for searching a specific user by given criterion.</param>
+        /// <param name="criteria">Represents the method for searching a specific user by given criterion.</param>
         /// <returns>Returns the seeking user.</returns>
-        public User GetUserByPredicate(Func<User, bool> predicate)
+        public User GetUserByPredicate(Func<User, bool> criteria)
         {
-            if(predicate == null)
-                throw new ArgumentNullException(nameof(predicate));
+            if(criteria == null)
+                throw new ArgumentNullException(nameof(criteria));
 
-            return storage.First(item => predicate(item.Value)).Value;
+            return storage.FirstOrDefault(item => criteria(item.Value)).Value;
         }
 
         /// <summary>
-        /// This method finds a collection of users by the given predicate.
+        /// This method finds a collection of users by the given criteria.
         /// </summary>
-        /// <param name="predicate">Represents the method for searching users by given criterion.</param>
-        /// <returns></returns>
-        public IEnumerable<User> GetUsersByPredicate(Func<User, bool> predicate)
+        /// <param name="criteria">Represents the method for searching users by the given criteria.</param>
+        /// <returns>Returns a collection of users which was found by using the criteria function.</returns>
+        public IEnumerable<User> GetUsersByPredicate(Func<User, bool> criteria)
         {
-            if (predicate == null)
-                throw new ArgumentNullException(nameof(predicate));
+            if (criteria == null)
+                throw new ArgumentNullException(nameof(criteria));
 
-            return storage.Where(item => predicate(item.Value)).Select(item => item.Value);
+            return storage.Where(item => criteria(item.Value)).Select(item => item.Value);
         }
 
         /// <summary>

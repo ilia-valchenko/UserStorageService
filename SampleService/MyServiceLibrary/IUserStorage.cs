@@ -17,28 +17,28 @@ namespace MyServiceLibrary
         /// This method removes the given user from the storage if it exists.
         /// </summary>
         /// <param name="user">A user which must be removed.</param>
-        void Delete(User user);
+        bool Delete(User user);
         /// <summary>
         /// This method removes a user from the storage by using user's id.
         /// </summary>
         /// <param name="userId">An Id of the user which must be removed.</param>
-        void Delete(int userId);
+        bool Delete(int userId);
         /// <summary>
         /// This method defines if the given user exist into the storage.
         /// </summary>
         /// <returns>Returns true if the given user exists.</returns>
         bool Contains(User user);
         /// <summary>
-        /// This method finds a user by the given predicate.
+        /// This method finds a user by the given criteria.
         /// </summary>
-        /// <param name="predicate">Represents the method for searching a specific user by given criterion.</param>
-        /// <returns>Returns user which was found by using the predicate.</returns>
-        User GetUserByPredicate(Func<User, bool> predicate);
+        /// <param name="criteria">Represents the method for searching a specific user by given criterion.</param>
+        /// <returns>Returns user which was found by using the criteria function.</returns>
+        User GetUserByPredicate(Func<User, bool> criteria);
         /// <summary>
-        /// This method finds a collection of users by the given predicate.
+        /// This method finds a collection of users by the given criteria.
         /// </summary>
-        /// <param name="predicate">Represents the method for searching users by given criterion.</param>
-        /// <returns>Returns a collection of users which was found by using predicate.</returns>
-        IEnumerable<User> GetUsersByPredicate(Func<User, bool> predicate);
+        /// <param name="criteria">Represents the method for searching users by given criteria.</param>
+        /// <returns>Returns a collection of users which was found by using the criteria function.</returns>
+        IEnumerable<User> GetUsersByPredicate(Func<User, bool> criteria);
     }
 }

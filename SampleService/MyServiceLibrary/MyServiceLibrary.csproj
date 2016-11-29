@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InvalidUserException.cs" />
+    <Compile Include="InvalidVisaRecordException.cs" />
     <Compile Include="IUserStorage.cs" />
     <Compile Include="IUserStorageService.cs" />
     <Compile Include="UserAlreadyExistsException.cs" />
@@ -50,12 +51,6 @@
     <Compile Include="UserStorageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BinarySearchTree\BinarySearchTree.csproj">
-      <Project>{4d4ab19f-3e14-4e85-b563-100d3ebf880f}</Project>
-      <Name>BinarySearchTree</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

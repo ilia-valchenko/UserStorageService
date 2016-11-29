@@ -68,79 +68,62 @@ namespace MyServiceLibrary
             if (user == null)
                 throw new ArgumentNullException(nameof(user));
 
-            if (string.IsNullOrEmpty(user.FirstName))
-                throw new InvalidUserException();
-
-            if (string.IsNullOrEmpty(user.LastName))
-                throw new InvalidUserException();
-
-            if (user.DateOfBirth > DateTime.Now)
-                throw new InvalidUserException();
-
             if (storage.Contains(user))
                 return;
 
             identifierChanger(ref id);
 
-            storage.Add(new User(user.FirstName, user.LastName, user.DateOfBirth, id));
+            storage.Add(new User(user.FirstName, user.LastName, user.Gender, user.DateOfBirth, user.VisaRecords, id));
         }
 
         /// <summary>
         /// This method removes user from the storage.
         /// </summary>
         /// <param name="user">A user that must be removed.</param>
-        public void Delete(User user)
+        public bool Delete(User user)
         { 
             if (user == null)
                 throw new ArgumentNullException(nameof(user));
 
-            // Is it necessary?
-            if (!storage.Contains(user))
-                throw new UserDoesntExistException();
-
-            storage.Delete(user);
+            return storage.Delete(user);
         }
 
         /// <summary>
         /// This method removes user from the storage if it exists.
         /// </summary>
         /// <param name="userId">Id of the user which must be deleted.</param>
-        public void Delete(int userId)
+        public bool Delete(int userId)
         {
             if (userId < 0)
                 throw new ArgumentException(nameof(userId));
 
-            Func<User, bool> getUserById = (User u) => u.Id == userId;
-            var user = GetUserByPredicate(getUserById);
-
-            if (user != null)
-                storage.Delete(user);
+            return storage.Delete(userId);
         }
 
         /// <summary>
-        /// This method finds a user by the given predicate.
+        /// This method finds a user by the given criteria.
         /// </summary>
-        /// <param name="predicate"></param>
-        /// <returns>Returns user which was found by using the predicate.</returns>
-        public User GetUserByPredicate(Func<User, bool> predicate)
+        /// <param name="criteria">Represents the method for searching a specific user by given criterion.</param>
+        /// <returns>Returns user which was found by using the criteria function.</returns>
+        public User GetUserByPredicate(Func<User, bool> criteria)
         {
-            if (predicate == null)
-                throw new ArgumentNullException(nameof(predicate));
+            if (criteria == null)
+                throw new ArgumentNullException(nameof(criteria));
 
-            return storage.GetUserByPredicate(predicate);
+            return storage.GetUserByPredicate(criteria);
         }
 
         /// <summary>
-        /// This method finds an array of users by the given predicate.
+        /// This method finds an array of users by the given criteria.
         /// </summary>
-        /// <param name="predicate"></param>
-        /// <returns>Returns a collection of users which was found by using predicate.</returns>
-        public IEnumerable<User> GetUsersByPredicate(Func<User, bool> predicate)
+        /// <param name="criteria">Represents the method for searching users by given criteria.</param>
+        /// <returns>Returns a collection of users which was found by using the criteria function.</returns>
+        public IEnumerable<User> GetUsersByPredicate(Func<User, bool> criteria)
         {
-            if (predicate == null)
-                throw new ArgumentNullException(nameof(predicate));
+            if (criteria == null)
+                throw new ArgumentNullException(nameof(criteria));
 
-            return storage.GetUsersByPredicate(predicate);
+            return storage.GetUsersByPredicate(criteria);
         }
         #endregion
 

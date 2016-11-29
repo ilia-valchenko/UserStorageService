@@ -50,10 +50,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BinarySearchTree\BinarySearchTree.csproj">
-      <Project>{4d4ab19f-3e14-4e85-b563-100d3ebf880f}</Project>
-      <Name>BinarySearchTree</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MyServiceLibrary\MyServiceLibrary.csproj">
       <Project>{83615058-2919-4ca9-84c2-5368cef9f281}</Project>
       <Name>MyServiceLibrary</Name>

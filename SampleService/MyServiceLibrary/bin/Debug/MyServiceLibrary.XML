@@ -4,6 +4,16 @@
         <name>MyServiceLibrary</name>
     </assembly>
     <members>
+        <member name="T:MyServiceLibrary.InvalidUserException">
+            <summary>
+            This exception will be thrown if the client would attempt to create an incorrect user.
+            </summary>
+        </member>
+        <member name="T:MyServiceLibrary.InvalidVisaRecordException">
+            <summary>
+            This exception will be thrown if the client would attempt to create an incorrect visa record.
+            </summary>
+        </member>
         <member name="T:MyServiceLibrary.IUserStorage">
             <summary>
             This interface prodives basic operations for storage such as CRUD and seeking operations.
@@ -35,17 +45,17 @@
         </member>
         <member name="M:MyServiceLibrary.IUserStorage.GetUserByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
             <summary>
-            This method finds a user by the given predicate.
+            This method finds a user by the given criteria.
             </summary>
-            <param name="predicate">Represents the method for searching a specific user by given criterion.</param>
-            <returns>Returns user which was found by using the predicate.</returns>
+            <param name="criteria">Represents the method for searching a specific user by given criterion.</param>
+            <returns>Returns user which was found by using the criteria function.</returns>
         </member>
         <member name="M:MyServiceLibrary.IUserStorage.GetUsersByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
             <summary>
-            This method finds a collection of users by the given predicate.
+            This method finds a collection of users by the given criteria.
             </summary>
-            <param name="predicate">Represents the method for searching users by given criterion.</param>
-            <returns>Returns a collection of users which was found by using predicate.</returns>
+            <param name="criteria">Represents the method for searching users by given criteria.</param>
+            <returns>Returns a collection of users which was found by using the criteria function.</returns>
         </member>
         <member name="T:MyServiceLibrary.IUserStorageService">
             <summary>
@@ -72,17 +82,17 @@
         </member>
         <member name="M:MyServiceLibrary.IUserStorageService.GetUserByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
             <summary>
-            This method finds a user by the given predicate.
+            This method finds a user by the given criteria.
             </summary>
-            <param name="predicate"></param>
-            <returns>Returns user which was found by using the predicate.</returns>
+            <param name="criteria">Represents the method for searching a specific user by given criterion.</param>
+            <returns>Returns user which was found by using the criteria function.</returns>
         </member>
         <member name="M:MyServiceLibrary.IUserStorageService.GetUsersByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
             <summary>
             This method finds an array of users by the given predicate.
             </summary>
-            <param name="predicate"></param>
-            <returns>Returns a collection of users which was found by using predicate.</returns>
+            <param name="criteria">Represents the method for searching users by given criterion.</param>
+            <returns>Returns a collection of users which was found by using the criteria function.</returns>
         </member>
         <member name="T:MyServiceLibrary.UserStorage">
             <summary>
@@ -120,17 +130,17 @@
         </member>
         <member name="M:MyServiceLibrary.UserStorage.GetUserByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
             <summary>
-            This method finds a user by the given predicate. 
+            This method finds a user by the given criteria. 
             </summary>
-            <param name="predicate">Represents the method for searching a specific user by given criterion.</param>
+            <param name="criteria">Represents the method for searching a specific user by given criterion.</param>
             <returns>Returns the seeking user.</returns>
         </member>
         <member name="M:MyServiceLibrary.UserStorage.GetUsersByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
             <summary>
-            This method finds a collection of users by the given predicate.
+            This method finds a collection of users by the given criteria.
             </summary>
-            <param name="predicate">Represents the method for searching users by given criterion.</param>
-            <returns></returns>
+            <param name="criteria">Represents the method for searching users by the given criteria.</param>
+            <returns>Returns a collection of users which was found by using the criteria function.</returns>
         </member>
         <member name="F:MyServiceLibrary.UserStorage.storage">
             <summary>
@@ -197,21 +207,160 @@
         </member>
         <member name="M:MyServiceLibrary.UserStorageService.GetUserByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
             <summary>
-            This method finds a user by the given predicate.
+            This method finds a user by the given criteria.
             </summary>
-            <param name="predicate"></param>
-            <returns>Returns user which was found by using the predicate.</returns>
+            <param name="criteria">Represents the method for searching a specific user by given criterion.</param>
+            <returns>Returns user which was found by using the criteria function.</returns>
         </member>
         <member name="M:MyServiceLibrary.UserStorageService.GetUsersByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
             <summary>
-            This method finds an array of users by the given predicate.
+            This method finds an array of users by the given criteria.
             </summary>
-            <param name="predicate"></param>
-            <returns>Returns a collection of users which was found by using predicate.</returns>
+            <param name="criteria">Represents the method for searching users by given criteria.</param>
+            <returns>Returns a collection of users which was found by using the criteria function.</returns>
         </member>
         <member name="T:MyServiceLibrary.User">
             <summary>
             This class represents a simple user which contains information about it's first name, last name and a date of birth.
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.User.Id">
+            <summary>
+            User's id property.
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.User.FirstName">
+            <summary>
+            User's first name property.
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.User.LastName">
+            <summary>
+            User's last name property.
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.User.Gender">
+            <summary>
+            User's gender.
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.User.DateOfBirth">
+            <summary>
+            User's date of birth property.
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.User.VisaRecords">
+            <summary>
+            User's visa records.
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.User.#ctor">
+            <summary>
+            Default constructor which create a default user.
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.User.#ctor(System.String,System.String,MyServiceLibrary.Gender,System.DateTime,System.Collections.Generic.IEnumerable{MyServiceLibrary.VisaRecord},System.Int32)">
+            <summary>
+            Constructor that creates a user by using input parameters.
+            </summary>
+            <param name="firstname">The first name of a future user.</param>
+            <param name="lastname">The last name of a future user.</param>
+            <param name="gender">The gender of a future user.</param>
+            <param name="dateOfBirth">The date of birth of a future user.</param>
+            <param name="visaRecords">User's collection of visa records.</param>
+            <param name="id">The id of a future user.</param>
+        </member>
+        <member name="M:MyServiceLibrary.User.Equals(MyServiceLibrary.User)">
+            <summary>
+            This method determines if the current user is equals to another one.
+            </summary>
+            <param name="other">Another user.</param>
+            <returns>Returns true if they are equal.</returns>
+        </member>
+        <member name="M:MyServiceLibrary.User.CompareTo(MyServiceLibrary.User)">
+            <summary>
+            This method compares the current user to another one.
+            </summary>
+            <param name="other">Another user.</param>
+            <returns>Returns 0 if users are equal. Returns -1 if the current user is less than another. Returns 1 if the current user is greater than given another.</returns>
+        </member>
+        <member name="M:MyServiceLibrary.User.ToString">
+            <summary>
+            This method returns string representation of the current user.
+            </summary>
+            <returns>String that represent the current user.</returns>
+        </member>
+        <member name="F:MyServiceLibrary.User.id">
+            <summary>
+            User's Id.
+            </summary>
+        </member>
+        <member name="F:MyServiceLibrary.User.firstName">
+            <summary>
+            User's first name.
+            </summary>
+        </member>
+        <member name="F:MyServiceLibrary.User.lastName">
+            <summary>
+            User's last name.
+            </summary>
+        </member>
+        <member name="F:MyServiceLibrary.User.dateOfBirth">
+            <summary>
+            User's date of birth.
+            </summary>
+        </member>
+        <member name="F:MyServiceLibrary.User.visaRecords">
+            <summary>
+            The list of the user's visa records.
+            </summary>
+        </member>
+        <member name="T:MyServiceLibrary.Gender">
+            <summary>
+            Represents a gender of a user.
+            </summary>
+        </member>
+        <member name="T:MyServiceLibrary.VisaRecord">
+            <summary>
+            This structure represetns a visa record. Record contains information country which was visited by user and visit date.
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.VisaRecord.Country">
+            <summary>
+            Country's property
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.VisaRecord.Start">
+            <summary>
+            Start's property
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.VisaRecord.End">
+            <summary>
+            Start's property
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.VisaRecord.#ctor(System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Custom constructor for visa record.
+            </summary>
+            <param name="country">The country which was visited.</param>
+            <param name="start">The date of arrival.</param>
+            <param name="end">The date of departure.</param>
+        </member>
+        <member name="F:MyServiceLibrary.VisaRecord.country">
+            <summary>
+            The country which was visited by user.
+            </summary>
+        </member>
+        <member name="F:MyServiceLibrary.VisaRecord.start">
+            <summary>
+            The date when the user has arrived in the country. 
+            </summary>
+        </member>
+        <member name="F:MyServiceLibrary.VisaRecord.end">
+            <summary>
+            The date when the user left the country
             </summary>
         </member>
     </members>
