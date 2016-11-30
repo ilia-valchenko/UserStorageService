@@ -20,8 +20,7 @@ namespace ServiceApplication
                          {
                              new VisaRecord("USA", new DateTime(1969, 4, 2), new DateTime(1969, 5, 16)),
                              new VisaRecord("Mexico", new DateTime(1973, 3, 10), new DateTime(1973, 4, 10))
-                         }, 
-                         1),
+                         }),
 
                 new User("Ilia", 
                          "Valchenko", 
@@ -31,15 +30,13 @@ namespace ServiceApplication
                          {
                              new VisaRecord("Ukraine", new DateTime(2003, 8, 2), new DateTime(2003, 8, 29)),
                              new VisaRecord("Mexico", new DateTime(2016, 9, 7), new DateTime(2016, 10, 10))
-                         },
-                         2),
+                         }),
 
                 new User("Tim", 
                          "Berners-Lee", 
                          Gender.Male, 
                          new DateTime(1955, 6, 8), 
-                         new List<VisaRecord>(),
-                         3)
+                         new List<VisaRecord>())
             };
 
             foreach (var user in users)
@@ -49,7 +46,7 @@ namespace ServiceApplication
 
             Console.WriteLine($"The result of finding by predicate: {result}");
 
-            Console.WriteLine($"Are equal: {Object.ReferenceEquals(result, users[1])}");
+            //Console.WriteLine($"Are equal: {Object.ReferenceEquals(result, users[1])}");
 
             Console.WriteLine("\nTap to continue...");
             Console.ReadKey(true);
