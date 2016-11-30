@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml.Linq;
+using NLog.Internal;
+using System.Configuration;
+using System.IO;
 
 namespace MyServiceLibrary
 {
@@ -209,7 +213,37 @@ namespace MyServiceLibrary
         }
         #endregion
 
-        #region Private fields and properties
+        /// <summary>
+        /// This method saves a state of the service to xml file. File will contain the last generaed id and the number of users in the storage.
+        /// </summary>
+        public void SaveState()
+        {
+            logger.WriteInfo("Start SaveState method.");
+
+            string fileName = System.Configuration.ConfigurationManager.AppSettings["StateFileName"];
+
+            logger.WriteInfo($"The name of the future state file: {fileName}");
+
+            XDocument xDoc = new XDocument();
+            XElement userStorageService = new XElement("userStorageService");
+            XElement lastGeneratedId = new XElement("lastGeneratedId", id.ToString());
+            XElement numberOfUsers = new XElement("numberOfUsers", storage.Count.ToString());
+
+            userStorageService.Add(lastGeneratedId);
+            userStorageService.Add(numberOfUsers);
+            xDoc.Add(userStorageService);
+
+            try
+            {
+                xDoc.Save(fileName);
+            }
+            catch (Exception exc)
+            {
+                logger.WriteError(exc.Message);
+            }
+        }
+
+        #region Private fields
         private readonly IUserStorage storage;
         private readonly IdentifierChanger identifierChanger;
         private readonly ILogger logger;

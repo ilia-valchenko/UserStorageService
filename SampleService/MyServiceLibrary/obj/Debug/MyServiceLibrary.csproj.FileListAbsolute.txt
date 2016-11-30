@@ -8,7 +8,6 @@ G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\
 G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.dll
 G:\EPAM .NET Training\.NET and BCL\dotnetbasics-master\dotnetbasics-master\Day1\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.pdb
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.XML
-G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.csprojResolveAssemblyReference.cache
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.dll
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.pdb
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.dll
@@ -16,3 +15,4 @@ G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\bin\Debug\MyService
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\bin\Debug\NLog.config
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\bin\Debug\NLog.dll
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\bin\Debug\NLog.xml
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.dll.config

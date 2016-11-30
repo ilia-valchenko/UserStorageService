@@ -48,6 +48,8 @@ namespace ServiceApplication
 
             //Console.WriteLine($"Are equal: {Object.ReferenceEquals(result, users[1])}");
 
+            uss.SaveState();
+
             Console.WriteLine("\nTap to continue...");
             Console.ReadKey(true);
         }

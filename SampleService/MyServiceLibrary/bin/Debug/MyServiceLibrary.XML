@@ -48,6 +48,11 @@
             This interface prodives basic operations for storage such as CRUD and seeking operations.
             </summary>
         </member>
+        <member name="P:MyServiceLibrary.IUserStorage.Count">
+            <summary>
+            This property returns the number of users in a storage.
+            </summary>
+        </member>
         <member name="M:MyServiceLibrary.IUserStorage.Add(MyServiceLibrary.User)">
             <summary>
             This method ads the given user to the storage if it doesn't exist.
@@ -160,6 +165,11 @@
         <member name="T:MyServiceLibrary.UserStorage">
             <summary>
             This class represents a simple storage for users with basic operations.
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.UserStorage.Count">
+            <summary>
+            This property returns the number of users in a storage.
             </summary>
         </member>
         <member name="M:MyServiceLibrary.UserStorage.#ctor">

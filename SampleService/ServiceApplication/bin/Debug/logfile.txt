@@ -1,0 +1,57 @@
+2016-11-30 13:48:37.6120|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-11-30 13:48:38.1380|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-11-30 13:48:38.1380|INFO|MyServiceLibrary.Logger|Generated ID is: 1
+2016-11-30 13:48:38.1500|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Bobby; Last name: McFerrin; Date of birth: 11.03.1950 0:00:00
+2016-11-30 13:48:38.1500|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-11-30 13:48:38.1500|INFO|MyServiceLibrary.Logger|Generated ID is: 2
+2016-11-30 13:48:38.1500|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Ilia; Last name: Valchenko; Date of birth: 02.08.1995 0:00:00
+2016-11-30 13:48:38.1500|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-11-30 13:48:38.1500|INFO|MyServiceLibrary.Logger|Generated ID is: 3
+2016-11-30 13:48:38.1500|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Tim; Last name: Berners-Lee; Date of birth: 08.06.1955 0:00:00
+2016-11-30 13:48:38.1500|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-11-30 13:48:38.1500|INFO|MyServiceLibrary.Logger|User was successfully found. Id: 2; First name: Ilia; Last name: Valchenko; Date of birth: 02.08.1995 0:00:00
+2016-11-30 13:48:38.1570|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-11-30 13:48:38.1570|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-11-30 13:49:02.5474|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-11-30 13:49:02.6674|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-11-30 13:49:02.6814|INFO|MyServiceLibrary.Logger|Generated ID is: 1
+2016-11-30 13:49:02.6814|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Bobby; Last name: McFerrin; Date of birth: 11.03.1950 0:00:00
+2016-11-30 13:49:02.6814|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-11-30 13:49:02.6814|INFO|MyServiceLibrary.Logger|Generated ID is: 2
+2016-11-30 13:49:02.6814|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Ilia; Last name: Valchenko; Date of birth: 02.08.1995 0:00:00
+2016-11-30 13:49:02.6814|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-11-30 13:49:02.6814|INFO|MyServiceLibrary.Logger|Generated ID is: 3
+2016-11-30 13:49:02.6814|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Tim; Last name: Berners-Lee; Date of birth: 08.06.1955 0:00:00
+2016-11-30 13:49:02.6814|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-11-30 13:49:02.6964|INFO|MyServiceLibrary.Logger|User was successfully found. Id: 2; First name: Ilia; Last name: Valchenko; Date of birth: 02.08.1995 0:00:00
+2016-11-30 13:49:02.6964|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-11-30 13:49:02.6964|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-11-30 13:49:02.8155|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-11-30 13:54:05.4018|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-11-30 13:54:05.4668|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-11-30 13:54:05.4668|INFO|MyServiceLibrary.Logger|Generated ID is: 1
+2016-11-30 13:54:05.4668|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Bobby; Last name: McFerrin; Date of birth: 11.03.1950 0:00:00
+2016-11-30 13:54:05.4668|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-11-30 13:54:05.4788|INFO|MyServiceLibrary.Logger|Generated ID is: 2
+2016-11-30 13:54:05.4788|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Ilia; Last name: Valchenko; Date of birth: 02.08.1995 0:00:00
+2016-11-30 13:54:05.4788|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-11-30 13:54:05.4788|INFO|MyServiceLibrary.Logger|Generated ID is: 3
+2016-11-30 13:54:05.4788|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Tim; Last name: Berners-Lee; Date of birth: 08.06.1955 0:00:00
+2016-11-30 13:54:05.4788|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-11-30 13:54:05.4788|INFO|MyServiceLibrary.Logger|User was successfully found. Id: 2; First name: Ilia; Last name: Valchenko; Date of birth: 02.08.1995 0:00:00
+2016-11-30 13:54:05.4788|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-11-30 14:02:44.3104|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-11-30 14:02:44.4465|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-11-30 14:02:44.4475|INFO|MyServiceLibrary.Logger|Generated ID is: 1
+2016-11-30 14:02:44.4915|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Bobby; Last name: McFerrin; Date of birth: 11.03.1950 0:00:00
+2016-11-30 14:02:44.4915|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-11-30 14:02:44.4915|INFO|MyServiceLibrary.Logger|Generated ID is: 2
+2016-11-30 14:02:44.4945|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Ilia; Last name: Valchenko; Date of birth: 02.08.1995 0:00:00
+2016-11-30 14:02:44.4945|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-11-30 14:02:44.4945|INFO|MyServiceLibrary.Logger|Generated ID is: 3
+2016-11-30 14:02:44.4945|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Tim; Last name: Berners-Lee; Date of birth: 08.06.1955 0:00:00
+2016-11-30 14:02:44.4945|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-11-30 14:02:44.4945|INFO|MyServiceLibrary.Logger|User was successfully found. Id: 2; First name: Ilia; Last name: Valchenko; Date of birth: 02.08.1995 0:00:00
+2016-11-30 14:02:44.4945|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-11-30 14:03:01.7264|INFO|MyServiceLibrary.Logger|The name of the future state file: ussstate.xml

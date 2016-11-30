@@ -23,3 +23,6 @@ G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\MyS
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\MyServiceLibrary.xml
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\Castle.Core.xml
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\Moq.xml
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\NLog.config
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\NLog.dll
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\NLog.xml

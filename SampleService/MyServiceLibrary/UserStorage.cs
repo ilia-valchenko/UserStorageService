@@ -10,6 +10,11 @@ namespace MyServiceLibrary
     public class UserStorage : IUserStorage
     {
         /// <summary>
+        /// This property returns the number of users in a storage.
+        /// </summary>
+        public int Count => storage.Count;
+
+        /// <summary>
         /// A default constructor that creates an empty storage.
         /// </summary>
         public UserStorage()
@@ -66,7 +71,7 @@ namespace MyServiceLibrary
         /// <returns>Returns the seeking user.</returns>
         public User GetUserByPredicate(Func<User, bool> criteria)
         {
-            if(criteria == null)
+            if (criteria == null)
                 throw new ArgumentNullException(nameof(criteria));
 
             return storage.FirstOrDefault(item => criteria(item.Value)).Value;

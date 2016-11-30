@@ -8,10 +8,12 @@ namespace MyServiceLibrary
     /// </summary>
     public class User : IEquatable<User>, IComparable<User>
     {
+        #region Public properties
         /// <summary>
         /// User's id property.
         /// </summary>
-        public int Id {
+        public int Id
+        {
             get
             {
                 return id;
@@ -101,12 +103,13 @@ namespace MyServiceLibrary
             }
             set
             {
-                if(value == null)
+                if (value == null)
                     throw new InvalidUserException();
 
                 visaRecords = value;
             }
-        }
+        } 
+        #endregion
 
         /// <summary>
         /// Default constructor which create a default user.
@@ -175,26 +178,32 @@ namespace MyServiceLibrary
         /// <returns>String that represent the current user.</returns>
         public override string ToString() => String.Format("Id: " + Id + "; First name: " + FirstName + "; Last name: " + LastName + "; Date of birth: " + DateOfBirth);
 
+        #region Private fields
         /// <summary>
         /// User's Id.
         /// </summary>
         private int id;
+
         /// <summary>
         /// User's first name.
         /// </summary>
         private string firstName;
+
         /// <summary>
         /// User's last name.
         /// </summary>
         private string lastName;
+
         /// <summary>
         /// User's date of birth.
         /// </summary>
         private DateTime dateOfBirth;
+
         /// <summary>
         /// The list of the user's visa records.
         /// </summary>
-        private IEnumerable<VisaRecord> visaRecords;
+        private IEnumerable<VisaRecord> visaRecords; 
+        #endregion
     }
 
     /// <summary>
@@ -212,6 +221,7 @@ namespace MyServiceLibrary
     /// </summary>
     public struct VisaRecord
     {
+        #region Public properties
         /// <summary>
         /// Country's property
         /// </summary>
@@ -223,7 +233,7 @@ namespace MyServiceLibrary
             }
             set
             {
-                if(String.IsNullOrEmpty(value))
+                if (String.IsNullOrEmpty(value))
                     throw new InvalidVisaRecordException();
 
                 country = value;
@@ -241,7 +251,7 @@ namespace MyServiceLibrary
             }
             set
             {
-                if(value > DateTime.Now)
+                if (value > DateTime.Now)
                     throw new InvalidVisaRecordException();
 
                 start = value;
@@ -264,7 +274,8 @@ namespace MyServiceLibrary
 
                 end = value;
             }
-        }
+        } 
+        #endregion
 
         /// <summary>
         /// Custom constructor for visa record.
@@ -283,17 +294,21 @@ namespace MyServiceLibrary
             End = end;
         }
 
+        #region Private fields
         /// <summary>
         /// The country which was visited by user.
         /// </summary>
         private string country;
+
         /// <summary>
         /// The date when the user has arrived in the country. 
         /// </summary>
         private DateTime start;
+
         /// <summary>
         /// The date when the user left the country
         /// </summary>
-        private DateTime end;
+        private DateTime end; 
+        #endregion
     }
 }
