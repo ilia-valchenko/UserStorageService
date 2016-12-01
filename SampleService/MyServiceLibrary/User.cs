@@ -6,6 +6,7 @@ namespace MyServiceLibrary
     /// <summary>
     /// This class represents a simple user which contains information about it's first name, last name and a date of birth.
     /// </summary>
+    [Serializable]
     public class User : IEquatable<User>, IComparable<User>
     {
         #region Public properties
@@ -219,6 +220,7 @@ namespace MyServiceLibrary
     /// <summary>
     /// This structure represetns a visa record. Record contains information country which was visited by user and visit date.
     /// </summary>
+    [Serializable]
     public struct VisaRecord
     {
         #region Public properties

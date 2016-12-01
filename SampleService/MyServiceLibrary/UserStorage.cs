@@ -7,7 +7,7 @@ namespace MyServiceLibrary
     /// <summary>
     /// This class represents a simple storage for users with basic operations.
     /// </summary>
-    public class UserStorage : IUserStorage
+    public sealed class UserStorage : IUserStorage
     {
         /// <summary>
         /// This property returns the number of users in a storage.

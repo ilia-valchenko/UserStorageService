@@ -162,6 +162,46 @@
             </summary>
             <param name="message"></param>
         </member>
+        <member name="T:MyServiceLibrary.SlaveService">
+            <summary>
+            This class represents a slave service that executes only search operation. 
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.SlaveService.#ctor(MyServiceLibrary.IUserStorage)">
+            <summary>
+            Default constructor that creates a simple slave sservice with empty collection of users.
+            </summary>
+            <param name="storage">A storage for users.</param>
+        </member>
+        <member name="M:MyServiceLibrary.SlaveService.#ctor(MyServiceLibrary.IUserStorage,System.Collections.Generic.IEnumerable{MyServiceLibrary.User})">
+            <summary>
+            This constructor takes an initializes collection of users.
+            </summary>
+            <param name="storage">A storage for users.</param>
+            <param name="users">The collection of users which must be added to the storage for the first time.</param>
+        </member>
+        <member name="M:MyServiceLibrary.SlaveService.#ctor(MyServiceLibrary.IUserStorage,System.Collections.Generic.IEnumerable{MyServiceLibrary.User},MyServiceLibrary.ILogger)">
+            <summary>
+            This constructor takes an initializes collection of users.
+            </summary>
+            <param name="storage">A storage for users.</param>
+            <param name="users">The collection of users which must be added to the storage for the first time.</param>
+            <param name="logger">The instance of class which implements ILogger interface.</param>
+        </member>
+        <member name="M:MyServiceLibrary.SlaveService.GetUserByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
+            <summary>
+            This method finds a user by the given criteria.
+            </summary>
+            <param name="criteria">Represents the method for searching a specific user by given criterion.</param>
+            <returns>Returns user which was found by using the criteria function.</returns>
+        </member>
+        <member name="M:MyServiceLibrary.SlaveService.GetUsersByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
+            <summary>
+            This method finds an array of users by the given criteria.
+            </summary>
+            <param name="criteria">Represents the method for searching users by given criteria.</param>
+            <returns>Returns a collection of users which was found by using the criteria function.</returns>
+        </member>
         <member name="T:MyServiceLibrary.UserStorage">
             <summary>
             This class represents a simple storage for users with basic operations.
@@ -292,6 +332,11 @@
             </summary>
             <param name="criteria">Represents the method for searching users by given criteria.</param>
             <returns>Returns a collection of users which was found by using the criteria function.</returns>
+        </member>
+        <member name="M:MyServiceLibrary.UserStorageService.SaveState">
+            <summary>
+            This method saves a state of the service to xml file. File will contain the last generaed id and the number of users in the storage.
+            </summary>
         </member>
         <member name="T:MyServiceLibrary.User">
             <summary>

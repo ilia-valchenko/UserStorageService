@@ -5,7 +5,7 @@ namespace MyServiceLibrary
     /// <summary>
     /// This class implements ILogger interface by using NLog.
     /// </summary>
-    public class Logger : ILogger
+    public sealed class Logger : ILogger
     {
         /// <summary>
         /// Default constructor.
