@@ -15,13 +15,11 @@ namespace SlaveApplication
     {
         static void Main(string[] args)
         {
-            //SlaveService slave = new SlaveService(new UserStorage(), new List<User>(), new Logger());
-
-            //Console.WriteLine("Current slave's domain: " + AppDomain.CurrentDomain.FriendlyName);
-
             int port = 83;
             string hostName = "localhost";
-            NotificationMessage msg = new NotificationMessage(Commands.Add, new User(), 0);
+
+            //NotificationMessage msg = new NotificationMessage(Commands.Add, new User(), 0);
+            AddNotificationMessage msg = new AddNotificationMessage(new User());
 
             IPHostEntry ipHost = Dns.GetHostEntry(hostName);
             IPAddress ipAddress = ipHost.AddressList[0];
@@ -32,28 +30,28 @@ namespace SlaveApplication
             try
             {
                 sender.Connect(endPoint);
-                sender.Send(TransformMessageToByteArray(msg));
+                sender.Send(TransformMessageToBytes(msg));
             }
-            catch (Exception exc)
+            catch (SocketException exc)
             {
                 Console.WriteLine(exc.Message);
             }
             
-
             Console.WriteLine("\nTap to continue...");
             Console.ReadKey(true);
         }
 
-        public static byte[] TransformMessageToByteArray(NotificationMessage msg)
+        public static byte[] TransformMessageToBytes(NotificationMessage msg)
         {
             if (msg == null)
                 return null;
 
-            BinaryFormatter bf = new BinaryFormatter();
-            MemoryStream ms = new MemoryStream();
-            bf.Serialize(ms, msg);
-
-            return ms.ToArray();
+            using (MemoryStream stream = new MemoryStream())
+            {
+                BinaryFormatter binFormatter = new BinaryFormatter();
+                binFormatter.Serialize(stream, msg);
+                return stream.ToArray();
+            }
         }
     }
 }

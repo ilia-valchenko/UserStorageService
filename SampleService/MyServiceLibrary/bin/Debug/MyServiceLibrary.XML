@@ -4,6 +4,70 @@
         <name>MyServiceLibrary</name>
     </assembly>
     <members>
+        <member name="T:MyServiceLibrary.AddNotificationMessage">
+            <summary>
+            This class represents a message that inform services to add a new user.
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.AddNotificationMessage.UserInstance">
+            <summary>
+            The instance of user which would be used in Add or Delete methods.
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.AddNotificationMessage.#ctor(MyServiceLibrary.User)">
+            <summary>
+            Constructor that takes the user which must be added to the service.
+            </summary>
+            <param name="user">User that must be added.</param>
+        </member>
+        <member name="T:MyServiceLibrary.DeleteNotificationMessage">
+            <summary>
+            This class represents a message that inform services to delete a user.
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.DeleteNotificationMessage.UserId">
+            <summary>
+            The id of the user which must be deleted.
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.DeleteNotificationMessage.#ctor(System.Int32)">
+            <summary>
+            Constructor that takes the id of the user which must be deleted.
+            </summary>
+            <param name="userId">The id of the user which must be deleted.</param>
+        </member>
+        <member name="T:MyServiceLibrary.GetUserByPredicateNotificationMessage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.GetUserByPredicateNotificationMessage.Criteria">
+            <summary>
+            This criteria is use to find a concrete user.
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.GetUserByPredicateNotificationMessage.#ctor(System.Func{MyServiceLibrary.User,System.Boolean})">
+            <summary>
+            Constructor that takes a predicate.
+            </summary>
+            <param name="criteria">Search criteria method.</param>
+        </member>
+        <member name="T:MyServiceLibrary.GetUsersByPredicateNotificationMessage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.GetUsersByPredicateNotificationMessage.Criteria">
+            <summary>
+            This criteria is use to find users.
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.GetUsersByPredicateNotificationMessage.#ctor(System.Func{MyServiceLibrary.User,System.Boolean})">
+            <summary>
+            Constructor that takes a predicate.
+            </summary>
+            <param name="criteria">Search criteria method.</param>
+        </member>
         <member name="T:MyServiceLibrary.ILogger">
             <summary>
             This interface defines basic methods for logging messages.
@@ -161,6 +225,27 @@
             Designates very severe error events that will presumably lead the application to abort.
             </summary>
             <param name="message"></param>
+        </member>
+        <member name="T:MyServiceLibrary.NotificationMessage">
+            <summary>
+            This is the class that provides communications between services.
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.NotificationMessage.Command">
+            <summary>
+            Command.
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.NotificationMessage.#ctor(MyServiceLibrary.Commands)">
+            <summary>
+            Constructor that takes a command.
+            </summary>
+            <param name="command">Command.</param>
+        </member>
+        <member name="T:MyServiceLibrary.Commands">
+            <summary>
+            There are commands which our service will take from client.
+            </summary>
         </member>
         <member name="T:MyServiceLibrary.SlaveService">
             <summary>

@@ -2,21 +2,30 @@
 
 namespace MyServiceLibrary
 {
+    /// <summary>
+    /// This is the class that provides communications between services.
+    /// </summary>
     [Serializable]
-    public class NotificationMessage
+    public abstract class NotificationMessage
     {
-        public Commands Command { get; set; }
-        public User UserInstance { get; set; }
-        public int UserId { get; set; }
+        /// <summary>
+        /// Command.
+        /// </summary>
+        public Commands Command { get; private set; }
 
-        public NotificationMessage(Commands command, User user, int id)
+        /// <summary>
+        /// Constructor that takes a command.
+        /// </summary>
+        /// <param name="command">Command.</param>
+        protected NotificationMessage(Commands command)
         {
             Command = command;
-            UserInstance = user;
-            UserId = id;
         }
     }
 
+    /// <summary>
+    /// There are commands which our service will take from client.
+    /// </summary>
     public enum Commands
     {
         Add,

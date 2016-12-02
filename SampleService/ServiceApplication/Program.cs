@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -54,25 +55,69 @@ namespace ServiceApplication
             {
                 socketListener.Bind(endPoint);
                 socketListener.Listen(10);
+                bool isWorkFinished = false;
 
-                while (true)
+                while (!isWorkFinished)
                 {
-                    Console.WriteLine("Wait a connection...");
+                    Console.WriteLine("Server is ready to accept a new client.");
 
                     Socket handler = socketListener.Accept();
+                    byte[] bytes = new byte[1024];
 
-                    byte[] data = new byte[1024];
-                    int numberOfReceivedBytes = handler.Receive(data);
+                    // Get data from connected socket to buffer
+                    int numberOfReceivedBytes = handler.Receive(bytes);
 
-                    NotificationMessage nMsg = TransfromToNotificationMessage(data, 0, numberOfReceivedBytes);
+                    NotificationMessage nMsg = null;
 
-                    Console.WriteLine("Notification command is: " + nMsg.Command);
-
-                    if (nMsg.Command == Commands.Stop)
+                    try
                     {
-                        Console.WriteLine("Service was stopped.");
-                        break;
+                        nMsg = TransfromBytesToNotificationMessage(bytes, 0, numberOfReceivedBytes);
                     }
+                    catch (Exception exc)
+                    {
+                        Console.WriteLine(exc.Message);
+                    }
+
+                    switch (nMsg.Command)
+                    {
+                        case Commands.Add:
+                            Console.WriteLine("The client is calling Add method.");
+                            break;
+
+                        case Commands.Delete:
+                            Console.WriteLine("The client is calling Delete method.");
+                            break;
+
+                        case Commands.GetUserByPredicate:
+                            Console.WriteLine("The client is calling GetUserByPredicate method.");
+                            break;
+
+                        case Commands.GetUsersByPredicate:
+                            Console.WriteLine("The client is calling GetUsersByPredicate method.");
+                            break;
+
+                        case Commands.Stop:
+                            Console.WriteLine("The client is calling Stop method.");
+                            isWorkFinished = true;
+                            break;
+                    }
+
+                    //using (NetworkStream networkStream = new NetworkStream(handler))
+                    //{
+                    //    byte[] data = new byte[1024];
+                    //    using (MemoryStream ms = new MemoryStream())
+                    //    {
+
+                    //        int numBytesRead;
+                    //        while ((numBytesRead = networkStream.Read(data, 0, data.Length)) > 0)
+                    //        {
+                    //            Console.WriteLine("Current number of bytes: " + numBytesRead);
+                    //            ms.Write(data, 0, numBytesRead);
+                    //            ms.Seek(0, SeekOrigin.Begin);
+                    //        }
+                    //        str = Encoding.ASCII.GetString(ms.ToArray(), 0, (int)ms.Length);
+                    //    }
+                    //}
                 }
             }
             catch (SocketException exc)
@@ -80,17 +125,19 @@ namespace ServiceApplication
                 Console.WriteLine(exc.Message);
             }
 
-            Console.WriteLine("\nTap to continue...");
+            Console.WriteLine("\nServer was stoped. Tap to continue...");
             Console.ReadKey(true);
         }
 
-        public static NotificationMessage TransfromToNotificationMessage(byte[] array, int offset, int count)
+        public static NotificationMessage TransfromBytesToNotificationMessage(byte[] array, int offset, int count)
         {
-            MemoryStream ms = new MemoryStream();
-            BinaryFormatter binFormatter = new BinaryFormatter();
-            ms.Write(array, offset, count);
-            ms.Seek(0, SeekOrigin.Begin);
-            return binFormatter.Deserialize(ms) as NotificationMessage;
+            using (MemoryStream stream = new MemoryStream())
+            {
+                BinaryFormatter binFormatter = new BinaryFormatter();
+                stream.Write(array, offset, count);
+                stream.Seek(0, SeekOrigin.Begin);
+                return binFormatter.Deserialize(stream) as NotificationMessage;
+            }
         }
     }
 }

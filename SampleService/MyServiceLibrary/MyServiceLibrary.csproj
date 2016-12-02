@@ -46,6 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNotificationMessage.cs" />
+    <Compile Include="DeleteNotificationMessage.cs" />
+    <Compile Include="GetUserByPredicateNotificationMessage.cs" />
+    <Compile Include="GetUsersByPredicateNotificationMessage.cs" />
     <Compile Include="ILogger.cs" />
     <Compile Include="InvalidUserException.cs" />
     <Compile Include="InvalidVisaRecordException.cs" />
