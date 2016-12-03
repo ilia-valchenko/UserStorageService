@@ -4,6 +4,9 @@ using System.Xml.Linq;
 using NLog.Internal;
 using System.Configuration;
 using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Xml;
 
 namespace MyServiceLibrary
 {
@@ -73,6 +76,56 @@ namespace MyServiceLibrary
             this.identifierChanger = identifierChanger;
             this.logger = logger;
 
+            // Check if we have the previous state of our service
+            string statefile = System.Configuration.ConfigurationManager.AppSettings["StateFileName"];
+
+            if (File.Exists(statefile))
+            {
+                XDocument xDoc = null;
+
+                try
+                {
+                    xDoc = XDocument.Load(statefile);
+                }
+                catch (Exception exc)
+                {
+                    logger.WriteError(exc.Message);
+                }
+
+                Int32.TryParse(xDoc.Root.Element("lastGeneratedId").Value, out this.id);
+                var xmlUsers = xDoc.Root.Element("users").Elements("user");
+
+                if (xmlUsers.Count() > 0)
+                {
+                    foreach (var xUser in xmlUsers)
+                    {
+                        int userId = 0;
+                        Int32.TryParse(xUser.Element("id").Value, out userId);
+                        string firstName = xUser.Element("firstName").Value;
+                        string lastName = xUser.Element("lastName").Value;
+                        Gender gender = (Gender)Enum.Parse(typeof(Gender), xUser.Element("gender").Value);
+                        DateTime dateOfBirth = Convert.ToDateTime(xUser.Element("dateOfBirth").Value);
+
+                        List<VisaRecord> visaRecords = new List<VisaRecord>();
+
+                        var xmlVisaRecords = xUser.Element("visaRecords").Elements("visa");
+
+                        foreach (var xVisa in xmlVisaRecords)
+                        {
+                            string country = xVisa.Element("country").Value;
+                            DateTime start = Convert.ToDateTime(xVisa.Element("start").Value);
+                            DateTime end = Convert.ToDateTime(xVisa.Element("end").Value);
+
+                            visaRecords.Add(new VisaRecord(country, start, end));
+                        }
+
+                        this.storage.Add(new User(firstName, lastName, gender, dateOfBirth, visaRecords, userId));
+                    }
+                }
+                
+                logger.WriteInfo($"Service has state file. The ID which will be use is: {id}");
+            }
+
             foreach (var user in users)
                 storage.Add(user);
         }
@@ -98,14 +151,17 @@ namespace MyServiceLibrary
                 logger.WriteWarning($"The service already contains this user. {user}");
                 return;
             }
-                
+
             identifierChanger(ref id);
-
             logger.WriteInfo($"Generated ID is: {id}");
-
+            
             storage.Add(new User(user.FirstName, user.LastName, user.Gender, user.DateOfBirth, user.VisaRecords, id));
 
             logger.WriteInfo($"New user was successfully added. {user}");
+
+            SaveState();
+
+            logger.WriteInfo("The state of the service was saved.");
         }
 
         /// <summary>
@@ -125,6 +181,8 @@ namespace MyServiceLibrary
             if (storage.Delete(user))
             {
                 logger.WriteInfo($"The user was successfully deleted. {user}");
+                SaveState();
+                logger.WriteInfo("The state of the service was saved.");
                 return true;
             }
 
@@ -151,6 +209,8 @@ namespace MyServiceLibrary
             if (storage.Delete(userId))
             {
                 logger.WriteInfo("User was successfully deleted.");
+                SaveState();
+                logger.WriteInfo("The state of the service was saved.");
                 return true;
             }
 
@@ -216,7 +276,7 @@ namespace MyServiceLibrary
         /// <summary>
         /// This method saves a state of the service to xml file. File will contain the last generaed id and the number of users in the storage.
         /// </summary>
-        public void SaveState()
+        private void SaveState()
         {
             logger.WriteInfo("Start SaveState method.");
 
@@ -228,9 +288,41 @@ namespace MyServiceLibrary
             XElement userStorageService = new XElement("userStorageService");
             XElement lastGeneratedId = new XElement("lastGeneratedId", id.ToString());
             XElement numberOfUsers = new XElement("numberOfUsers", storage.Count.ToString());
+            XElement users = new XElement("users");
+
+            logger.WriteInfo($"The number of users which will be written into the xml file: {storage.Count}");
+            logger.WriteInfo($"The last generated user's id: {id}");
 
             userStorageService.Add(lastGeneratedId);
             userStorageService.Add(numberOfUsers);
+            
+
+            foreach (var item in storage)
+            {
+                XElement user = new XElement("user");
+                XElement userId = new XElement("id", item.Id);
+                XElement firstName = new XElement("firstName", item.FirstName);
+                XElement lastName = new XElement("lastName", item.LastName);
+                XElement gender = new XElement("gender", item.Gender);
+                XElement dateOfBirth = new XElement("dateOfBirth", item.DateOfBirth);
+                XElement visaRecords = new XElement("visaRecords");
+
+                foreach (var visaItem in item.VisaRecords)
+                {
+                    XElement visa = new XElement("visa");
+                    XElement country = new XElement("country", visaItem.Country);
+                    XElement start = new XElement("start", visaItem.Start);
+                    XElement end = new XElement("end", visaItem.End);
+
+                    visa.Add(country, start, end);
+                    visaRecords.Add(visa);
+                }
+
+                user.Add(userId, firstName, lastName, gender, dateOfBirth, visaRecords);
+                users.Add(user);
+            }
+
+            userStorageService.Add(users);
             xDoc.Add(userStorageService);
 
             try
@@ -241,6 +333,14 @@ namespace MyServiceLibrary
             {
                 logger.WriteError(exc.Message);
             }
+        }
+
+        public void PrintUsersToConsole()
+        {
+            Console.WriteLine("All users:" + Environment.NewLine);
+
+            foreach (var user in storage)
+                Console.WriteLine(user + Environment.NewLine);
         }
 
         #region Private fields

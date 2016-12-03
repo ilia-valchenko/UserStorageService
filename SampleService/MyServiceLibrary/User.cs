@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace MyServiceLibrary
 {
@@ -105,9 +106,9 @@ namespace MyServiceLibrary
             set
             {
                 if (value == null)
-                    throw new InvalidUserException();
-
-                visaRecords = value;
+                    visaRecords = new List<VisaRecord>();
+                else
+                    visaRecords = value;
             }
         } 
         #endregion
@@ -115,7 +116,7 @@ namespace MyServiceLibrary
         /// <summary>
         /// Default constructor which create a default user.
         /// </summary>
-        public User() : this("unknown", "unknown", Gender.Unknown, DateTime.Now, new List<VisaRecord>()) { }
+        public User() : this("unknown", "unknown", Gender.Unknown, DateTime.Now) { }
 
         /// <summary>
         /// Constructor that creates a user by using input parameters.
@@ -126,7 +127,7 @@ namespace MyServiceLibrary
         /// <param name="dateOfBirth">The date of birth of a future user.</param>
         /// <param name="visaRecords">User's collection of visa records.</param>
         /// <param name="id">The id of a future user.</param>
-        public User(string firstname, string lastname, Gender gender, DateTime dateOfBirth, IEnumerable<VisaRecord> visaRecords, int id = 0)
+        public User(string firstname, string lastname, Gender gender, DateTime dateOfBirth, IEnumerable<VisaRecord> visaRecords = null, int id = 0)
         {
             Id = id;
             FirstName = firstname;
@@ -177,7 +178,20 @@ namespace MyServiceLibrary
         /// This method returns string representation of the current user.
         /// </summary>
         /// <returns>String that represent the current user.</returns>
-        public override string ToString() => String.Format("Id: " + Id + "; First name: " + FirstName + "; Last name: " + LastName + "; Date of birth: " + DateOfBirth);
+        public override string ToString()
+        {
+            StringBuilder stringUser = new StringBuilder();
+            stringUser.Append("Id: " + Id + "; ");
+            stringUser.Append("First name: " + FirstName + "; ");
+            stringUser.Append("Last name: " + LastName + "; ");
+            stringUser.Append("Gender: " + Gender + "; ");
+            stringUser.Append("Date of birth: " + DateOfBirth + "; ");
+
+            foreach (var visa in visaRecords)
+                stringUser.Append(visa + "; ");
+
+            return stringUser.ToString();
+        } 
 
         #region Private fields
         /// <summary>
@@ -295,6 +309,11 @@ namespace MyServiceLibrary
             Start = start;
             End = end;
         }
+
+        /// <summary>
+        /// Returns the string representation of a visa record.
+        /// </summary>
+        public override string ToString() => String.Format($"{Country} [Arrival: " + Start + ", Departure: " + End + "]");
 
         #region Private fields
         /// <summary>

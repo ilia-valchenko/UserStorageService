@@ -16,3 +16,4 @@ G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\bin\Debug\NLog.conf
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\bin\Debug\NLog.dll
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\bin\Debug\NLog.xml
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.dll.config
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.csprojResolveAssemblyReference.cache

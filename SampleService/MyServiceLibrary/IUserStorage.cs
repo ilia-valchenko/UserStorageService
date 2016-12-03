@@ -7,7 +7,7 @@ namespace MyServiceLibrary
     /// <summary>
     /// This interface prodives basic operations for storage such as CRUD and seeking operations.
     /// </summary>
-    public interface IUserStorage
+    public interface IUserStorage : IEnumerable<User>
     {
         /// <summary>
         /// This property returns the number of users in a storage.

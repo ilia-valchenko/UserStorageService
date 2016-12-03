@@ -43,13 +43,22 @@ namespace ServiceApplication
                          Gender.Male,
                          new DateTime(1955, 6, 8),
                          new List<VisaRecord>())
-                }; 
+                };
             #endregion
 
-            IPHostEntry ipHost = Dns.GetHostEntry("localhost");
+            foreach (var user in users)
+                uss.Add(user);
+
+            //User toshiro = new User("Toshiro", "Mifune", Gender.Male, new DateTime(1920, 4, 1));
+            //uss.Add(toshiro);
+
+            uss.PrintUsersToConsole();
+
+            #region Server emulator
+            /*IPHostEntry ipHost = Dns.GetHostEntry("localhost");
             IPAddress ipAddr = ipHost.AddressList[0];
             IPEndPoint endPoint = new IPEndPoint(ipAddr, 83);
-            Socket socketListener = new Socket(endPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);           
+            Socket socketListener = new Socket(endPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 
             try
             {
@@ -123,9 +132,10 @@ namespace ServiceApplication
             catch (SocketException exc)
             {
                 Console.WriteLine(exc.Message);
-            }
+            }*/
+            #endregion
 
-            Console.WriteLine("\nServer was stoped. Tap to continue...");
+            Console.WriteLine("\nTap to continue...");
             Console.ReadKey(true);
         }
 

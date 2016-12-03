@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -88,6 +89,20 @@ namespace MyServiceLibrary
                 throw new ArgumentNullException(nameof(criteria));
 
             return storage.Where(item => criteria(item.Value)).Select(item => item.Value);
+        }
+
+        /// <summary>
+        /// Returns an enumerator that iterates through a storage.
+        /// </summary>
+        public IEnumerator<User> GetEnumerator()
+        {
+            foreach (var item in storage)
+                yield return item.Value;
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
 
         /// <summary>

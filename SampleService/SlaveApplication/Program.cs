@@ -15,11 +15,11 @@ namespace SlaveApplication
     {
         static void Main(string[] args)
         {
+            AddNotificationMessage msg = new AddNotificationMessage(new User());
+
+            #region Client emulator
             int port = 83;
             string hostName = "localhost";
-
-            //NotificationMessage msg = new NotificationMessage(Commands.Add, new User(), 0);
-            AddNotificationMessage msg = new AddNotificationMessage(new User());
 
             IPHostEntry ipHost = Dns.GetHostEntry(hostName);
             IPAddress ipAddress = ipHost.AddressList[0];
@@ -30,13 +30,15 @@ namespace SlaveApplication
             try
             {
                 sender.Connect(endPoint);
+                //NetworkStream stream = new NetworkStream(sender);
                 sender.Send(TransformMessageToBytes(msg));
             }
             catch (SocketException exc)
             {
                 Console.WriteLine(exc.Message);
-            }
-            
+            } 
+            #endregion
+
             Console.WriteLine("\nTap to continue...");
             Console.ReadKey(true);
         }

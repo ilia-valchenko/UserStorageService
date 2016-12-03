@@ -16,14 +16,7 @@ namespace MyServiceLibrary
         /// Default constructor that creates a simple slave sservice with empty collection of users.
         /// </summary>
         /// <param name="storage">A storage for users.</param>
-        public SlaveService(IUserStorage storage) : this(storage, new List<User>(), new Logger()) { }
-
-        /// <summary>
-        /// This constructor takes an initializes collection of users.
-        /// </summary>
-        /// <param name="storage">A storage for users.</param>
-        /// <param name="users">The collection of users which must be added to the storage for the first time.</param>
-        public SlaveService(IUserStorage storage, IEnumerable<User> users) : this(storage, users, new Logger()) { }
+        //public SlaveService(IUserStorage storage) : this(storage, new List<User>(), new Logger()) { }
 
         /// <summary>
         /// This constructor takes an initializes collection of users.
@@ -31,13 +24,13 @@ namespace MyServiceLibrary
         /// <param name="storage">A storage for users.</param>
         /// <param name="users">The collection of users which must be added to the storage for the first time.</param>
         /// <param name="logger">The instance of class which implements ILogger interface.</param>
-        public SlaveService(IUserStorage storage, IEnumerable<User> users, ILogger logger)
+        public SlaveService(IUserStorage storage, ILogger logger)
         {
             if (storage == null)
                 throw new ArgumentNullException(nameof(storage));
 
-            if (users == null)
-                throw new ArgumentNullException(nameof(users));
+            /*if (users == null)
+                throw new ArgumentNullException(nameof(users));*/
 
             if (logger == null)
                 throw new ArgumentNullException(nameof(logger));
@@ -45,8 +38,8 @@ namespace MyServiceLibrary
             this.storage = storage;
             this.logger = logger;
 
-            foreach (var user in users)
-                this.storage.Add(user);
+            /*foreach (var user in users)
+                this.storage.Add(user);*/
         } 
         #endregion
 

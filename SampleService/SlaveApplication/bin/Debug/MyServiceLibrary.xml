@@ -252,20 +252,7 @@
             This class represents a slave service that executes only search operation. 
             </summary>
         </member>
-        <member name="M:MyServiceLibrary.SlaveService.#ctor(MyServiceLibrary.IUserStorage)">
-            <summary>
-            Default constructor that creates a simple slave sservice with empty collection of users.
-            </summary>
-            <param name="storage">A storage for users.</param>
-        </member>
-        <member name="M:MyServiceLibrary.SlaveService.#ctor(MyServiceLibrary.IUserStorage,System.Collections.Generic.IEnumerable{MyServiceLibrary.User})">
-            <summary>
-            This constructor takes an initializes collection of users.
-            </summary>
-            <param name="storage">A storage for users.</param>
-            <param name="users">The collection of users which must be added to the storage for the first time.</param>
-        </member>
-        <member name="M:MyServiceLibrary.SlaveService.#ctor(MyServiceLibrary.IUserStorage,System.Collections.Generic.IEnumerable{MyServiceLibrary.User},MyServiceLibrary.ILogger)">
+        <member name="M:MyServiceLibrary.SlaveService.#ctor(MyServiceLibrary.IUserStorage,MyServiceLibrary.ILogger)">
             <summary>
             This constructor takes an initializes collection of users.
             </summary>
@@ -339,6 +326,11 @@
             </summary>
             <param name="criteria">Represents the method for searching users by the given criteria.</param>
             <returns>Returns a collection of users which was found by using the criteria function.</returns>
+        </member>
+        <member name="M:MyServiceLibrary.UserStorage.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a storage.
+            </summary>
         </member>
         <member name="F:MyServiceLibrary.UserStorage.storage">
             <summary>
@@ -551,6 +543,11 @@
             <param name="country">The country which was visited.</param>
             <param name="start">The date of arrival.</param>
             <param name="end">The date of departure.</param>
+        </member>
+        <member name="M:MyServiceLibrary.VisaRecord.ToString">
+            <summary>
+            Returns the string representation of a visa record.
+            </summary>
         </member>
         <member name="F:MyServiceLibrary.VisaRecord.country">
             <summary>
