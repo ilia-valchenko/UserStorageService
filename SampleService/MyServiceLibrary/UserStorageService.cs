@@ -20,7 +20,7 @@ namespace MyServiceLibrary
     /// <summary>
     /// This class represents the simple user storage service which prodives basic operations such as addition, finding and removing users.
     /// </summary>
-    public sealed class UserStorageService : IUserStorageService
+    public sealed class UserStorageService : MarshalByRefObject, IUserStorageService
     {
         #region Constructors
         /// <summary>
@@ -40,6 +40,12 @@ namespace MyServiceLibrary
         /// <param name="storage">A storage for users.</param>
         /// <param name="users">The collection of users which must be added to the storage for the first time.</param>
         public UserStorageService(IUserStorage storage, IEnumerable<User> users) : this(storage, users, (ref int id) => id++, new Logger()) { }
+        /// <summary>
+        /// This constructor takes a storage for users and logger.
+        /// </summary>
+        /// <param name="storage">A storage for users.</param>
+        /// <param name="logger">The class which implements ILogger interfaces.</param>
+        public UserStorageService(IUserStorage storage, ILogger logger) : this(storage, new List<User>(), (ref int id) => id++, logger) { }
         /// <summary>
         /// This constructor takes an initializes collection of users and custom identifierChanger.
         /// </summary>

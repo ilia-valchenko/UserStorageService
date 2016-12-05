@@ -242,6 +242,22 @@
             </summary>
             <param name="command">Command.</param>
         </member>
+        <member name="M:MyServiceLibrary.NotificationMessage.TransfromBytesToNotificationMessage(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            This method transfroms the given array of bytes to the notification message.
+            </summary>
+            <param name="array">The array of bytes which represent our message.</param>
+            <param name="offset">The start index.</param>
+            <param name="count">The end index.</param>
+            <returns>Returns the class derived from NotificationMessage.</returns>
+        </member>
+        <member name="M:MyServiceLibrary.NotificationMessage.TransformMessageToBytes(MyServiceLibrary.NotificationMessage)">
+            <summary>
+            This method transfroms the given notification message to an array of bytes.
+            </summary>
+            <param name="msg">The given notification message.</param>
+            <returns>The array of bytes which represents our notification message.</returns>
+        </member>
         <member name="T:MyServiceLibrary.Commands">
             <summary>
             There are commands which our service will take from client.
@@ -273,6 +289,11 @@
             </summary>
             <param name="criteria">Represents the method for searching users by given criteria.</param>
             <returns>Returns a collection of users which was found by using the criteria function.</returns>
+        </member>
+        <member name="T:MyServiceLibrary.StopNotificationMessage">
+            <summary>
+            This message says that service should stop his work. 
+            </summary>
         </member>
         <member name="T:MyServiceLibrary.UserStorage">
             <summary>
@@ -368,6 +389,13 @@
             </summary>
             <param name="storage">A storage for users.</param>
             <param name="users">The collection of users which must be added to the storage for the first time.</param>
+        </member>
+        <member name="M:MyServiceLibrary.UserStorageService.#ctor(MyServiceLibrary.IUserStorage,MyServiceLibrary.ILogger)">
+            <summary>
+            This constructor takes a storage for users and logger.
+            </summary>
+            <param name="storage">A storage for users.</param>
+            <param name="logger">The class which implements ILogger interfaces.</param>
         </member>
         <member name="M:MyServiceLibrary.UserStorageService.#ctor(MyServiceLibrary.IUserStorage,System.Collections.Generic.IEnumerable{MyServiceLibrary.User},MyServiceLibrary.IdentifierChanger,MyServiceLibrary.ILogger)">
             <summary>

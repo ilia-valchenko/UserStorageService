@@ -15,7 +15,8 @@ namespace SlaveApplication
     {
         static void Main(string[] args)
         {
-            AddNotificationMessage msg = new AddNotificationMessage(new User());
+            //AddNotificationMessage msg = new AddNotificationMessage(new User());
+            StopNotificationMessage msg = new StopNotificationMessage();
 
             #region Client emulator
             int port = 83;
@@ -31,7 +32,7 @@ namespace SlaveApplication
             {
                 sender.Connect(endPoint);
                 //NetworkStream stream = new NetworkStream(sender);
-                sender.Send(TransformMessageToBytes(msg));
+                sender.Send(NotificationMessage.TransformMessageToBytes(msg));
             }
             catch (SocketException exc)
             {
@@ -41,19 +42,6 @@ namespace SlaveApplication
 
             Console.WriteLine("\nTap to continue...");
             Console.ReadKey(true);
-        }
-
-        public static byte[] TransformMessageToBytes(NotificationMessage msg)
-        {
-            if (msg == null)
-                return null;
-
-            using (MemoryStream stream = new MemoryStream())
-            {
-                BinaryFormatter binFormatter = new BinaryFormatter();
-                binFormatter.Serialize(stream, msg);
-                return stream.ToArray();
-            }
         }
     }
 }

@@ -9,7 +9,7 @@ namespace MyServiceLibrary
     /// <summary>
     /// This class represents a slave service that executes only search operation. 
     /// </summary>
-    public class SlaveService : IUserStorageService
+    public class SlaveService : MarshalByRefObject, IUserStorageService
     {
         #region Constructors
         /// <summary>

@@ -15,10 +15,6 @@ G:\GitEpam\UserStorageService\SampleService\ServiceApplication\obj\Debug\Service
 G:\GitEpam\UserStorageService\SampleService\ServiceApplication\obj\Debug\ServiceApplication.pdb
 G:\GitEpam\UserStorageService\SampleService\ServiceApplication\bin\Debug\ServiceApplication.exe
 G:\GitEpam\UserStorageService\SampleService\ServiceApplication\bin\Debug\ServiceApplication.pdb
-G:\GitEpam\UserStorageService\SampleService\ServiceApplication\bin\Debug\MyServiceLibrary.dll
-G:\GitEpam\UserStorageService\SampleService\ServiceApplication\bin\Debug\MyServiceLibrary.pdb
-G:\GitEpam\UserStorageService\SampleService\ServiceApplication\bin\Debug\MyServiceLibrary.xml
-G:\GitEpam\UserStorageService\SampleService\ServiceApplication\obj\Debug\ServiceApplication.csprojResolveAssemblyReference.cache
 G:\GitEpam\UserStorageService\SampleService\ServiceApplication\bin\Debug\NLog.config
 G:\GitEpam\UserStorageService\SampleService\ServiceApplication\bin\Debug\NLog.dll
 G:\GitEpam\UserStorageService\SampleService\ServiceApplication\bin\Debug\NLog.xml
