@@ -8,7 +8,8 @@ namespace MyServiceLibrary
     /// <summary>
     /// This class represents a simple storage for users with basic operations.
     /// </summary>
-    public sealed class UserStorage : IUserStorage
+    [Serializable]
+    public sealed class UserStorage : MarshalByRefObject, IUserStorage
     {
         /// <summary>
         /// This property returns the number of users in a storage.

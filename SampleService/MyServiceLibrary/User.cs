@@ -8,7 +8,7 @@ namespace MyServiceLibrary
     /// This class represents a simple user which contains information about it's first name, last name and a date of birth.
     /// </summary>
     [Serializable]
-    public class User : IEquatable<User>, IComparable<User>
+    public class User : MarshalByRefObject, IEquatable<User>, IComparable<User>
     {
         #region Public properties
         /// <summary>
@@ -118,6 +118,8 @@ namespace MyServiceLibrary
         /// </summary>
         public User() : this("unknown", "unknown", Gender.Unknown, DateTime.Now) { }
 
+        public User(string firstname, string lastname, string nameOfGender, DateTime dateOfBirth) : this(firstname, lastname, (Gender)Enum.Parse(typeof(Gender), nameOfGender), dateOfBirth) { }
+
         /// <summary>
         /// Constructor that creates a user by using input parameters.
         /// </summary>
@@ -191,7 +193,12 @@ namespace MyServiceLibrary
                 stringUser.Append(visa + "; ");
 
             return stringUser.ToString();
-        } 
+        }
+
+        public void Hello(string name)
+        {
+            Console.WriteLine($"{name} hello from User's method which is working in {AppDomain.CurrentDomain}");
+        }
 
         #region Private fields
         /// <summary>
@@ -224,6 +231,7 @@ namespace MyServiceLibrary
     /// <summary>
     /// Represents a gender of a user.
     /// </summary>
+    [Serializable]
     public enum Gender
     {
         Male,

@@ -1,81 +1,9 @@
-2016-12-04 16:21:30.9029|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 16:49:37.2283|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 16:50:34.6246|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 16:59:28.1331|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 17:01:23.1647|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 17:06:28.1362|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 18:34:31.9447|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 18:34:54.9842|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 19:56:40.7880|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 19:57:47.0713|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 19:58:44.1028|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 19:59:51.0026|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:00:26.4931|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:00:43.4491|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:01:02.9519|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:08:31.2876|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:13:30.9027|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:14:15.6826|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:15:28.3355|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:15:56.7653|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:16:49.9771|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:17:39.4051|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:18:22.7800|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:21:36.7671|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:23:19.4487|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:24:34.7800|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:27:02.4295|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:31:21.6021|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:38:09.3085|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:40:01.3758|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:40:24.4024|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:41:35.0720|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:45:27.3856|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:45:58.0159|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:46:25.9519|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:48:05.6581|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:48:53.4851|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:50:43.0982|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:51:57.8585|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:53:44.5682|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 20:55:28.0050|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 21:12:12.5627|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 21:13:08.0829|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 21:13:25.0177|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 21:14:08.5114|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 21:14:58.1851|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 21:16:13.9162|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 21:17:10.1732|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 21:18:07.8581|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 21:19:04.0638|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 21:20:25.5813|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 21:21:20.5547|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 21:21:43.2717|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 21:22:26.6543|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 21:26:50.1340|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 21:28:13.1429|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 21:28:50.0532|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 21:29:50.1179|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 21:30:43.3053|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 21:30:51.9928|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 21:35:00.1401|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 21:39:32.5550|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 22:29:00.8015|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 22:29:46.8988|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 22:30:38.6824|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 22:31:15.9657|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 22:32:22.3387|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 22:33:07.9556|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 22:33:22.7206|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 22:35:11.0681|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 22:35:44.8981|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 22:36:18.4842|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 22:37:14.9016|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 22:45:03.3474|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 22:46:08.0569|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 22:55:16.5498|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 22:55:57.2472|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 23:18:49.3291|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 23:41:05.7718|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 23:45:39.5674|INFO|MyServiceLibrary.Logger|Start UserStorageService.
-2016-12-04 23:55:10.5802|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-08 12:41:04.5480|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-08 12:41:04.6590|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-08 12:41:04.6650|INFO|MyServiceLibrary.Logger|Generated ID is: 1
+2016-12-08 12:41:04.6650|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-08 12:41:04.6650|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-08 12:41:04.6780|INFO|MyServiceLibrary.Logger|The name of the future state file: ussstate.xml
+2016-12-08 12:41:04.7250|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 1
+2016-12-08 12:41:04.7250|INFO|MyServiceLibrary.Logger|The last generated user's id: 1
+2016-12-08 12:41:04.8150|INFO|MyServiceLibrary.Logger|The state of the service was saved.
