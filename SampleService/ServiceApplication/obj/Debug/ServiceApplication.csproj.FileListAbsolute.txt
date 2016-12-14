@@ -18,3 +18,13 @@ G:\GitEpam\UserStorageService\SampleService\ServiceApplication\bin\Debug\Service
 G:\GitEpam\UserStorageService\SampleService\ServiceApplication\bin\Debug\NLog.config
 G:\GitEpam\UserStorageService\SampleService\ServiceApplication\bin\Debug\NLog.dll
 G:\GitEpam\UserStorageService\SampleService\ServiceApplication\bin\Debug\NLog.xml
+G:\GitEpam\UserStorageService\SampleService\ServiceApplication\bin\Debug\MyServiceLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\ServiceApplication\bin\Debug\MyServiceLibrary.pdb
+G:\GitEpam\UserStorageService\SampleService\ServiceApplication\bin\Debug\MyServiceLibrary.xml
+G:\GitEpam\UserStorageService\SampleService\ServiceApplication\obj\Debug\ServiceApplication.csprojResolveAssemblyReference.cache
+G:\GitEpam\UserStorageService\SampleService\ServiceApplication\bin\Debug\MessageLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\ServiceApplication\bin\Debug\UserLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\ServiceApplication\bin\Debug\MessageLibrary.pdb
+G:\GitEpam\UserStorageService\SampleService\ServiceApplication\bin\Debug\UserLibrary.pdb
+G:\GitEpam\UserStorageService\SampleService\ServiceApplication\bin\Debug\SearchCriteriaLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\ServiceApplication\bin\Debug\SearchCriteriaLibrary.pdb

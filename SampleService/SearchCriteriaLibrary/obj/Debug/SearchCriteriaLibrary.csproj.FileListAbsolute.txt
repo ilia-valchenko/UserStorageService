@@ -1,0 +1,7 @@
+G:\GitEpam\UserStorageService\SampleService\SearchCriteriaLibrary\bin\Debug\SearchCriteriaLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\SearchCriteriaLibrary\bin\Debug\SearchCriteriaLibrary.pdb
+G:\GitEpam\UserStorageService\SampleService\SearchCriteriaLibrary\bin\Debug\UserLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\SearchCriteriaLibrary\bin\Debug\UserLibrary.pdb
+G:\GitEpam\UserStorageService\SampleService\SearchCriteriaLibrary\obj\Debug\SearchCriteriaLibrary.csprojResolveAssemblyReference.cache
+G:\GitEpam\UserStorageService\SampleService\SearchCriteriaLibrary\obj\Debug\SearchCriteriaLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\SearchCriteriaLibrary\obj\Debug\SearchCriteriaLibrary.pdb

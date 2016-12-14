@@ -19,10 +19,14 @@ G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\Cas
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\Moq.dll
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\MyServiceLibrary.dll
-G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\MyServiceLibrary.pdb
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\MyServiceLibrary.xml
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\Castle.Core.xml
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\Moq.xml
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\NLog.config
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\NLog.dll
 G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\NLog.xml
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\MyServiceLibrary.pdb
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\MessageLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\UserLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\MessageLibrary.pdb
+G:\GitEpam\UserStorageService\SampleService\MyServiceLibrary.Tests\bin\Debug\UserLibrary.pdb

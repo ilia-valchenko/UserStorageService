@@ -34,7 +34,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>bin\Debug\myservicelibrarykey.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>myservicelibrarykey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
@@ -52,36 +52,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddNotificationMessage.cs" />
-    <Compile Include="DeleteNotificationMessage.cs" />
-    <Compile Include="GetUserByPredicateNotificationMessage.cs" />
-    <Compile Include="GetUsersByPredicateNotificationMessage.cs" />
     <Compile Include="ILogger.cs" />
-    <Compile Include="InvalidUserException.cs" />
-    <Compile Include="InvalidVisaRecordException.cs" />
+    <Compile Include="IMaster.cs" />
     <Compile Include="IUserStorage.cs" />
     <Compile Include="IUserStorageService.cs" />
     <Compile Include="Logger.cs" />
-    <Compile Include="NotificationMessage.cs" />
+    <Compile Include="Master.cs" />
+    <Compile Include="Slave.cs" />
     <Compile Include="SlaveService.cs" />
-    <Compile Include="StopNotificationMessage.cs" />
-    <Compile Include="UserAlreadyExistsException.cs" />
-    <Compile Include="UserDoesntExistException.cs" />
     <Compile Include="UserStorage.cs" />
     <Compile Include="UserStorageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="App.config" />
-    <None Include="bin\Debug\myservicelibrarykey.snk" />
+    <None Include="myservicelibrarykey.snk" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MessageLibrary\MessageLibrary.csproj">
+      <Project>{93bf9ace-3033-4e5f-9317-f092ce72aa6b}</Project>
+      <Name>MessageLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserLibrary\UserLibrary.csproj">
+      <Project>{cec00885-c181-49c4-8cc8-d2036ad238f4}</Project>
+      <Name>UserLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

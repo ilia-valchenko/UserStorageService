@@ -1,0 +1,9 @@
+G:\GitEpam\UserStorageService\SampleService\MessageLibrary\bin\Debug\MessageLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\MessageLibrary\bin\Debug\MessageLibrary.pdb
+G:\GitEpam\UserStorageService\SampleService\MessageLibrary\bin\Debug\UserLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\MessageLibrary\bin\Debug\UserLibrary.pdb
+G:\GitEpam\UserStorageService\SampleService\MessageLibrary\obj\Debug\MessageLibrary.csprojResolveAssemblyReference.cache
+G:\GitEpam\UserStorageService\SampleService\MessageLibrary\obj\Debug\MessageLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\MessageLibrary\obj\Debug\MessageLibrary.pdb
+G:\GitEpam\UserStorageService\SampleService\MessageLibrary\bin\Debug\SearchCriteriaLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\MessageLibrary\bin\Debug\SearchCriteriaLibrary.pdb

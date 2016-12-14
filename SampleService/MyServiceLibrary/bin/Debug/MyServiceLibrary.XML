@@ -4,70 +4,6 @@
         <name>MyServiceLibrary</name>
     </assembly>
     <members>
-        <member name="T:MyServiceLibrary.AddNotificationMessage">
-            <summary>
-            This class represents a message that inform services to add a new user.
-            </summary>
-        </member>
-        <member name="P:MyServiceLibrary.AddNotificationMessage.UserInstance">
-            <summary>
-            The instance of user which would be used in Add or Delete methods.
-            </summary>
-        </member>
-        <member name="M:MyServiceLibrary.AddNotificationMessage.#ctor(MyServiceLibrary.User)">
-            <summary>
-            Constructor that takes the user which must be added to the service.
-            </summary>
-            <param name="user">User that must be added.</param>
-        </member>
-        <member name="T:MyServiceLibrary.DeleteNotificationMessage">
-            <summary>
-            This class represents a message that inform services to delete a user.
-            </summary>
-        </member>
-        <member name="P:MyServiceLibrary.DeleteNotificationMessage.UserId">
-            <summary>
-            The id of the user which must be deleted.
-            </summary>
-        </member>
-        <member name="M:MyServiceLibrary.DeleteNotificationMessage.#ctor(System.Int32)">
-            <summary>
-            Constructor that takes the id of the user which must be deleted.
-            </summary>
-            <param name="userId">The id of the user which must be deleted.</param>
-        </member>
-        <member name="T:MyServiceLibrary.GetUserByPredicateNotificationMessage">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:MyServiceLibrary.GetUserByPredicateNotificationMessage.Criteria">
-            <summary>
-            This criteria is use to find a concrete user.
-            </summary>
-        </member>
-        <member name="M:MyServiceLibrary.GetUserByPredicateNotificationMessage.#ctor(System.Func{MyServiceLibrary.User,System.Boolean})">
-            <summary>
-            Constructor that takes a predicate.
-            </summary>
-            <param name="criteria">Search criteria method.</param>
-        </member>
-        <member name="T:MyServiceLibrary.GetUsersByPredicateNotificationMessage">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:MyServiceLibrary.GetUsersByPredicateNotificationMessage.Criteria">
-            <summary>
-            This criteria is use to find users.
-            </summary>
-        </member>
-        <member name="M:MyServiceLibrary.GetUsersByPredicateNotificationMessage.#ctor(System.Func{MyServiceLibrary.User,System.Boolean})">
-            <summary>
-            Constructor that takes a predicate.
-            </summary>
-            <param name="criteria">Search criteria method.</param>
-        </member>
         <member name="T:MyServiceLibrary.ILogger">
             <summary>
             This interface defines basic methods for logging messages.
@@ -97,14 +33,76 @@
             </summary>
             <param name="message"></param>
         </member>
-        <member name="T:MyServiceLibrary.InvalidUserException">
+        <member name="T:MyServiceLibrary.IMaster">
             <summary>
-            This exception will be thrown if the client would attempt to create an incorrect user.
+            This interface provides basic user service API.
             </summary>
         </member>
-        <member name="T:MyServiceLibrary.InvalidVisaRecordException">
+        <member name="P:MyServiceLibrary.IMaster.HostName">
             <summary>
-            This exception will be thrown if the client would attempt to create an incorrect visa record.
+            The name of a host.
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.IMaster.Port">
+            <summary>
+            Number of port.
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.IMaster.IpHost">
+            <summary>
+            Ip host.
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.IMaster.IpAddress">
+            <summary>
+            Ip address.
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.IMaster.EndPoint">
+            <summary>
+            Represents a network endpoint as an IP address and a port number.
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.IMaster.SocketListener">
+            <summary>
+            Socket is for listening incomming messages.
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.IMaster.Add(UserLibrary.User)">
+            <summary>
+            This method ads user to the storage.
+            </summary>
+            <param name="user">User which must be added.</param>
+        </member>
+        <member name="M:MyServiceLibrary.IMaster.Delete(UserLibrary.User)">
+            <summary>
+            This method removes user from the storage.
+            </summary>
+            <param name="user">A user that must be removed.</param>
+        </member>
+        <member name="M:MyServiceLibrary.IMaster.Delete(System.Int32)">
+            <summary>
+            This method removes user from the storage if it exists.
+            </summary>
+            <param name="userId">Id of the user which must be deleted.</param>
+        </member>
+        <member name="M:MyServiceLibrary.IMaster.GetUserByPredicate(System.Func{UserLibrary.User,System.Boolean})">
+            <summary>
+            This method finds a user by the given criteria.
+            </summary>
+            <param name="criteria">Represents the method for searching a specific user by given criterion.</param>
+            <returns>Returns user which was found by using the criteria function.</returns>
+        </member>
+        <member name="M:MyServiceLibrary.IMaster.GetUsersByPredicate(System.Func{UserLibrary.User,System.Boolean})">
+            <summary>
+            This method finds an array of users by the given criteria.
+            </summary>
+            <param name="criteria">Represents the method for searching users by given criteria.</param>
+            <returns>Returns a collection of users which was found by using the criteria function.</returns>
+        </member>
+        <member name="M:MyServiceLibrary.IMaster.StartListen">
+            <summary>
+            This method made to start listen a port of master or slave.
             </summary>
         </member>
         <member name="T:MyServiceLibrary.IUserStorage">
@@ -117,13 +115,13 @@
             This property returns the number of users in a storage.
             </summary>
         </member>
-        <member name="M:MyServiceLibrary.IUserStorage.Add(MyServiceLibrary.User)">
+        <member name="M:MyServiceLibrary.IUserStorage.Add(UserLibrary.User)">
             <summary>
             This method ads the given user to the storage if it doesn't exist.
             </summary>
             <param name="user">A user which must be added to the storage.</param>
         </member>
-        <member name="M:MyServiceLibrary.IUserStorage.Delete(MyServiceLibrary.User)">
+        <member name="M:MyServiceLibrary.IUserStorage.Delete(UserLibrary.User)">
             <summary>
             This method removes the given user from the storage if it exists.
             </summary>
@@ -135,20 +133,20 @@
             </summary>
             <param name="userId">An Id of the user which must be removed.</param>
         </member>
-        <member name="M:MyServiceLibrary.IUserStorage.Contains(MyServiceLibrary.User)">
+        <member name="M:MyServiceLibrary.IUserStorage.Contains(UserLibrary.User)">
             <summary>
             This method defines if the given user exist into the storage.
             </summary>
             <returns>Returns true if the given user exists.</returns>
         </member>
-        <member name="M:MyServiceLibrary.IUserStorage.GetUserByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
+        <member name="M:MyServiceLibrary.IUserStorage.GetUserByPredicate(System.Func{UserLibrary.User,System.Boolean})">
             <summary>
             This method finds a user by the given criteria.
             </summary>
             <param name="criteria">Represents the method for searching a specific user by given criterion.</param>
             <returns>Returns user which was found by using the criteria function.</returns>
         </member>
-        <member name="M:MyServiceLibrary.IUserStorage.GetUsersByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
+        <member name="M:MyServiceLibrary.IUserStorage.GetUsersByPredicate(System.Func{UserLibrary.User,System.Boolean})">
             <summary>
             This method finds a collection of users by the given criteria.
             </summary>
@@ -160,13 +158,13 @@
             This interface provides an API of CRUD and seeking operations for storage of users.
             </summary>
         </member>
-        <member name="M:MyServiceLibrary.IUserStorageService.Add(MyServiceLibrary.User)">
+        <member name="M:MyServiceLibrary.IUserStorageService.Add(UserLibrary.User)">
             <summary>
             This method ads users to the storage if this storage doesn't contain the user. 
             </summary>
             <param name="user">User which must be added.</param>
         </member>
-        <member name="M:MyServiceLibrary.IUserStorageService.Delete(MyServiceLibrary.User)">
+        <member name="M:MyServiceLibrary.IUserStorageService.Delete(UserLibrary.User)">
             <summary>
             This method removes user from the storage.
             </summary>
@@ -178,14 +176,14 @@
             </summary>
             <param name="userId">Id of the user which must be deleted.</param>
         </member>
-        <member name="M:MyServiceLibrary.IUserStorageService.GetUserByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
+        <member name="M:MyServiceLibrary.IUserStorageService.GetUserByPredicate(System.Func{UserLibrary.User,System.Boolean})">
             <summary>
             This method finds a user by the given criteria.
             </summary>
             <param name="criteria">Represents the method for searching a specific user by given criterion.</param>
             <returns>Returns user which was found by using the criteria function.</returns>
         </member>
-        <member name="M:MyServiceLibrary.IUserStorageService.GetUsersByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
+        <member name="M:MyServiceLibrary.IUserStorageService.GetUsersByPredicate(System.Func{UserLibrary.User,System.Boolean})">
             <summary>
             This method finds an array of users by the given predicate.
             </summary>
@@ -226,42 +224,192 @@
             </summary>
             <param name="message"></param>
         </member>
-        <member name="T:MyServiceLibrary.NotificationMessage">
+        <member name="T:MyServiceLibrary.Master">
             <summary>
-            This is the class that provides communications between services.
+            This class represents the main server that executes CRUD and seeking operations for user storage.
             </summary>
         </member>
-        <member name="P:MyServiceLibrary.NotificationMessage.Command">
+        <member name="P:MyServiceLibrary.Master.HostName">
             <summary>
-            Command.
+            The name of a host.
             </summary>
         </member>
-        <member name="M:MyServiceLibrary.NotificationMessage.#ctor(MyServiceLibrary.Commands)">
+        <member name="P:MyServiceLibrary.Master.Port">
             <summary>
-            Constructor that takes a command.
+            Number of port.
             </summary>
-            <param name="command">Command.</param>
         </member>
-        <member name="M:MyServiceLibrary.NotificationMessage.TransfromBytesToNotificationMessage(System.Byte[],System.Int32,System.Int32)">
+        <member name="P:MyServiceLibrary.Master.IpHost">
             <summary>
-            This method transfroms the given array of bytes to the notification message.
+            Ip host.
             </summary>
-            <param name="array">The array of bytes which represent our message.</param>
-            <param name="offset">The start index.</param>
-            <param name="count">The end index.</param>
-            <returns>Returns the class derived from NotificationMessage.</returns>
         </member>
-        <member name="M:MyServiceLibrary.NotificationMessage.TransformMessageToBytes(MyServiceLibrary.NotificationMessage)">
+        <member name="P:MyServiceLibrary.Master.IpAddress">
             <summary>
-            This method transfroms the given notification message to an array of bytes.
+            Ip address.
             </summary>
-            <param name="msg">The given notification message.</param>
-            <returns>The array of bytes which represents our notification message.</returns>
         </member>
-        <member name="T:MyServiceLibrary.Commands">
+        <member name="P:MyServiceLibrary.Master.EndPoint">
             <summary>
-            There are commands which our service will take from client.
+            Represents a network endpoint as an IP address and a port number.
             </summary>
+        </member>
+        <member name="P:MyServiceLibrary.Master.SocketListener">
+            <summary>
+            Socket is for listening incomming messages.
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.Master.#ctor(System.Int32,System.String,System.Int32[])">
+            <summary>
+            Constructor that takes the port which will be used to start the master.
+            </summary>
+            <param name="port">Number of port.</param>
+            <param name="hostName">Name of a host.</param>
+            <param name="portsOfSlaves">Numbers of ports of slaves.</param>
+        </member>
+        <member name="M:MyServiceLibrary.Master.Add(UserLibrary.User)">
+            <summary>
+            This method ads user to the storage.
+            </summary>
+            <param name="user">User which must be added.</param>
+        </member>
+        <member name="M:MyServiceLibrary.Master.Delete(UserLibrary.User)">
+            <summary>
+            This method removes user from the storage.
+            </summary>
+            <param name="user">A user that must be removed.</param>
+        </member>
+        <member name="M:MyServiceLibrary.Master.Delete(System.Int32)">
+            <summary>
+            This method removes user from the storage if it exists.
+            </summary>
+            <param name="userId">Id of the user which must be deleted.</param>
+        </member>
+        <member name="M:MyServiceLibrary.Master.GetUserByPredicate(System.Func{UserLibrary.User,System.Boolean})">
+            <summary>
+            This method finds a user by the given criteria.
+            </summary>
+            <param name="criteria">Represents the method for searching a specific user by given criterion.</param>
+            <returns>Returns user which was found by using the criteria function.</returns>
+        </member>
+        <member name="M:MyServiceLibrary.Master.GetUsersByPredicate(System.Func{UserLibrary.User,System.Boolean})">
+            <summary>
+            This method finds an array of users by the given criteria.
+            </summary>
+            <param name="criteria">Represents the method for searching users by given criteria.</param>
+            <returns>Returns a collection of users which was found by using the criteria function.</returns>
+        </member>
+        <member name="M:MyServiceLibrary.Master.StartListen">
+            <summary>
+            This method starts to listen an incomming messages.
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.Master.ExecuteCommand(MessageLibrary.NotificationMessage,System.Net.Sockets.Socket)">
+            <summary>
+            This method executes command which was been received from the notification message.
+            </summary>
+            <param name="message">The given notification message.</param>
+            <param name="handler">Socket for sending a response to a slave.</param>
+        </member>
+        <member name="M:MyServiceLibrary.Master.SendMessageTo(System.Net.Sockets.Socket,MessageLibrary.NotificationMessage)">
+            <summary>
+            This method sends a notification message to service that works on the given number of port.
+            </summary>
+            <param name="handler">The socket which was received from Accept method.</param>
+            <param name="message">The message that must be sent.</param>
+        </member>
+        <member name="T:MyServiceLibrary.Slave">
+            <summary>
+            This class represent a slave. It'a a master with limited functionality. 
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.Slave.HostName">
+            <summary>
+            The name of a host.
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.Slave.Port">
+            <summary>
+            Number of port.
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.Slave.IpHost">
+            <summary>
+            Ip host.
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.Slave.IpAddress">
+            <summary>
+            Ip address.
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.Slave.EndPoint">
+            <summary>
+            Represents a network endpoint as an IP address and a port number.
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.Slave.SocketListener">
+            <summary>
+            Socket is for listening incomming messages.
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.Slave.#ctor(System.Int32,System.String,System.Int32)">
+            <summary>
+            Constructor that takes the port which will be used to start the master.
+            </summary>
+            <param name="port">Number of port.</param>
+            <param name="hostName">Name of a host.</param>
+            <param name="masterPort">Number of master port.</param>
+        </member>
+        <member name="M:MyServiceLibrary.Slave.GetUserByPredicate(System.Func{UserLibrary.User,System.Boolean})">
+            <summary>
+            This method finds a user by the given criteria.
+            </summary>
+            <param name="criteria">Represents the method for searching a specific user by given criterion.</param>
+            <returns>Returns user which was found by using the criteria function.</returns>
+        </member>
+        <member name="M:MyServiceLibrary.Slave.GetUsersByPredicate(System.Func{UserLibrary.User,System.Boolean})">
+            <summary>
+            This method finds an array of users by the given criteria.
+            </summary>
+            <param name="criteria">Represents the method for searching users by given criteria.</param>
+            <returns>Returns a collection of users which was found by using the criteria function.</returns>
+        </member>
+        <member name="M:MyServiceLibrary.Slave.StartListen">
+            <summary>
+            This method starts to listen an incomming messages.
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.Slave.Add(UserLibrary.User)">
+            <summary>
+            This method ads user to the storage.
+            </summary>
+            <param name="user">User which must be added.</param>
+        </member>
+        <member name="M:MyServiceLibrary.Slave.Delete(System.Int32)">
+            <summary>
+            This method removes user from the storage if it exists.
+            </summary>
+            <param name="userId">Id of the user which must be deleted.</param>
+        </member>
+        <member name="M:MyServiceLibrary.Slave.Delete(UserLibrary.User)">
+            <summary>
+            This method removes user from the storage.
+            </summary>
+            <param name="user">A user that must be removed.</param>
+        </member>
+        <member name="M:MyServiceLibrary.Slave.ExecuteCommand(MessageLibrary.NotificationMessage)">
+            <summary>
+            This method executes command which was been received from the notification message.
+            </summary>
+            <param name="message">The given notification message.</param>
+        </member>
+        <member name="M:MyServiceLibrary.Slave.SendMessageTo(System.Net.Sockets.Socket,MessageLibrary.NotificationMessage)">
+            <summary>
+            This method sends a notification message to service that works on the given number of port.
+            </summary>
+            <param name="handler">The socket which was received from Accept method.</param>
+            <param name="message">The message that must be sent.</param>
         </member>
         <member name="T:MyServiceLibrary.SlaveService">
             <summary>
@@ -276,24 +424,19 @@
             <param name="users">The collection of users which must be added to the storage for the first time.</param>
             <param name="logger">The instance of class which implements ILogger interface.</param>
         </member>
-        <member name="M:MyServiceLibrary.SlaveService.GetUserByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
+        <member name="M:MyServiceLibrary.SlaveService.GetUserByPredicate(System.Func{UserLibrary.User,System.Boolean})">
             <summary>
             This method finds a user by the given criteria.
             </summary>
             <param name="criteria">Represents the method for searching a specific user by given criterion.</param>
             <returns>Returns user which was found by using the criteria function.</returns>
         </member>
-        <member name="M:MyServiceLibrary.SlaveService.GetUsersByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
+        <member name="M:MyServiceLibrary.SlaveService.GetUsersByPredicate(System.Func{UserLibrary.User,System.Boolean})">
             <summary>
             This method finds an array of users by the given criteria.
             </summary>
             <param name="criteria">Represents the method for searching users by given criteria.</param>
             <returns>Returns a collection of users which was found by using the criteria function.</returns>
-        </member>
-        <member name="T:MyServiceLibrary.StopNotificationMessage">
-            <summary>
-            This message says that service should stop his work. 
-            </summary>
         </member>
         <member name="T:MyServiceLibrary.UserStorage">
             <summary>
@@ -310,13 +453,13 @@
             A default constructor that creates an empty storage.
             </summary>
         </member>
-        <member name="M:MyServiceLibrary.UserStorage.Add(MyServiceLibrary.User)">
+        <member name="M:MyServiceLibrary.UserStorage.Add(UserLibrary.User)">
             <summary>
             This method ads users to the storage. 
             </summary>
             <param name="user">User which must be added.</param>
         </member>
-        <member name="M:MyServiceLibrary.UserStorage.Delete(MyServiceLibrary.User)">
+        <member name="M:MyServiceLibrary.UserStorage.Delete(UserLibrary.User)">
             <summary>
             This method removes user from the storage.
             </summary>
@@ -328,20 +471,20 @@
             </summary>
             <param name="userId">Id of the user which must be deleted.</param>
         </member>
-        <member name="M:MyServiceLibrary.UserStorage.Contains(MyServiceLibrary.User)">
+        <member name="M:MyServiceLibrary.UserStorage.Contains(UserLibrary.User)">
             <summary>
             This method defines if the given user exist into the storage.
             </summary>
             <returns>Returns true if the given user exists.</returns>
         </member>
-        <member name="M:MyServiceLibrary.UserStorage.GetUserByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
+        <member name="M:MyServiceLibrary.UserStorage.GetUserByPredicate(System.Func{UserLibrary.User,System.Boolean})">
             <summary>
             This method finds a user by the given criteria. 
             </summary>
             <param name="criteria">Represents the method for searching a specific user by given criterion.</param>
             <returns>Returns the seeking user.</returns>
         </member>
-        <member name="M:MyServiceLibrary.UserStorage.GetUsersByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
+        <member name="M:MyServiceLibrary.UserStorage.GetUsersByPredicate(System.Func{UserLibrary.User,System.Boolean})">
             <summary>
             This method finds a collection of users by the given criteria.
             </summary>
@@ -370,9 +513,14 @@
             This class represents the simple user storage service which prodives basic operations such as addition, finding and removing users.
             </summary>
         </member>
+        <member name="M:MyServiceLibrary.UserStorageService.#ctor">
+            <summary>
+            Default constructor; 
+            </summary>
+        </member>
         <member name="M:MyServiceLibrary.UserStorageService.#ctor(MyServiceLibrary.IUserStorage)">
             <summary>
-            Default constructor that creates a simple service with empty collection of users and basic autoincrement id.
+            The constructor that creates a simple service with empty collection of users and basic autoincrement id.
             </summary>
             <param name="storage">A storage for users.</param>
         </member>
@@ -383,7 +531,7 @@
             <param name="storage">A storage for users.</param>
             <param name="identifierChanger">Delegate which encapsulates method to change user's id.</param>
         </member>
-        <member name="M:MyServiceLibrary.UserStorageService.#ctor(MyServiceLibrary.IUserStorage,System.Collections.Generic.IEnumerable{MyServiceLibrary.User})">
+        <member name="M:MyServiceLibrary.UserStorageService.#ctor(MyServiceLibrary.IUserStorage,System.Collections.Generic.IEnumerable{UserLibrary.User})">
             <summary>
             This constructor takes an initializes collection of users.
             </summary>
@@ -397,7 +545,7 @@
             <param name="storage">A storage for users.</param>
             <param name="logger">The class which implements ILogger interfaces.</param>
         </member>
-        <member name="M:MyServiceLibrary.UserStorageService.#ctor(MyServiceLibrary.IUserStorage,System.Collections.Generic.IEnumerable{MyServiceLibrary.User},MyServiceLibrary.IdentifierChanger,MyServiceLibrary.ILogger)">
+        <member name="M:MyServiceLibrary.UserStorageService.#ctor(MyServiceLibrary.IUserStorage,System.Collections.Generic.IEnumerable{UserLibrary.User},MyServiceLibrary.IdentifierChanger,MyServiceLibrary.ILogger)">
             <summary>
             This constructor takes an initializes collection of users and custom identifierChanger.
             </summary>
@@ -406,13 +554,13 @@
             <param name="identifierChanger">Delegate which encapsulates method to change user's id.</param>
             <param name="logger">The instance of class which implements ILogger interface.</param>
         </member>
-        <member name="M:MyServiceLibrary.UserStorageService.Add(MyServiceLibrary.User)">
+        <member name="M:MyServiceLibrary.UserStorageService.Add(UserLibrary.User)">
             <summary>
             This method ads users to the storage if this storage doesn't contain the user. 
             </summary>
             <param name="user">User which must be added.</param>
         </member>
-        <member name="M:MyServiceLibrary.UserStorageService.Delete(MyServiceLibrary.User)">
+        <member name="M:MyServiceLibrary.UserStorageService.Delete(UserLibrary.User)">
             <summary>
             This method removes user from the storage.
             </summary>
@@ -424,14 +572,14 @@
             </summary>
             <param name="userId">Id of the user which must be deleted.</param>
         </member>
-        <member name="M:MyServiceLibrary.UserStorageService.GetUserByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
+        <member name="M:MyServiceLibrary.UserStorageService.GetUserByPredicate(System.Func{UserLibrary.User,System.Boolean})">
             <summary>
             This method finds a user by the given criteria.
             </summary>
             <param name="criteria">Represents the method for searching a specific user by given criterion.</param>
             <returns>Returns user which was found by using the criteria function.</returns>
         </member>
-        <member name="M:MyServiceLibrary.UserStorageService.GetUsersByPredicate(System.Func{MyServiceLibrary.User,System.Boolean})">
+        <member name="M:MyServiceLibrary.UserStorageService.GetUsersByPredicate(System.Func{UserLibrary.User,System.Boolean})">
             <summary>
             This method finds an array of users by the given criteria.
             </summary>
@@ -441,155 +589,6 @@
         <member name="M:MyServiceLibrary.UserStorageService.SaveState">
             <summary>
             This method saves a state of the service to xml file. File will contain the last generaed id and the number of users in the storage.
-            </summary>
-        </member>
-        <member name="T:MyServiceLibrary.User">
-            <summary>
-            This class represents a simple user which contains information about it's first name, last name and a date of birth.
-            </summary>
-        </member>
-        <member name="P:MyServiceLibrary.User.Id">
-            <summary>
-            User's id property.
-            </summary>
-        </member>
-        <member name="P:MyServiceLibrary.User.FirstName">
-            <summary>
-            User's first name property.
-            </summary>
-        </member>
-        <member name="P:MyServiceLibrary.User.LastName">
-            <summary>
-            User's last name property.
-            </summary>
-        </member>
-        <member name="P:MyServiceLibrary.User.Gender">
-            <summary>
-            User's gender.
-            </summary>
-        </member>
-        <member name="P:MyServiceLibrary.User.DateOfBirth">
-            <summary>
-            User's date of birth property.
-            </summary>
-        </member>
-        <member name="P:MyServiceLibrary.User.VisaRecords">
-            <summary>
-            User's visa records.
-            </summary>
-        </member>
-        <member name="M:MyServiceLibrary.User.#ctor">
-            <summary>
-            Default constructor which create a default user.
-            </summary>
-        </member>
-        <member name="M:MyServiceLibrary.User.#ctor(System.String,System.String,MyServiceLibrary.Gender,System.DateTime,System.Collections.Generic.IEnumerable{MyServiceLibrary.VisaRecord},System.Int32)">
-            <summary>
-            Constructor that creates a user by using input parameters.
-            </summary>
-            <param name="firstname">The first name of a future user.</param>
-            <param name="lastname">The last name of a future user.</param>
-            <param name="gender">The gender of a future user.</param>
-            <param name="dateOfBirth">The date of birth of a future user.</param>
-            <param name="visaRecords">User's collection of visa records.</param>
-            <param name="id">The id of a future user.</param>
-        </member>
-        <member name="M:MyServiceLibrary.User.Equals(MyServiceLibrary.User)">
-            <summary>
-            This method determines if the current user is equals to another one.
-            </summary>
-            <param name="other">Another user.</param>
-            <returns>Returns true if they are equal.</returns>
-        </member>
-        <member name="M:MyServiceLibrary.User.CompareTo(MyServiceLibrary.User)">
-            <summary>
-            This method compares the current user to another one.
-            </summary>
-            <param name="other">Another user.</param>
-            <returns>Returns 0 if users are equal. Returns -1 if the current user is less than another. Returns 1 if the current user is greater than given another.</returns>
-        </member>
-        <member name="M:MyServiceLibrary.User.ToString">
-            <summary>
-            This method returns string representation of the current user.
-            </summary>
-            <returns>String that represent the current user.</returns>
-        </member>
-        <member name="F:MyServiceLibrary.User.id">
-            <summary>
-            User's Id.
-            </summary>
-        </member>
-        <member name="F:MyServiceLibrary.User.firstName">
-            <summary>
-            User's first name.
-            </summary>
-        </member>
-        <member name="F:MyServiceLibrary.User.lastName">
-            <summary>
-            User's last name.
-            </summary>
-        </member>
-        <member name="F:MyServiceLibrary.User.dateOfBirth">
-            <summary>
-            User's date of birth.
-            </summary>
-        </member>
-        <member name="F:MyServiceLibrary.User.visaRecords">
-            <summary>
-            The list of the user's visa records.
-            </summary>
-        </member>
-        <member name="T:MyServiceLibrary.Gender">
-            <summary>
-            Represents a gender of a user.
-            </summary>
-        </member>
-        <member name="T:MyServiceLibrary.VisaRecord">
-            <summary>
-            This structure represetns a visa record. Record contains information country which was visited by user and visit date.
-            </summary>
-        </member>
-        <member name="P:MyServiceLibrary.VisaRecord.Country">
-            <summary>
-            Country's property
-            </summary>
-        </member>
-        <member name="P:MyServiceLibrary.VisaRecord.Start">
-            <summary>
-            Start's property
-            </summary>
-        </member>
-        <member name="P:MyServiceLibrary.VisaRecord.End">
-            <summary>
-            Start's property
-            </summary>
-        </member>
-        <member name="M:MyServiceLibrary.VisaRecord.#ctor(System.String,System.DateTime,System.DateTime)">
-            <summary>
-            Custom constructor for visa record.
-            </summary>
-            <param name="country">The country which was visited.</param>
-            <param name="start">The date of arrival.</param>
-            <param name="end">The date of departure.</param>
-        </member>
-        <member name="M:MyServiceLibrary.VisaRecord.ToString">
-            <summary>
-            Returns the string representation of a visa record.
-            </summary>
-        </member>
-        <member name="F:MyServiceLibrary.VisaRecord.country">
-            <summary>
-            The country which was visited by user.
-            </summary>
-        </member>
-        <member name="F:MyServiceLibrary.VisaRecord.start">
-            <summary>
-            The date when the user has arrived in the country. 
-            </summary>
-        </member>
-        <member name="F:MyServiceLibrary.VisaRecord.end">
-            <summary>
-            The date when the user left the country
             </summary>
         </member>
     </members>

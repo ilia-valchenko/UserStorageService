@@ -63,9 +63,17 @@
     <Compile Include="UserTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MessageLibrary\MessageLibrary.csproj">
+      <Project>{93bf9ace-3033-4e5f-9317-f092ce72aa6b}</Project>
+      <Name>MessageLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyServiceLibrary\MyServiceLibrary.csproj">
       <Project>{83615058-2919-4ca9-84c2-5368cef9f281}</Project>
       <Name>MyServiceLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserLibrary\UserLibrary.csproj">
+      <Project>{cec00885-c181-49c4-8cc8-d2036ad238f4}</Project>
+      <Name>UserLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,4 @@
+G:\GitEpam\UserStorageService\SampleService\NotificationMessagesLibrary\bin\Debug\NotificationMessagesLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\NotificationMessagesLibrary\bin\Debug\NotificationMessagesLibrary.pdb
+G:\GitEpam\UserStorageService\SampleService\NotificationMessagesLibrary\obj\Debug\NotificationMessagesLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\NotificationMessagesLibrary\obj\Debug\NotificationMessagesLibrary.pdb

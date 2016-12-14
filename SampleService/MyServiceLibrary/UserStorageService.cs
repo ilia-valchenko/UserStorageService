@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Xml;
+using UserLibrary;
 
 namespace MyServiceLibrary
 {
@@ -24,7 +25,11 @@ namespace MyServiceLibrary
     {
         #region Constructors
         /// <summary>
-        /// Default constructor that creates a simple service with empty collection of users and basic autoincrement id.
+        /// Default constructor; 
+        /// </summary>
+        public UserStorageService() : this(new UserStorage()) { }
+        /// <summary>
+        /// The constructor that creates a simple service with empty collection of users and basic autoincrement id.
         /// </summary>
         /// <param name="storage">A storage for users.</param>
         public UserStorageService(IUserStorage storage) : this(storage, new List<User>(), (ref int id) => id++, new Logger()) { }
@@ -339,14 +344,6 @@ namespace MyServiceLibrary
             {
                 logger.WriteError(exc.Message);
             }
-        }
-
-        public void PrintUsersToConsole()
-        {
-            Console.WriteLine("All users:" + Environment.NewLine);
-
-            foreach (var user in storage)
-                Console.WriteLine(user + Environment.NewLine);
         }
 
         #region Private fields

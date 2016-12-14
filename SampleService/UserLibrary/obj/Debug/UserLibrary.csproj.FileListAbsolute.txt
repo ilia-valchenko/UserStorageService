@@ -1,0 +1,4 @@
+G:\GitEpam\UserStorageService\SampleService\UserLibrary\bin\Debug\UserLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\UserLibrary\bin\Debug\UserLibrary.pdb
+G:\GitEpam\UserStorageService\SampleService\UserLibrary\obj\Debug\UserLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\UserLibrary\obj\Debug\UserLibrary.pdb
