@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 using UserLibrary;
 using MessageLibrary;
 
@@ -78,15 +75,22 @@ namespace MyServiceLibrary
 
             var user = uss.GetUserByPredicate(criteria);
 
-            // If we can't find user in local storage
+            // If we can't find user in a local storage
             if (user == null)
             {
+                Console.Write("User wasn't found in a local storage. Start to asking the master.");
+
                 GetUserByPredicateNotificationMessage message = new GetUserByPredicateNotificationMessage(criteria);
-                SendMessageTo(masterPort, message);
-                return null;
+                AddNotificationMessage receivedAnswer = SendMessageTo(masterPort, message) as AddNotificationMessage;
+
+                if (receivedAnswer.User != null)
+                    return receivedAnswer.User;
+                else
+                    return null;
             }
             else
             {
+                Console.WriteLine("User was found in a local storage.");
                 return user;
             }
         }
@@ -106,7 +110,47 @@ namespace MyServiceLibrary
         /// </summary>
         public void StartListen()
         {
-            throw new NotImplementedException();
+            try
+            {
+                SocketListener.Bind(EndPoint);
+                SocketListener.Listen(10);
+                bool isWorkFinished = false;
+
+                while (!isWorkFinished)
+                {
+                    Console.WriteLine("\nSlave is ready to accept a new client...");
+
+                    Socket handler = SocketListener.Accept();
+                    byte[] bytes = new byte[2048];
+                    int numberOfReceivedBytes = handler.Receive(bytes);
+
+                    NotificationMessage receivedMessage = null;
+
+                    try
+                    {
+                        receivedMessage = NotificationMessage.TransfromBytesToNotificationMessage(bytes, 0, numberOfReceivedBytes);
+                        Console.WriteLine("Slave received an answer from the master.");
+                    }
+                    catch (Exception exc)
+                    {
+                        Console.WriteLine(exc.Message);
+                    }
+
+                    if (receivedMessage is StopNotificationMessage)
+                    {
+                        isWorkFinished = true;
+                        Console.WriteLine("Stop message was received. The master is stoping.");
+                    }
+                    else
+                    {
+                        ExecuteCommand(receivedMessage);
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+            }
         }
 
         #region Invalid slave's operation
@@ -151,19 +195,11 @@ namespace MyServiceLibrary
             switch (message.Command)
             {
                 case Commands.Add:
-                    Console.WriteLine("The client is calling Add method.");
+                    Console.WriteLine("Master said that slave must add a new user to inner storage.");
                     break;
 
                 case Commands.Delete:
-                    Console.WriteLine("The client is calling Delete method.");
-                    break;
-
-                case Commands.GetUserByPredicate:
-                    Console.WriteLine("The client is calling GetUserByPredicate method.");
-                    break;
-
-                case Commands.GetUsersByPredicate:
-                    Console.WriteLine("The client is calling GetUsersByPredicate method.");
+                    Console.WriteLine("Master said that slave should delete the user from inner storage.");
                     break;
 
                 default:
@@ -173,29 +209,11 @@ namespace MyServiceLibrary
         }
 
         /// <summary>
-        /// This method sends a notification message to service that works on the given number of port.
+        /// This method sends a notification message to the service which works on the given port.
         /// </summary>
-        /// <param name="handler">The socket which was received from Accept method.</param>
-        /// <param name="message">The message that must be sent.</param>
-        private void SendMessageTo(Socket handler, NotificationMessage message)
-        {
-            byte[] bytesOfMessage = null;
-
-            try
-            {
-                bytesOfMessage = NotificationMessage.TransformMessageToBytes(message);
-            }
-            catch (Exception exc)
-            {
-                Console.WriteLine(exc.Message);
-            }
-
-            handler.Send(bytesOfMessage);
-
-            Console.WriteLine("The message was sent.");
-        }
-
-        private void SendMessageTo(int port, NotificationMessage message)
+        /// <param name="port">Number of a port.</param>
+        /// <param name="message">Notification message that must be sent.</param>
+        private NotificationMessage SendMessageTo(int port, NotificationMessage message)
         {
             byte[] bytesOfMessage = null;
             IPHostEntry ipHost = Dns.GetHostEntry("localhost");
@@ -213,10 +231,18 @@ namespace MyServiceLibrary
             }
 
             sender.Connect(endPoint);
-
             sender.Send(bytesOfMessage);
 
-            Console.WriteLine("The message was sent.");
+            Console.WriteLine("Slave sent message to the master.");
+            Console.WriteLine("Wait an answer from the master.");
+
+            byte[] bytesOfReceivedMessage = new byte[2048];
+            int numberOfReceivedBytes = sender.Receive(bytesOfReceivedMessage);
+            NotificationMessage msg = NotificationMessage.TransfromBytesToNotificationMessage(bytesOfReceivedMessage, 0, numberOfReceivedBytes);
+
+            Console.WriteLine($"The received command from the master is {msg.Command}.");
+
+            return msg;
         }
 
         private UserStorageService uss;

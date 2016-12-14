@@ -404,12 +404,12 @@
             </summary>
             <param name="message">The given notification message.</param>
         </member>
-        <member name="M:MyServiceLibrary.Slave.SendMessageTo(System.Net.Sockets.Socket,MessageLibrary.NotificationMessage)">
+        <member name="M:MyServiceLibrary.Slave.SendMessageTo(System.Int32,MessageLibrary.NotificationMessage)">
             <summary>
-            This method sends a notification message to service that works on the given number of port.
+            This method sends a notification message to the service which works on the given port.
             </summary>
-            <param name="handler">The socket which was received from Accept method.</param>
-            <param name="message">The message that must be sent.</param>
+            <param name="port">Number of a port.</param>
+            <param name="message">Notification message that must be sent.</param>
         </member>
         <member name="T:MyServiceLibrary.SlaveService">
             <summary>

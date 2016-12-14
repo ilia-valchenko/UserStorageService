@@ -204,12 +204,12 @@ namespace MyServiceLibrary
 
                 case Commands.GetUserByPredicate:
                     Console.WriteLine("The client is calling GetUserByPredicate method.");
-                    /*GetUserByPredicateNotificationMessage msg = message as GetUserByPredicateNotificationMessage;
+                    GetUserByPredicateNotificationMessage msg = message as GetUserByPredicateNotificationMessage;
                     User user = uss.GetUserByPredicate(msg.Criteria);
                     AddNotificationMessage response = new AddNotificationMessage(user);
                     byte[] bytesOfResponse = NotificationMessage.TransformMessageToBytes(response);
                     handler.Send(bytesOfResponse);
-                    Console.WriteLine("The answer from master was sent.");*/
+                    Console.WriteLine("The answer from master was sent.");
                     break;
 
                 case Commands.GetUsersByPredicate:

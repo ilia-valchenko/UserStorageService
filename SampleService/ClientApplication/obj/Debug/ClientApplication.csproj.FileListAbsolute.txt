@@ -7,7 +7,6 @@ G:\GitEpam\UserStorageService\SampleService\ClientApplication\bin\Debug\NLog.dll
 G:\GitEpam\UserStorageService\SampleService\ClientApplication\bin\Debug\MyServiceLibrary.pdb
 G:\GitEpam\UserStorageService\SampleService\ClientApplication\bin\Debug\MyServiceLibrary.xml
 G:\GitEpam\UserStorageService\SampleService\ClientApplication\bin\Debug\NLog.xml
-G:\GitEpam\UserStorageService\SampleService\ClientApplication\obj\Debug\ClientApplication.csprojResolveAssemblyReference.cache
 G:\GitEpam\UserStorageService\SampleService\ClientApplication\obj\Debug\ClientApplication.exe
 G:\GitEpam\UserStorageService\SampleService\ClientApplication\obj\Debug\ClientApplication.pdb
 G:\GitEpam\UserStorageService\SampleService\ClientApplication\bin\Debug\MessageLibrary.dll
@@ -16,3 +15,4 @@ G:\GitEpam\UserStorageService\SampleService\ClientApplication\bin\Debug\MessageL
 G:\GitEpam\UserStorageService\SampleService\ClientApplication\bin\Debug\UserLibrary.pdb
 G:\GitEpam\UserStorageService\SampleService\ClientApplication\bin\Debug\SearchCriteriaLibrary.dll
 G:\GitEpam\UserStorageService\SampleService\ClientApplication\bin\Debug\SearchCriteriaLibrary.pdb
+G:\GitEpam\UserStorageService\SampleService\ClientApplication\obj\Debug\ClientApplication.csprojResolveAssemblyReference.cache

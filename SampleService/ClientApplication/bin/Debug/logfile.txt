@@ -53,3 +53,52 @@
 2016-12-14 13:14:20.9647|INFO|MyServiceLibrary.Logger|Start UserStorageService.
 2016-12-14 13:14:20.9817|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
 2016-12-14 13:14:20.9817|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-14 13:47:18.8438|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-14 13:47:18.8618|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-14 13:47:18.8618|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-14 13:48:23.5755|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-14 13:48:23.6205|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-14 13:48:23.6205|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-14 13:50:41.8775|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-14 13:57:09.9926|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-14 13:57:10.0447|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-14 13:57:10.0607|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-14 13:57:47.7418|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-14 13:57:48.0128|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-14 13:57:48.0128|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-14 14:01:51.0947|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-14 14:01:51.3897|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-14 14:01:51.3897|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-14 14:11:03.4783|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-14 14:11:03.5253|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-14 14:11:03.6213|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-14 14:15:07.3603|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-14 14:15:07.5573|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-14 14:15:07.5633|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-14 14:27:21.7723|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-14 14:27:21.8373|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-14 14:27:21.8373|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-14 14:29:38.5701|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-14 14:29:38.7131|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-14 14:29:38.7131|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-14 14:30:43.8208|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-14 14:30:43.8388|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-14 14:30:43.8388|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-14 14:31:28.7524|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-14 14:31:28.7704|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-14 14:31:28.7704|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-14 14:32:08.6777|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-14 14:32:08.6967|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-14 14:32:08.7027|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-14 14:32:27.6418|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-14 14:32:28.1008|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-14 14:32:28.1008|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-14 14:33:17.2356|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-14 14:33:17.5196|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-14 14:33:17.5956|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-14 14:34:09.7916|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-14 14:34:09.9896|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-14 14:34:10.0556|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-14 14:35:58.6698|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-14 14:35:58.6878|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-14 14:35:58.6878|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.

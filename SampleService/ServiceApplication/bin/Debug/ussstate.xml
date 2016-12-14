@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<userStorageService>
+  <lastGeneratedId>2</lastGeneratedId>
+  <numberOfUsers>2</numberOfUsers>
+  <users>
+    <user>
+      <id>1</id>
+      <firstName>Ilia</firstName>
+      <lastName>Valchenko</lastName>
+      <gender>Male</gender>
+      <dateOfBirth>1995-08-02T00:00:00</dateOfBirth>
+      <visaRecords />
+    </user>
+    <user>
+      <id>2</id>
+      <firstName>Toshiro</firstName>
+      <lastName>Mifune</lastName>
+      <gender>Male</gender>
+      <dateOfBirth>1920-04-01T00:00:00</dateOfBirth>
+      <visaRecords />
+    </user>
+  </users>
+</userStorageService>
