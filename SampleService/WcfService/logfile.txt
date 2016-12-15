@@ -1,0 +1,10 @@
+2016-12-15 12:28:18.8110|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-15 12:28:19.1080|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 12:28:34.6589|INFO|MyServiceLibrary.Logger|Generated ID is: 1
+2016-12-15 12:28:34.6849|INFO|MyServiceLibrary.Logger|The user which will be added to the storage is: Id: 0; First name: Leonard; Last name: Cohen; Gender: Male; Date of birth: 21.09.1934 0:00:00; 
+2016-12-15 12:28:34.7609|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Leonard; Last name: Cohen; Gender: Male; Date of birth: 21.09.1934 0:00:00; 
+2016-12-15 12:28:34.7849|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 12:28:34.7849|INFO|MyServiceLibrary.Logger|The name of the future state file: ussstate.xml
+2016-12-15 12:28:34.8049|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 1
+2016-12-15 12:28:34.8049|INFO|MyServiceLibrary.Logger|The last generated user's id: 1
+2016-12-15 12:28:35.0179|INFO|MyServiceLibrary.Logger|The state of the service was saved.

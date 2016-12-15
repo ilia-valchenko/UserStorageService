@@ -110,14 +110,6 @@ namespace MyServiceLibrary
             if (criteria == null)
                 throw new ArgumentNullException(nameof(criteria));
 
-            /* This way has disadvantages. We can lost users which were added to the master's 
-             * storage. Local slave's storage doesn't contain these users. The solution is to 
-             * send a notification message to slaves when new user is adding. But I want to save 
-             * my realization that looks like a simple caching when a local storage contains 
-             * the most frequently requested users. Another way is to redirect this multi-user 
-             * query to the master.
-            */
-
             return uss.GetUsersByPredicate(criteria);
         }
 

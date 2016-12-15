@@ -1,0 +1,8 @@
+G:\GitEpam\UserStorageService\SampleService\TestWcfServiceApplication\bin\Debug\TestWcfServiceApplication.exe.config
+G:\GitEpam\UserStorageService\SampleService\TestWcfServiceApplication\bin\Debug\TestWcfServiceApplication.exe
+G:\GitEpam\UserStorageService\SampleService\TestWcfServiceApplication\bin\Debug\TestWcfServiceApplication.pdb
+G:\GitEpam\UserStorageService\SampleService\TestWcfServiceApplication\bin\Debug\UserLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\TestWcfServiceApplication\bin\Debug\UserLibrary.pdb
+G:\GitEpam\UserStorageService\SampleService\TestWcfServiceApplication\obj\Debug\TestWcfServiceApplication.exe
+G:\GitEpam\UserStorageService\SampleService\TestWcfServiceApplication\obj\Debug\TestWcfServiceApplication.pdb
+G:\GitEpam\UserStorageService\SampleService\TestWcfServiceApplication\obj\Debug\TestWcfServiceApplication.csprojResolveAssemblyReference.cache

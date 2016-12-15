@@ -1,0 +1,16 @@
+G:\GitEpam\UserStorageService\SampleService\WcfService\bin\NLog.config
+G:\GitEpam\UserStorageService\SampleService\WcfService\bin\WcfService.dll.config
+G:\GitEpam\UserStorageService\SampleService\WcfService\bin\WcfService.dll
+G:\GitEpam\UserStorageService\SampleService\WcfService\bin\WcfService.pdb
+G:\GitEpam\UserStorageService\SampleService\WcfService\bin\MyServiceLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\WcfService\bin\UserLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\WcfService\bin\NLog.dll
+G:\GitEpam\UserStorageService\SampleService\WcfService\bin\MessageLibrary.dll
+G:\GitEpam\UserStorageService\SampleService\WcfService\bin\MyServiceLibrary.pdb
+G:\GitEpam\UserStorageService\SampleService\WcfService\bin\MyServiceLibrary.xml
+G:\GitEpam\UserStorageService\SampleService\WcfService\bin\UserLibrary.pdb
+G:\GitEpam\UserStorageService\SampleService\WcfService\bin\NLog.xml
+G:\GitEpam\UserStorageService\SampleService\WcfService\bin\MessageLibrary.pdb
+G:\GitEpam\UserStorageService\SampleService\WcfService\obj\Debug\WcfService.csprojResolveAssemblyReference.cache
+G:\GitEpam\UserStorageService\SampleService\WcfService\obj\Debug\WcfService.dll
+G:\GitEpam\UserStorageService\SampleService\WcfService\obj\Debug\WcfService.pdb

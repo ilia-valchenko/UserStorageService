@@ -59,7 +59,6 @@
     <Compile Include="Logger.cs" />
     <Compile Include="Master.cs" />
     <Compile Include="Slave.cs" />
-    <Compile Include="SlaveService.cs" />
     <Compile Include="UserStorage.cs" />
     <Compile Include="UserStorageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
