@@ -11,7 +11,7 @@ namespace SearchCriteriaLibrary
     {
         public static bool GetUserByName(User user)
         {
-            if (user.FirstName == "Ilia")
+            if (user.FirstName == "Toshiro")
                 return true;
 
             return false;

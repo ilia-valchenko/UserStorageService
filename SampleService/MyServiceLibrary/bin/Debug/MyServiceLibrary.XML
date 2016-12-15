@@ -318,6 +318,13 @@
             <param name="handler">The socket which was received from Accept method.</param>
             <param name="message">The message that must be sent.</param>
         </member>
+        <member name="M:MyServiceLibrary.Master.SendMessageTo(System.Int32,MessageLibrary.NotificationMessage)">
+            <summary>
+            This method sends a notification message to the service which works on the given port.
+            </summary>
+            <param name="port">Number of a port.</param>
+            <param name="message">Notification message that must be sent.</param>
+        </member>
         <member name="T:MyServiceLibrary.Slave">
             <summary>
             This class represent a slave. It'a a master with limited functionality. 

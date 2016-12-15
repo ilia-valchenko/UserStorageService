@@ -74,7 +74,9 @@ namespace MyServiceLibrary
 
             uss.Add(user);
 
-            // set not msg to slaves
+            AddNotificationMessage message = new AddNotificationMessage(user);
+            for (int i = 0; i < portsOfSlaves.Length; i++)
+                SendMessageTo(portsOfSlaves[i], message);
         }
 
         /// <summary>
@@ -86,9 +88,18 @@ namespace MyServiceLibrary
             if (user == null)
                 throw new ArgumentNullException(nameof(user));
 
-            return uss.Delete(user);
+            bool isSuccesssfullyDelete = uss.Delete(user);
 
-            // set not msg to slaves
+            if(isSuccesssfullyDelete)
+            {
+                DeleteNotificationMessage message = new DeleteNotificationMessage(user.Id);
+                for (int i = 0; i < portsOfSlaves.Length; i++)
+                    SendMessageTo(portsOfSlaves[i], message);
+
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -100,9 +111,18 @@ namespace MyServiceLibrary
             if (userId < 0)
                 throw new ArgumentException(nameof(userId));
 
-            return uss.Delete(userId);
+            bool isSuccesssfullyDelete = uss.Delete(userId);
 
-            // set not msg to slaves
+            if (isSuccesssfullyDelete)
+            {
+                DeleteNotificationMessage message = new DeleteNotificationMessage(userId);
+                for (int i = 0; i < portsOfSlaves.Length; i++)
+                    SendMessageTo(portsOfSlaves[i], message);
+
+                return true;
+            }
+
+            return false; 
         }
 
         /// <summary>
@@ -155,7 +175,7 @@ namespace MyServiceLibrary
                     try
                     {
                         receivedMessage = NotificationMessage.TransfromBytesToNotificationMessage(bytes, 0, numberOfReceivedBytes);
-                        Console.WriteLine("Message was received.");
+                        Console.WriteLine("Master received a new message.");
                     }
                     catch (Exception exc)
                     {
@@ -187,25 +207,15 @@ namespace MyServiceLibrary
         /// <param name="handler">Socket for sending a response to a slave.</param>
         private void ExecuteCommand(NotificationMessage message, Socket handler)
         {
-            Console.WriteLine("Into ExecuteCommand method.");
-
             if (message == null)
                 throw new ArgumentNullException(nameof(message));
 
             switch (message.Command)
             {
-                case Commands.Add:
-                    Console.WriteLine("The client is calling Add method.");
-                    break;
-
-                case Commands.Delete:
-                    Console.WriteLine("The client is calling Delete method.");
-                    break;
-
                 case Commands.GetUserByPredicate:
                     Console.WriteLine("The client is calling GetUserByPredicate method.");
-                    GetUserByPredicateNotificationMessage msg = message as GetUserByPredicateNotificationMessage;
-                    User user = uss.GetUserByPredicate(msg.Criteria);
+                    GetUserByPredicateNotificationMessage getUserByPredicateMessage = message as GetUserByPredicateNotificationMessage;
+                    User user = uss.GetUserByPredicate(getUserByPredicateMessage.Criteria);
                     AddNotificationMessage response = new AddNotificationMessage(user);
                     byte[] bytesOfResponse = NotificationMessage.TransformMessageToBytes(response);
                     handler.Send(bytesOfResponse);
@@ -214,6 +224,7 @@ namespace MyServiceLibrary
 
                 case Commands.GetUsersByPredicate:
                     Console.WriteLine("The client is calling GetUsersByPredicate method.");
+                    // not implemented
                     break;
 
                 default:
@@ -242,7 +253,35 @@ namespace MyServiceLibrary
 
             handler.Send(bytesOfMessage);
 
-            Console.WriteLine("The message was sent.");
+            Console.WriteLine("The message was sent by using accepted socket.");
+        }
+
+        /// <summary>
+        /// This method sends a notification message to the service which works on the given port.
+        /// </summary>
+        /// <param name="port">Number of a port.</param>
+        /// <param name="message">Notification message that must be sent.</param>
+        private void SendMessageTo(int port, NotificationMessage message)
+        {
+            byte[] bytesOfMessage = null;
+            IPHostEntry ipHost = Dns.GetHostEntry("localhost");
+            IPAddress ipAddress = ipHost.AddressList[0];
+            IPEndPoint endPoint = new IPEndPoint(ipAddress, port);
+            Socket sender = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+
+            try
+            {
+                bytesOfMessage = NotificationMessage.TransformMessageToBytes(message);
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+            }
+
+            sender.Connect(endPoint);
+            sender.Send(bytesOfMessage);
+
+            Console.WriteLine($"Master sent message with command {message.Command} to the slave that works on port: {port}.");
         }
 
         private UserStorageService uss;

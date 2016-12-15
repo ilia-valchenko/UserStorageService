@@ -84,9 +84,14 @@ namespace MyServiceLibrary
                 AddNotificationMessage receivedAnswer = SendMessageTo(masterPort, message) as AddNotificationMessage;
 
                 if (receivedAnswer.User != null)
+                {
+                    uss.Add(receivedAnswer.User);
                     return receivedAnswer.User;
+                }     
                 else
+                {
                     return null;
+                } 
             }
             else
             {
@@ -102,7 +107,18 @@ namespace MyServiceLibrary
         /// <returns>Returns a collection of users which was found by using the criteria function.</returns>
         public IEnumerable<User> GetUsersByPredicate(Func<User, bool> criteria)
         {
-            throw new NotImplementedException();
+            if (criteria == null)
+                throw new ArgumentNullException(nameof(criteria));
+
+            /* This way has disadvantages. We can lost users which were added to the master's 
+             * storage. Local slave's storage doesn't contain these users. The solution is to 
+             * send a notification message to slaves when new user is adding. But I want to save 
+             * my realization that looks like a simple caching when a local storage contains 
+             * the most frequently requested users. Another way is to redirect this multi-user 
+             * query to the master.
+            */
+
+            return uss.GetUsersByPredicate(criteria);
         }
 
         /// <summary>
@@ -195,11 +211,26 @@ namespace MyServiceLibrary
             switch (message.Command)
             {
                 case Commands.Add:
-                    Console.WriteLine("Master said that slave must add a new user to inner storage.");
+                    AddNotificationMessage addNotificationMessage = message as AddNotificationMessage;
+                    Console.WriteLine($"Master said that slave must add a new user to inner storage. The user is: {addNotificationMessage.User}");
+                    uss.Add(addNotificationMessage.User);
                     break;
 
                 case Commands.Delete:
                     Console.WriteLine("Master said that slave should delete the user from inner storage.");
+                    DeleteNotificationMessage deleteNotificationMessage = message as DeleteNotificationMessage;
+                    User user = uss.GetUserByPredicate((User u) => u.Id == deleteNotificationMessage.UserId);
+
+                    if(user == null)
+                    {
+                        Console.WriteLine("The local storage doesn't contains the user with given Id.");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"The user which will be removed is: {user}");
+                        uss.Delete(user.Id);
+                    }
+                   
                     break;
 
                 default:

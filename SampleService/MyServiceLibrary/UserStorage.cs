@@ -90,7 +90,13 @@ namespace MyServiceLibrary
             if (criteria == null)
                 throw new ArgumentNullException(nameof(criteria));
 
-            return storage.Where(item => criteria(item.Value)).Select(item => item.Value);
+            var preres = storage.Where(item => criteria(item.Value));
+            var res = preres.Select(item => item.Value);
+
+            Console.WriteLine("Number of received users: " + res.Count());
+
+            return res;
+            //return storage.Where(item => criteria(item.Value)).Select(item => item.Value);
         }
 
         /// <summary>

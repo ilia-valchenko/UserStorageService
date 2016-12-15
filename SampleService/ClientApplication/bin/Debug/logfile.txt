@@ -102,3 +102,474 @@
 2016-12-14 14:35:58.6698|INFO|MyServiceLibrary.Logger|Start UserStorageService.
 2016-12-14 14:35:58.6878|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
 2016-12-14 14:35:58.6878|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-14 14:53:21.3875|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-14 14:53:21.4035|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-14 14:53:21.4035|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-14 14:53:21.4385|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-14 14:53:21.4385|INFO|MyServiceLibrary.Logger|Generated ID is: 1
+2016-12-14 14:53:21.4515|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 1; First name: Ilia; Last name: Valchenko; Gender: Male; Date of birth: 02.08.1995 0:00:00; 
+2016-12-14 14:53:21.4515|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-14 14:53:21.4515|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-14 14:53:21.4515|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 1
+2016-12-14 14:53:21.4515|INFO|MyServiceLibrary.Logger|The last generated user's id: 1
+2016-12-14 14:53:21.4985|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-14 14:53:21.4985|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-14 14:53:21.4985|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-14 14:53:21.4985|INFO|MyServiceLibrary.Logger|User was successfully found. Id: 1; First name: Ilia; Last name: Valchenko; Gender: Male; Date of birth: 02.08.1995 0:00:00; 
+2016-12-14 23:43:40.6181|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-14 23:43:40.6371|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-14 23:43:40.6411|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-14 23:44:07.9557|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-14 23:54:32.1474|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-14 23:54:32.1804|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-14 23:54:32.1804|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-15 00:04:55.6300|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-15 00:05:00.0283|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:05:00.0283|INFO|MyServiceLibrary.Logger|Generated ID is: 1
+2016-12-15 00:05:00.0283|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Ilia; Last name: Valchenko; Gender: Male; Date of birth: 02.08.1995 0:00:00; 
+2016-12-15 00:05:00.0283|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:05:00.0353|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:05:00.0353|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 1
+2016-12-15 00:05:00.0353|INFO|MyServiceLibrary.Logger|The last generated user's id: 1
+2016-12-15 00:05:00.0593|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:05:00.0593|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:05:00.0593|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:05:00.0593|INFO|MyServiceLibrary.Logger|Generated ID is: 2
+2016-12-15 00:05:00.0593|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:05:00.0593|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:05:00.0593|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:05:00.0593|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 2
+2016-12-15 00:05:00.0593|INFO|MyServiceLibrary.Logger|The last generated user's id: 2
+2016-12-15 00:05:00.0593|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:05:00.0593|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:05:00.0663|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:05:00.0663|INFO|MyServiceLibrary.Logger|Generated ID is: 3
+2016-12-15 00:05:00.0663|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Takashi; Last name: Shimura; Gender: Male; Date of birth: 12.03.1905 0:00:00; 
+2016-12-15 00:05:00.0663|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:05:00.0663|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:05:00.0663|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 3
+2016-12-15 00:05:00.0663|INFO|MyServiceLibrary.Logger|The last generated user's id: 3
+2016-12-15 00:05:00.0663|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:05:00.0663|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:06:47.7404|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-15 00:08:37.0677|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-15 00:08:37.0917|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-15 00:08:37.0917|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-15 00:08:53.8377|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-15 00:08:53.8587|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-15 00:08:53.8587|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-15 00:09:11.9977|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-15 00:09:12.0187|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-15 00:09:12.0187|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.
+2016-12-15 00:09:45.6266|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-15 00:09:49.3068|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:09:49.3078|INFO|MyServiceLibrary.Logger|Generated ID is: 1
+2016-12-15 00:09:49.3078|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Ilia; Last name: Valchenko; Gender: Male; Date of birth: 02.08.1995 0:00:00; 
+2016-12-15 00:09:49.3078|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:09:49.3078|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:09:49.3078|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 1
+2016-12-15 00:09:49.3078|INFO|MyServiceLibrary.Logger|The last generated user's id: 1
+2016-12-15 00:09:49.3358|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:09:49.3358|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:09:49.3358|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:09:49.3358|INFO|MyServiceLibrary.Logger|Generated ID is: 2
+2016-12-15 00:09:49.3408|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:09:49.3408|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:09:49.3408|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:09:49.3408|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 2
+2016-12-15 00:09:49.3408|INFO|MyServiceLibrary.Logger|The last generated user's id: 2
+2016-12-15 00:09:49.3408|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:09:49.3408|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:09:49.3408|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:09:49.3408|INFO|MyServiceLibrary.Logger|Generated ID is: 3
+2016-12-15 00:09:49.3408|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Takashi; Last name: Shimura; Gender: Male; Date of birth: 12.03.1905 0:00:00; 
+2016-12-15 00:09:49.3408|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:09:49.3408|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:09:49.3408|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 3
+2016-12-15 00:09:49.3408|INFO|MyServiceLibrary.Logger|The last generated user's id: 3
+2016-12-15 00:09:49.3408|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:09:49.3408|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:09:55.6792|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-15 00:09:55.6792|INFO|MyServiceLibrary.Logger|User was successfully found. Id: 1; First name: Ilia; Last name: Valchenko; Gender: Male; Date of birth: 02.08.1995 0:00:00; 
+2016-12-15 00:11:10.1004|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-15 00:11:13.3356|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:11:13.3356|INFO|MyServiceLibrary.Logger|Generated ID is: 1
+2016-12-15 00:11:13.3356|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Ilia; Last name: Valchenko; Gender: Male; Date of birth: 02.08.1995 0:00:00; 
+2016-12-15 00:11:13.3356|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:11:13.3356|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:11:13.3356|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 1
+2016-12-15 00:11:13.3356|INFO|MyServiceLibrary.Logger|The last generated user's id: 1
+2016-12-15 00:11:13.3566|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:11:13.3566|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:11:13.3566|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:11:13.3606|INFO|MyServiceLibrary.Logger|Generated ID is: 2
+2016-12-15 00:11:13.3606|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:11:13.3606|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:11:13.3606|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:11:13.3606|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 2
+2016-12-15 00:11:13.3606|INFO|MyServiceLibrary.Logger|The last generated user's id: 2
+2016-12-15 00:11:13.3606|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:11:13.3606|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:11:13.3606|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:11:13.3606|INFO|MyServiceLibrary.Logger|Generated ID is: 3
+2016-12-15 00:11:13.3606|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Takashi; Last name: Shimura; Gender: Male; Date of birth: 12.03.1905 0:00:00; 
+2016-12-15 00:11:13.3606|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:11:13.3606|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:11:13.3606|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 3
+2016-12-15 00:11:13.3606|INFO|MyServiceLibrary.Logger|The last generated user's id: 3
+2016-12-15 00:11:13.3606|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:11:13.3606|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:11:20.1400|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-15 00:11:20.1400|INFO|MyServiceLibrary.Logger|User was successfully found. Id: 1; First name: Ilia; Last name: Valchenko; Gender: Male; Date of birth: 02.08.1995 0:00:00; 
+2016-12-15 00:16:52.3760|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-15 00:16:56.1062|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:16:56.1062|INFO|MyServiceLibrary.Logger|Generated ID is: 1
+2016-12-15 00:16:56.1102|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Ilia; Last name: Valchenko; Gender: Male; Date of birth: 02.08.1995 0:00:00; 
+2016-12-15 00:16:56.1102|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:16:56.1102|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:16:56.1102|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 1
+2016-12-15 00:16:56.1102|INFO|MyServiceLibrary.Logger|The last generated user's id: 1
+2016-12-15 00:16:56.1312|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:16:56.1312|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:16:56.1312|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:16:56.1312|INFO|MyServiceLibrary.Logger|Generated ID is: 2
+2016-12-15 00:16:56.1312|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:16:56.1312|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:16:56.1312|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:16:56.1312|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 2
+2016-12-15 00:16:56.1312|INFO|MyServiceLibrary.Logger|The last generated user's id: 2
+2016-12-15 00:16:56.1312|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:16:56.1312|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:16:56.1312|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:16:56.1312|INFO|MyServiceLibrary.Logger|Generated ID is: 3
+2016-12-15 00:16:56.1312|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Takashi; Last name: Shimura; Gender: Male; Date of birth: 12.03.1905 0:00:00; 
+2016-12-15 00:16:56.1312|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:16:56.1312|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:16:56.1312|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 3
+2016-12-15 00:16:56.1312|INFO|MyServiceLibrary.Logger|The last generated user's id: 3
+2016-12-15 00:16:56.1312|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:16:56.1312|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:17:02.3996|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-15 00:17:02.3996|INFO|MyServiceLibrary.Logger|User was successfully found. Id: 2; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:18:08.8274|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-15 00:18:12.0606|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:18:12.0606|INFO|MyServiceLibrary.Logger|Generated ID is: 1
+2016-12-15 00:18:12.0606|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Ilia; Last name: Valchenko; Gender: Male; Date of birth: 02.08.1995 0:00:00; 
+2016-12-15 00:18:12.0606|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:18:12.0676|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:18:12.0676|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 1
+2016-12-15 00:18:12.0676|INFO|MyServiceLibrary.Logger|The last generated user's id: 1
+2016-12-15 00:18:12.0836|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:18:12.0836|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:18:12.0836|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:18:12.0836|INFO|MyServiceLibrary.Logger|Generated ID is: 2
+2016-12-15 00:18:12.0836|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:18:12.0836|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:18:12.0836|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:18:12.0836|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 2
+2016-12-15 00:18:12.0836|INFO|MyServiceLibrary.Logger|The last generated user's id: 2
+2016-12-15 00:18:12.0836|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:18:12.0836|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:18:12.0836|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:18:12.0836|INFO|MyServiceLibrary.Logger|Generated ID is: 3
+2016-12-15 00:18:12.0836|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Takashi; Last name: Shimura; Gender: Male; Date of birth: 12.03.1905 0:00:00; 
+2016-12-15 00:18:12.0836|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:18:12.0836|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:18:12.0836|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 3
+2016-12-15 00:18:12.0836|INFO|MyServiceLibrary.Logger|The last generated user's id: 3
+2016-12-15 00:18:12.0836|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:18:12.0836|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:18:18.8480|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-15 00:18:18.8480|INFO|MyServiceLibrary.Logger|User was successfully found. Id: 2; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:19:58.3987|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-15 00:20:01.3678|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:20:01.3678|INFO|MyServiceLibrary.Logger|Generated ID is: 1
+2016-12-15 00:20:01.3678|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Ilia; Last name: Valchenko; Gender: Male; Date of birth: 02.08.1995 0:00:00; 
+2016-12-15 00:20:01.3678|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:20:01.3678|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:20:01.3808|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 1
+2016-12-15 00:20:01.3808|INFO|MyServiceLibrary.Logger|The last generated user's id: 1
+2016-12-15 00:20:01.3938|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:20:01.3938|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:20:01.3938|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:20:01.3938|INFO|MyServiceLibrary.Logger|Generated ID is: 2
+2016-12-15 00:20:01.3938|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:20:01.3938|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:20:01.3938|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:20:01.3938|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 2
+2016-12-15 00:20:01.3938|INFO|MyServiceLibrary.Logger|The last generated user's id: 2
+2016-12-15 00:20:01.3938|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:20:01.3938|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:20:01.3938|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:20:01.3938|INFO|MyServiceLibrary.Logger|Generated ID is: 3
+2016-12-15 00:20:01.3938|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Takashi; Last name: Shimura; Gender: Male; Date of birth: 12.03.1905 0:00:00; 
+2016-12-15 00:20:01.3938|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:20:01.3938|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:20:01.3938|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 3
+2016-12-15 00:20:01.3938|INFO|MyServiceLibrary.Logger|The last generated user's id: 3
+2016-12-15 00:20:01.3938|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:20:01.3938|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:20:08.4302|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-15 00:20:08.4302|INFO|MyServiceLibrary.Logger|User was successfully found. Id: 2; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:23:44.6166|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-15 00:23:48.9589|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:23:48.9589|INFO|MyServiceLibrary.Logger|Generated ID is: 1
+2016-12-15 00:23:48.9589|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Ilia; Last name: Valchenko; Gender: Male; Date of birth: 02.08.1995 0:00:00; 
+2016-12-15 00:23:48.9589|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:23:48.9589|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:23:48.9589|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 1
+2016-12-15 00:23:48.9669|INFO|MyServiceLibrary.Logger|The last generated user's id: 1
+2016-12-15 00:23:48.9919|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:23:48.9919|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:23:48.9919|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:23:48.9919|INFO|MyServiceLibrary.Logger|Generated ID is: 2
+2016-12-15 00:23:48.9919|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:23:48.9919|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:23:48.9919|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:23:48.9919|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 2
+2016-12-15 00:23:48.9919|INFO|MyServiceLibrary.Logger|The last generated user's id: 2
+2016-12-15 00:23:48.9919|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:23:48.9989|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:23:48.9989|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:23:48.9989|INFO|MyServiceLibrary.Logger|Generated ID is: 3
+2016-12-15 00:23:48.9989|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Takashi; Last name: Shimura; Gender: Male; Date of birth: 12.03.1905 0:00:00; 
+2016-12-15 00:23:48.9989|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:23:48.9989|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:23:48.9989|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 3
+2016-12-15 00:23:48.9989|INFO|MyServiceLibrary.Logger|The last generated user's id: 3
+2016-12-15 00:23:48.9989|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:23:48.9989|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:23:54.6502|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-15 00:23:54.6502|INFO|MyServiceLibrary.Logger|User was successfully found. Id: 2; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:27:02.8919|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-15 00:27:06.6732|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:27:06.6732|INFO|MyServiceLibrary.Logger|Generated ID is: 1
+2016-12-15 00:27:06.6732|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Ilia; Last name: Valchenko; Gender: Male; Date of birth: 02.08.1995 0:00:00; 
+2016-12-15 00:27:06.6732|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:27:06.6732|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:27:06.6842|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 1
+2016-12-15 00:27:06.6842|INFO|MyServiceLibrary.Logger|The last generated user's id: 1
+2016-12-15 00:27:06.7182|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:27:06.7182|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:27:06.7182|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:27:06.7182|INFO|MyServiceLibrary.Logger|Generated ID is: 2
+2016-12-15 00:27:06.7182|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:27:06.7182|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:27:06.7182|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:27:06.7182|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 2
+2016-12-15 00:27:06.7182|INFO|MyServiceLibrary.Logger|The last generated user's id: 2
+2016-12-15 00:27:06.7182|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:27:06.7182|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:27:06.7182|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:27:06.7182|INFO|MyServiceLibrary.Logger|Generated ID is: 3
+2016-12-15 00:27:06.7182|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Takashi; Last name: Shimura; Gender: Male; Date of birth: 12.03.1905 0:00:00; 
+2016-12-15 00:27:06.7182|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:27:06.7182|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:27:06.7182|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 3
+2016-12-15 00:27:06.7182|INFO|MyServiceLibrary.Logger|The last generated user's id: 3
+2016-12-15 00:27:06.7182|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:27:06.7182|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:27:12.9115|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-15 00:27:12.9115|INFO|MyServiceLibrary.Logger|User was successfully found. Id: 2; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:27:49.9446|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-15 00:27:55.3539|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:27:55.3549|INFO|MyServiceLibrary.Logger|Generated ID is: 1
+2016-12-15 00:27:55.3549|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Ilia; Last name: Valchenko; Gender: Male; Date of birth: 02.08.1995 0:00:00; 
+2016-12-15 00:27:55.3549|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:27:55.3549|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:27:55.3549|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 1
+2016-12-15 00:27:55.3549|INFO|MyServiceLibrary.Logger|The last generated user's id: 1
+2016-12-15 00:27:55.9290|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:27:55.9290|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:27:56.0520|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:27:56.0520|INFO|MyServiceLibrary.Logger|Generated ID is: 2
+2016-12-15 00:27:56.0520|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:27:56.0520|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:27:56.0520|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:27:56.0520|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 2
+2016-12-15 00:27:56.0520|INFO|MyServiceLibrary.Logger|The last generated user's id: 2
+2016-12-15 00:27:56.0520|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:27:56.0570|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:27:56.1160|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:27:56.2840|INFO|MyServiceLibrary.Logger|Generated ID is: 3
+2016-12-15 00:27:56.2840|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Takashi; Last name: Shimura; Gender: Male; Date of birth: 12.03.1905 0:00:00; 
+2016-12-15 00:27:56.2840|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:27:56.2840|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:27:56.2840|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 3
+2016-12-15 00:27:56.2840|INFO|MyServiceLibrary.Logger|The last generated user's id: 3
+2016-12-15 00:27:56.2840|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:27:56.2840|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:27:59.9792|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-15 00:27:59.9792|INFO|MyServiceLibrary.Logger|User was successfully found. Id: 2; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:31:08.1360|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-15 00:31:11.1721|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:31:11.1721|INFO|MyServiceLibrary.Logger|Generated ID is: 1
+2016-12-15 00:31:11.1721|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Ilia; Last name: Valchenko; Gender: Male; Date of birth: 02.08.1995 0:00:00; 
+2016-12-15 00:31:11.1721|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:31:11.1721|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:31:11.1721|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 1
+2016-12-15 00:31:11.1721|INFO|MyServiceLibrary.Logger|The last generated user's id: 1
+2016-12-15 00:31:11.2001|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:31:11.2001|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:31:11.2001|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:31:11.2001|INFO|MyServiceLibrary.Logger|Generated ID is: 2
+2016-12-15 00:31:11.2001|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:31:11.2001|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:31:11.2001|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:31:11.2001|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 2
+2016-12-15 00:31:11.2001|INFO|MyServiceLibrary.Logger|The last generated user's id: 2
+2016-12-15 00:31:11.2001|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:31:11.2001|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:31:11.2001|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:31:11.2001|INFO|MyServiceLibrary.Logger|Generated ID is: 3
+2016-12-15 00:31:11.2001|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Takashi; Last name: Shimura; Gender: Male; Date of birth: 12.03.1905 0:00:00; 
+2016-12-15 00:31:11.2001|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:31:11.2001|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:31:11.2001|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 3
+2016-12-15 00:31:11.2001|INFO|MyServiceLibrary.Logger|The last generated user's id: 3
+2016-12-15 00:31:11.2001|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:31:11.2001|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:31:18.1555|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-15 00:31:18.1575|INFO|MyServiceLibrary.Logger|User was successfully found. Id: 2; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:31:49.3413|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-15 00:31:52.9675|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:31:52.9675|INFO|MyServiceLibrary.Logger|Generated ID is: 1
+2016-12-15 00:31:52.9675|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Ilia; Last name: Valchenko; Gender: Male; Date of birth: 02.08.1995 0:00:00; 
+2016-12-15 00:31:52.9675|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:31:52.9675|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:31:52.9675|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 1
+2016-12-15 00:31:52.9675|INFO|MyServiceLibrary.Logger|The last generated user's id: 1
+2016-12-15 00:31:52.9935|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:31:52.9935|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:31:52.9935|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:31:52.9935|INFO|MyServiceLibrary.Logger|Generated ID is: 2
+2016-12-15 00:31:52.9935|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:31:52.9935|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:31:52.9935|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:31:52.9935|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 2
+2016-12-15 00:31:52.9935|INFO|MyServiceLibrary.Logger|The last generated user's id: 2
+2016-12-15 00:31:52.9935|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:31:52.9935|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:31:52.9935|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:31:52.9935|INFO|MyServiceLibrary.Logger|Generated ID is: 3
+2016-12-15 00:31:52.9935|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Takashi; Last name: Shimura; Gender: Male; Date of birth: 12.03.1905 0:00:00; 
+2016-12-15 00:31:52.9935|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:31:52.9935|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:31:52.9935|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 3
+2016-12-15 00:31:52.9935|INFO|MyServiceLibrary.Logger|The last generated user's id: 3
+2016-12-15 00:31:52.9935|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:31:52.9935|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:31:59.3729|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-15 00:31:59.3729|INFO|MyServiceLibrary.Logger|User was successfully found. Id: 2; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:33:32.8733|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-15 00:33:38.4846|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:33:38.4846|INFO|MyServiceLibrary.Logger|Generated ID is: 1
+2016-12-15 00:33:38.4846|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Ilia; Last name: Valchenko; Gender: Male; Date of birth: 02.08.1995 0:00:00; 
+2016-12-15 00:33:38.4846|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:33:38.4846|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:33:38.4846|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 1
+2016-12-15 00:33:38.4976|INFO|MyServiceLibrary.Logger|The last generated user's id: 1
+2016-12-15 00:33:38.7866|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:33:38.7866|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:33:38.8246|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:33:38.8246|INFO|MyServiceLibrary.Logger|Generated ID is: 2
+2016-12-15 00:33:38.8246|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:33:38.8246|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:33:38.8246|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:33:38.8246|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 2
+2016-12-15 00:33:38.8246|INFO|MyServiceLibrary.Logger|The last generated user's id: 2
+2016-12-15 00:33:38.8246|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:33:38.8246|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:33:39.0556|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:33:39.0556|INFO|MyServiceLibrary.Logger|Generated ID is: 3
+2016-12-15 00:33:39.0566|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Takashi; Last name: Shimura; Gender: Male; Date of birth: 12.03.1905 0:00:00; 
+2016-12-15 00:33:39.0566|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:33:39.0566|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:33:39.0566|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 3
+2016-12-15 00:33:39.0566|INFO|MyServiceLibrary.Logger|The last generated user's id: 3
+2016-12-15 00:33:39.0566|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:33:39.0566|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:33:42.8918|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-15 00:33:42.8938|INFO|MyServiceLibrary.Logger|User was successfully found. Id: 2; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:34:56.4870|INFO|MyServiceLibrary.Logger|Start UserStorageService.
+2016-12-15 00:34:59.6072|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:34:59.6072|INFO|MyServiceLibrary.Logger|Generated ID is: 1
+2016-12-15 00:34:59.6152|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Ilia; Last name: Valchenko; Gender: Male; Date of birth: 02.08.1995 0:00:00; 
+2016-12-15 00:34:59.6152|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:34:59.6152|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:34:59.6152|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 1
+2016-12-15 00:34:59.6152|INFO|MyServiceLibrary.Logger|The last generated user's id: 1
+2016-12-15 00:34:59.7212|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:34:59.7492|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:34:59.7492|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:34:59.7492|INFO|MyServiceLibrary.Logger|Generated ID is: 2
+2016-12-15 00:34:59.7492|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:34:59.7492|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:34:59.7492|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:34:59.7492|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 2
+2016-12-15 00:34:59.7492|INFO|MyServiceLibrary.Logger|The last generated user's id: 2
+2016-12-15 00:34:59.7492|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:34:59.7492|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:34:59.7562|INFO|MyServiceLibrary.Logger|Start Add user method.
+2016-12-15 00:34:59.7562|INFO|MyServiceLibrary.Logger|Generated ID is: 3
+2016-12-15 00:34:59.7562|INFO|MyServiceLibrary.Logger|New user was successfully added. Id: 0; First name: Takashi; Last name: Shimura; Gender: Male; Date of birth: 12.03.1905 0:00:00; 
+2016-12-15 00:34:59.7562|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:34:59.7562|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:34:59.7562|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 3
+2016-12-15 00:34:59.7562|INFO|MyServiceLibrary.Logger|The last generated user's id: 3
+2016-12-15 00:34:59.7562|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:34:59.7562|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:34:59.7562|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-15 00:34:59.7562|INFO|MyServiceLibrary.Logger|User was successfully found. Id: 2; First name: Toshiro; Last name: Mifune; Gender: Male; Date of birth: 01.04.1920 0:00:00; 
+2016-12-15 00:34:59.7562|INFO|MyServiceLibrary.Logger|Start Delete method which uses an id of user as input parameter.
+2016-12-15 00:34:59.7562|INFO|MyServiceLibrary.Logger|ID of the user which must be deleted: 2
+2016-12-15 00:34:59.7562|INFO|MyServiceLibrary.Logger|User was successfully deleted.
+2016-12-15 00:34:59.7562|INFO|MyServiceLibrary.Logger|Start SaveState method.
+2016-12-15 00:34:59.7562|INFO|MyServiceLibrary.Logger|The name of the future state file: 
+2016-12-15 00:34:59.7562|INFO|MyServiceLibrary.Logger|The number of users which will be written into the xml file: 2
+2016-12-15 00:34:59.7562|INFO|MyServiceLibrary.Logger|The last generated user's id: 3
+2016-12-15 00:34:59.7562|ERROR|MyServiceLibrary.Logger|Значение не может быть неопределенным.
+Имя параметра: outputFileName
+2016-12-15 00:34:59.7712|INFO|MyServiceLibrary.Logger|The state of the service was saved.
+2016-12-15 00:35:06.5086|INFO|MyServiceLibrary.Logger|Start GetUserByPredicate method.
+2016-12-15 00:35:06.5086|INFO|MyServiceLibrary.Logger|User wasn't found. The returned result is null.

@@ -1,6 +1,7 @@
 ﻿using System;
 using MyServiceLibrary;
 using System.Configuration;
+using System.Threading.Tasks;
 using UserLibrary;
 
 namespace ServiceApplication
@@ -91,7 +92,7 @@ namespace ServiceApplication
             //} 
             #endregion
 
-            string hostName = "localhost";
+            string hostName = ConfigurationSettings.AppSettings.Get("HostName");
 
             int masterPort;
             Int32.TryParse(ConfigurationSettings.AppSettings.Get("MasterPort"), out masterPort);
@@ -120,11 +121,17 @@ namespace ServiceApplication
 
             User ilia = new User("Ilia", "Valchenko", "Male", new DateTime(1995, 8, 2));
             User toshiro = new User("Toshiro", "Mifune", "Male", new DateTime(1920, 4, 1));
+            User takashi = new User("Takashi", "Shimura", "Male", new DateTime(1905, 3, 12));
+
+            Task listenerTask = new Task(master.StartListen);
+            listenerTask.Start();
 
             master.Add(ilia);
             master.Add(toshiro);
+            master.Add(takashi);
+            master.Delete(2);
 
-            master.StartListen();
+            listenerTask.Wait();
 
             Console.WriteLine("\nTap to continue...");
             Console.ReadKey(true);
